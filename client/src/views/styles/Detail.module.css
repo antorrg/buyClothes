@@ -1,0 +1,51 @@
+.body {
+    background-color: rgb(231, 195, 167);
+   width: 100vw;
+   height: 60vw;
+  }  
+.cont{
+  
+    border: 1px solid gray;
+    border-radius:  0.5rem;
+    width: fit-content;
+    font-weight: 600;
+    margin: auto;
+    padding: 1 rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    background-color: rgb(219, 231, 216);
+    /* box-shadow: 
+    0 0 5px rgb(246, 250, 246),
+    0 0 10px rgb(230, 254, 225),
+    0 0 15px rgb(210, 251, 201),
+    0 0 20px rgb(192, 250, 179),
+    0 0 25px rgb(155, 252, 134),
+    0 0 30px rgb(92, 178, 73); */
+
+    .descriptionTextarea{
+        width: 200px;
+        overflow:auto;
+    }
+    
+}
+.image{
+    display:flex;
+    justify-content: flex-start;
+    float: left;
+    clear: both; 
+    width: 20rem;
+    margin: 15px;
+}
+
+
+.text{
+    padding: 1rem;
+    color:rgb(7, 69, 27);
+    text-align: left;
+}
+.descriptionDiv{
+    color: black;
+}
+
