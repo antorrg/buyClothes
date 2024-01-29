@@ -8,6 +8,7 @@ const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
     const handleInputChange = (e) => {
       const { name, value } = e.target;
       onInputChange(name, value);
+      console.log(onImageChange)
     };
     const [imageUrl, setImageUrl] = useState('');
     const url=imageUrl;
@@ -25,7 +26,7 @@ const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
       <form onSubmit={handleSubmit}>
         <label>
           Imagen:
-          <CloudinaryUpload onImageChange={onImageChange }/>
+          <CloudinaryUpload onImageChange={onImageChange}/>
         </label>
         <label>
           Nombre:

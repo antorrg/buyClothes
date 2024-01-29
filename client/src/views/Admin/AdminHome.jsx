@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {getAllUsers}from '../../Redux/actions'
 import GenericButton from '../../components/Buttons/GenericButton';
 import {Link}from 'react-router-dom'
-import CloudinaryUpload from '../../components/EditComponents/CloudinaryUpload';
+//import CloudinaryUpload from '../../components/EditComponents/CloudinaryUpload';
 
 function AdminHome() {
   const {authenticated, user}=useAuth();

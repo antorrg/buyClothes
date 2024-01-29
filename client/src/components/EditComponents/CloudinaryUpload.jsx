@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios'
 import { showSuccess, showError } from '../../Auth/HandlerError';
 import { Image, Transformation, CloudinaryContext } from 'cloudinary-react';
-import GenericButton from '../Buttons/GenericButton';
 const uplPreset= import.meta.env.VITE_PRESET
 
 const CloudinaryUpload = ({ onImageChange }) => {

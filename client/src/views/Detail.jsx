@@ -46,8 +46,8 @@ const Detail=()=>{
     return (
       <div className={style.body}>
       <div className={style.cont}>
-      <div className={style.image}>
-      <img src={userBI?.picture} alt = {'not found'}/>
+      <div>
+      <img  className={style.image} src={userBI?.picture} alt = {'not found'}/>
       </div >
       <div className={style.text}>
       <GenericButton onClick = {goBack} buttonText='Volver'/>
