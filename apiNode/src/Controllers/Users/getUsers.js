@@ -45,7 +45,7 @@ const updUserController = async(id, newData)=>{
        
           const parsedData = {
             name: newData.name,
-            //picture: newData.picture,
+            picture: newData.picture,
             surname: newData.surname,
             role: parseFloat(newData.role), //convertir a numero
             country: newData.country,

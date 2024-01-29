@@ -11,8 +11,10 @@ function App() {
   console.log(authenticated)
   const allow = user? user.role : 1;
   console.log(allow)
+  
  
 
+  
 
 
   return (

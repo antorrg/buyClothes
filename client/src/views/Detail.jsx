@@ -41,7 +41,7 @@ const Detail=()=>{
   const puedeEditar = user && user.role === 0;
   const roleName = getRoleName(userBI.role);
   const status = statusUser(userBI.enable);
-  console.log('yo soy user '+user.id)
+  //console.log('yo soy user '+user.id)
   
     return (
       <div className={style.body}>

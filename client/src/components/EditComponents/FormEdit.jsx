@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import style from '../styles/Form.module.css'
 import GenericButton from '../Buttons/GenericButton';
+import CloudinaryUpload from './CloudinaryUpload';
 
 
 const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
@@ -8,7 +9,11 @@ const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
       const { name, value } = e.target;
       onInputChange(name, value);
     };
-  
+    const [imageUrl, setImageUrl] = useState('');
+    const url=imageUrl;
+    const onImageChange = (url) => {
+      setImageUrl(url);
+    };
     const handleSubmit = (e) => {
       e.preventDefault();
       onSaveChanges();
@@ -18,6 +23,10 @@ const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
   return (
     <div className={style.formContainer}>
       <form onSubmit={handleSubmit}>
+        <label>
+          Imagen:
+          <CloudinaryUpload onImageChange={onImageChange }/>
+        </label>
         <label>
           Nombre:
           <input type="text" name="name" value={editedUser.name} onChange={handleInputChange} />
