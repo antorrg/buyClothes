@@ -18,7 +18,6 @@ const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
     const handleSubmit = (e) => {
       e.preventDefault();
       onSaveChanges();
-      // Puedes realizar alguna lógica de validación si lo deseas
     };
 
   return (
