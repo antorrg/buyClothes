@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { setAuthHeader } from '../Auth/axiosUtils';
 import {HandlError, showSuccess}from '../Auth/HandlerError'
 export const LOGIN_USER= 'LOGIN_USER';
 export const ALL_USERS= 'ALL_USERS';
@@ -20,9 +21,9 @@ export const getAllUsers = ()=>{
     }
   }
 }
-export const getById = (id) => async (dispatch) => {
+export const getById = (id, token) => async (dispatch) => {
   try {
-    const data = await axios(`/user/${id}`);
+    const data = await axios(`/user/${id}`, setAuthHeader(token));
     return dispatch({
       type: USER_BY_ID,
       payload:data.data,

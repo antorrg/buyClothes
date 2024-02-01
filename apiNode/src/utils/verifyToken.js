@@ -23,7 +23,8 @@ const verifyToken = (req, res, next) => {
     // Almacena el usuario decodificado en el objeto de solicitud para su uso posterior
     req.user = decoded;
      const userId = decoded.id;
-     req.userId = userId;
+     const userRole = decoded.role;
+     req.userInfo={userId, userRole};
      //console.log(req.user.userId+' id del usuario')
      //console.log(req.user.email+': este es el email del usuario')
 

@@ -27,7 +27,7 @@ const interceptor = () => {
  };   
     
 const setAuthHeader = (token) => {
-      //const token = localStorage.getItem('authToken');
+      //const token = localStorage.getItem('validToken');
        const config = {};
       
        if (token) {
@@ -40,4 +40,7 @@ const setAuthHeader = (token) => {
  };
 
 
-  
+export {
+    interceptor,
+    setAuthHeader
+}

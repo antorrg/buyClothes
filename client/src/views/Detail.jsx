@@ -28,12 +28,12 @@ const Detail=()=>{
     setIsModalOpen(false);
   };
 
- 
+ const token = localStorage.getItem('validToken')
 
   useEffect(()=>{
     dispatch(cleanData());
 
-    dispatch(getById(id));
+    dispatch(getById(id, token));
 
   },[dispatch,id, cleanData]);
 
