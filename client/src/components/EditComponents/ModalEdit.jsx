@@ -16,8 +16,8 @@ const EditWindow = ({ onClose, userEdit}) => {
   //console.log (enable)
 
   const [editedUser, setEditedUser] = useState({
-    picture,
     name,
+    picture,
     surname,
     country,
     role,
@@ -27,6 +27,7 @@ const EditWindow = ({ onClose, userEdit}) => {
   const handleInputChange = (name, value) => {
     console.log('name: ', name);
     console.log('value: ', value);
+    console.log('picture: ', picture)
     const processedValue = name === 'enable' ? value === 'true' : value;
     setEditedUser((prevUser) => ({
       ...prevUser,

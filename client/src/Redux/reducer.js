@@ -25,6 +25,7 @@ const reducer = (state=initialState, {type, payload})=>{
         case ISN_AUTH:
             return {
                 ...state,
+                LogIn:payload,
                 isAuthenticate: false,
             }
         case ALL_USERS:

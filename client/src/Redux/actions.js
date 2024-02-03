@@ -46,9 +46,9 @@ export const loginUser = (payload) => (dispatch)=>{
         });
       
   };
-export const isNotAuth =(payload)=>{
+export const isNotAuth =()=>(dispatch)=>{
   return dispatch({
     type:ISN_AUTH,
-    payload: payload,
+    payload: [],
   })
 }

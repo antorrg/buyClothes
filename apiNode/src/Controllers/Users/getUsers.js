@@ -53,6 +53,7 @@ const updUserController = async(id, newData)=>{
           };
           // Actualizar todos los campos
           const userUp =await user.update(parsedData);
+          console.log('soy la imagen: '+userUp.picture)
         return userUp;
       } catch (error) {
         console.error("Error al actualizar el usuario");

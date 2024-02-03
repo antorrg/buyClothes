@@ -1,18 +1,35 @@
 //Dependencies:
 import { useAuth } from './Auth/AuthContext/AuthContext'
-import {Routes, Route, Navigate} from 'react-router-dom';
+import {Routes, Route, Navigate, useNavigate} from 'react-router-dom';
+import { useEffect } from 'react';
+import {useDispatch}from 'react-redux';
 //Componentes:
 import {Landing, Detail, Home, Form, Error} from './views/Index';
 import { AdminHome,  } from './views/AdminIndex';
 import './App.css';
+import { interceptor } from './Auth/axiosUtils'
+import {loginUser, isNotAuth} from './Redux/actions'
 
 function App() {
-  const {authenticated, user}=useAuth();
+  const {authenticated, user,logout}=useAuth();
+
+  const dispatch = useDispatch();
   console.log(authenticated)
   const allow = user? user.role : 1;
   console.log(allow)
-  
- 
+  const navigate = useNavigate()
+  useEffect(()=>{
+    if(authenticated){
+      dispatch(loginUser(user))
+    }else{
+      dispatch(isNotAuth())
+    }
+  },[authenticated]);
+
+ useEffect(()=>{
+  interceptor(logout);
+  navigate('/')
+ },[])
 
   
 

@@ -6,7 +6,7 @@ import mainRouter from './Routers/mainRouter'
 
 const server = express();
 
-server.use(cors ());
+server.use(cors());
 server.use(corsConfig);
 server.use(morgan('dev'));
 server.use(express.json());

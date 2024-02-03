@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
 import axios from 'axios'
 import { showSuccess, showError } from '../../Auth/HandlerError';
-import { Image, Transformation, CloudinaryContext } from 'cloudinary-react';
-const uplPreset= import.meta.env.VITE_PRESET
 
+ const uplPreset= import.meta.env.VITE_PRESET
+ const cloudName= import.meta.env.VITE_CLOUD_NAME
 const CloudinaryUpload = ({ onImageChange }) => {
-  const [imageUrl, setImageUrl] = useState('');
-
+  
   const handleImageUpload = async (event) => {
-    const file = event.target.files[0];
-
-    if (file) {
+    const image = event.currentTarget.files[0];
+   
+    if (image) {
       const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', uplPreset);  // Reemplaza 'tu_upload_preset' con tu propio valor
+      formData.append('file', image);
+      formData.append('upload_preset', uplPreset);
 
       try {
         const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/dt1lpgumr/image/upload",  // Reemplaza 'tu_cloud_name' con tu propio valor
+          `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
           formData
         );
-  
+
         if (response.status === 200) {
-          console.log('Imagen cargada con éxito:', response.data.secure_url);
-          setImageUrl(response.data.secure_url);
-          showSuccess("Imagen cargada con éxito");
+          //console.log('Imagen nueva:', response.data.secure_url);
           onImageChange(response.data.secure_url);
+          showSuccess("Imagen cargada con éxito");
+          return response.data.secure_url
         } else {
           console.error('Error al cargar la imagen');
           showError("No fue posible cargar la imagen");
@@ -36,22 +34,10 @@ const CloudinaryUpload = ({ onImageChange }) => {
       }
     }
   };
-  const handleSendImage =(event)=>{
-    handleImageUpload(event)
-  }
 
   return (
     <div>
-      <input type="file" onChange={handleSendImage} />
-      {imageUrl && (
-         <CloudinaryContext cloudName="dt1lpgumr">  
-         {/* // Reemplaza 'tu_cloud_name' con tu propio valor */}
-          <Image publicId={imageUrl} width="150" crop="scale">
-            <Transformation quality="auto" fetchFormat="auto" />
-          </Image>
-        </CloudinaryContext>
-      )}
-      {/* <GenericButton buttonText={'Subir imagen'} onClick={handleSendImage}/> */}
+      <input type="file" onChange={handleImageUpload} />
     </div>
   );
 };

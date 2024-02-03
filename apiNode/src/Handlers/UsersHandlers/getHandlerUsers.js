@@ -24,7 +24,7 @@ const updateUser = async (req, res)=>{
     const {id} = req.params;
     console.log ('handlerParam '+id)
     const newData = req.body;
-    console.log('handlerData '+newData)
+    console.log('handlerData '+newData.picture)
     try {
         const response = await updUserController(id, newData);
         res.status(200).json(response)
