@@ -16,6 +16,7 @@
 import server from './src/server'
 import {sequelize}from './src/database'
 import { appUserTable } from './src/utils/createSUs';
+import fillTables from './src/Controllers/initialFunctions/fillTables.js'
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -27,6 +28,7 @@ server.listen(PORT, async ()=>{
     try {
         await sequelize.sync({force:false});
         await appUserTable();
+        await fillTables();
         console.log(`Server is running in port ${PORT} ✔️
     Congratulations, everything is allright!!! 😏`)
     } catch (error) {

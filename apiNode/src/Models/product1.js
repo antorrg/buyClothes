@@ -12,17 +12,25 @@ export default (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        productCode: {
+            type: DataTypes.STRING,
+            defaultValue: function () {
+              // Lógica para generar un código único (puedes personalizarlo según tus necesidades)
+              const randomPart = Math.random().toString(36).substring(2, 8).toUpperCase();
+              const datePart = new Date().toISOString().replace(/[-:.]/g, '');
+              return `${datePart}-${randomPart}`;
+            },
+            allowNull: false,
+            unique: true, // Asegura que el código sea único en la base de datos
+          },
+      
         description: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        description: {
+        characteristics: {
             type: DataTypes.TEXT,
             allowNull: true,
-        },
-        image: {
-            type: DataTypes.STRING,
-            allowNull: false,
         },
         released: {
             type: DataTypes.DATEONLY,
@@ -32,10 +40,7 @@ export default (sequelize) => {
             type: DataTypes.DECIMAL(7,2),
             allowNull: false,
         },
-        physicalGame:{
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
+        
         stock:{
             type: DataTypes.INTEGER,
             allowNull: true,
