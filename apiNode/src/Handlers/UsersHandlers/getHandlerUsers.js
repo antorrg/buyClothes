@@ -10,6 +10,7 @@ const getHandlerUsers = async(req, res)=>{
     }
 };
 
+
 const getHandlerId = async(req,res)=>{
     const {id}=req.params;
     try {
@@ -20,6 +21,8 @@ const getHandlerId = async(req,res)=>{
         res.status(400).json({error: error.message});
     }
 }
+
+
 const updateUser = async (req, res)=>{
     const {id} = req.params;
     console.log ('handlerParam '+id)
@@ -34,6 +37,7 @@ const updateUser = async (req, res)=>{
         res.status(400).json({error: error.message});
     }
 }
+
 export {
     getHandlerUsers,
     getHandlerId,

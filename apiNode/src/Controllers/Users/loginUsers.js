@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 const {USER_IMAGE} = process.env;
 
+//!>>>>>>>>>>>>> Funcion de login de usuario <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 const loginUser = async(email, password)=>{
     const userf = await User.findOne({
         where: {
@@ -40,7 +42,7 @@ const loginUser = async(email, password)=>{
         throw error;
       }
 };
-
+//? >>>>>>>>>>>>>>>>> Funcion de creacion de usuario <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 const createUser = async(email, password)=>{
     // Método para registrar un nuevo usuario
 
