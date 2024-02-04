@@ -7,4 +7,4 @@ const errorEndWare = ((err, req, res, next) => { // eslint-disable-line no-unuse
     res.status(status).send(message);
 });
 
-module.exports = errorEndWare
+export default errorEndWare;
