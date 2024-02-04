@@ -43,3 +43,4 @@ const CloudinaryUpload = ({ onImageChange }) => {
 };
 
 export default CloudinaryUpload;
+
