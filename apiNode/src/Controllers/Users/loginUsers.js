@@ -51,7 +51,7 @@ const createUser = async(email, password)=>{
         const user = await User.findOne({
           where: {
             email: email,
-            deleteAt: false,
+            deletedAt: false,
           },
         });
     

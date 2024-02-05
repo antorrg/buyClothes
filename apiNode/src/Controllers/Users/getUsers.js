@@ -7,7 +7,7 @@ const getUsers = async () => {
     try {
         const response = await User.findAll({
             where:{
-                deleteAt:false,
+                deletedAt:false,
             }
         });
         const data = response;
@@ -21,7 +21,7 @@ const getById = async (id)=>{
     try {
         const response = await User.findByPk(id,{
             where:{
-                deleteAt:false,
+                deletedAt:false,
             }
         });
         const data = response;

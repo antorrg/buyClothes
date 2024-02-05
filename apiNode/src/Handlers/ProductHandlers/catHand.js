@@ -1,8 +1,8 @@
-
+import {catsCreate,catsGet,catsUpdate,catsDelete} from '../../Controllers/Product1/catController.js'
 
 const getHandCategory = async(req, res)=>{
     try {
-        const response = await xxxxxx();
+        const response = await catsGet();
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error:error.message})
@@ -10,9 +10,9 @@ const getHandCategory = async(req, res)=>{
 };
 
 const postHandCategory = async(req, res)=>{
-    const {xx}=req.body;
+    const {name}=req.body;
     try {
-       const response = await xx(xx);
+       const response = await catsCreate(name);
        res.status(201).json(response);
     } catch (error) {
        res.status(400).json({error:error.message})
@@ -21,9 +21,9 @@ const postHandCategory = async(req, res)=>{
 
 const putHandCategory = async(req, res)=>{
     const {id}=req.params;
-    const data = req.body;
+    const newData = req.body;
     try {
-        const response = await xxxxxx(id, data);
+        const response = await catsUpdate(id, newData);
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error:error.message})
@@ -33,7 +33,7 @@ const putHandCategory = async(req, res)=>{
 const delHandCategory = async(req, res)=>{
     const {id}=req.params;
     try {
-        const response = await xxxx(id);
+        const response = await catsDelete(id);
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error:error.message})

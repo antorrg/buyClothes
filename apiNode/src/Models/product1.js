@@ -49,7 +49,7 @@ export default (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue:true
         },
-        deleteAt:{
+        deletedAt:{
             type: DataTypes.BOOLEAN,
             defaultValue:false
         }       

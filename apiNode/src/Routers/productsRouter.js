@@ -1,7 +1,6 @@
 import {Router} from 'express';
-import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
-import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
-import {getHandImages, postHandImages,putHandImages,delHandImages} from '../Handlers/ProductHandlers/imageHand.js'
+//import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
+//import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
 import {getHandCategory, postHandCategory,putHandCategory,delHandCategory}from '../Handlers/ProductHandlers/catHand.js'
 import {getHandSize,postHandSize,putHandSize,delHandSize}from '../Handlers/ProductHandlers/sizeHand.js'
 import {getHandExtras,postHandExtras,putHandExtras,delHandExtras}from '../Handlers/ProductHandlers/extrasHand.js'
@@ -11,16 +10,11 @@ import {getHandRating,postHandRating, putHandRating, delHandRating} from '../Han
 
 const productsRouter = Router();
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-productsRouter.get('/', getProductsHandler);
-productsRouter.get('/:id', getProdByIdHand);
-productsRouter.post('/', createProdHand);
-productsRouter.put('/:id', updProdHand);
-productsRouter.delete('/:id', delProdHand);
-//*========= CRUD Images =========================================
-productsRouter.post('/images', postHandImages);
-productsRouter.get('/images', getHandImages);
-productsRouter.put('images/:id', putHandImages);
-productsRouter.delete('images/:id', delHandImages);
+// productsRouter.get('/', getProductsHandler);
+// productsRouter.get('/:id', getProdByIdHand);
+// productsRouter.post('/', createProdHand);
+// productsRouter.put('/:id', updProdHand);
+// productsRouter.delete('/:id', delProdHand);
 //*========= CRUD Size =============================================
 productsRouter.post('/size', postHandSize);
 productsRouter.get('/size',getHandSize);
@@ -37,9 +31,9 @@ productsRouter.get('/extras',getHandExtras);
 productsRouter.put('/extras/:id',putHandExtras);
 productsRouter.delete('/extras/:id',delHandExtras);
 //*======= CRUD Rating ===============================================
-productsRouter.post('/rating',postHandRating);
-productsRouter.get('/rating',getHandRating);
-productsRouter.put('/rating/:id', putHandRating);
-productsRouter.delete('/rating/:id',delHandRating);
+// productsRouter.post('/rating',postHandRating);
+// productsRouter.get('/rating',getHandRating);
+// productsRouter.put('/rating/:id', putHandRating);
+// productsRouter.delete('/rating/:id',delHandRating);
 
 export default productsRouter;

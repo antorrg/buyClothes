@@ -1,8 +1,8 @@
-
+import {sizeCreate, sizeGet, sizeUpdate, sizeDelete} from '../../Controllers/Product1/sizeController.js';
 
 const getHandSize = async(req, res)=>{
     try {
-        const response = await xxxxxx();
+        const response = await sizeGet();
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error:error.message})
@@ -10,9 +10,9 @@ const getHandSize = async(req, res)=>{
 };
 
 const postHandSize = async(req, res)=>{
-    const {xx}=req.body;
+    const {name}=req.body;
     try {
-       const response = await xx(xx);
+       const response = await sizeCreate(name);
        res.status(201).json(response);
     } catch (error) {
        res.status(400).json({error:error.message})
@@ -21,9 +21,9 @@ const postHandSize = async(req, res)=>{
 
 const putHandSize = async(req, res)=>{
     const {id}=req.params;
-    const data = req.body;
+    const newData = req.body;
     try {
-        const response = await xxxxxx(id, data);
+        const response = await sizeUpdate(id, newData);
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error:error.message})
@@ -33,7 +33,7 @@ const putHandSize = async(req, res)=>{
 const delHandSize = async(req, res)=>{
     const {id}=req.params;
     try {
-        const response = await xxxx(id);
+        const response = await sizeDelete(id);
         res.status(200).json(response);
     } catch (error) {
         res.status(400).json({error:error.message})

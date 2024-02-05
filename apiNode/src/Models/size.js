@@ -11,6 +11,14 @@ export default (sequelize)=>{
             type: DataTypes.STRING,
             allownull: false
         },
+        enable:{
+            type: DataTypes.BOOLEAN,
+            defaultValue:true
+        },
+        deletedAt:{
+            type: DataTypes.BOOLEAN,
+            defaultValue:false
+        }
     },
     {timestamps: true},
     )

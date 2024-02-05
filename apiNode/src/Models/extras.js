@@ -11,5 +11,13 @@ export default (sequelize)=>{
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: true,
         },
+        enable:{
+            type: DataTypes.BOOLEAN,
+            defaultValue:true
+        },
+        deletedAt:{
+            type: DataTypes.BOOLEAN,
+            defaultValue:false
+        }
     })
 }

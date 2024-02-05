@@ -19,6 +19,7 @@ export default (sequelize) => {
                     max: 5
                 }
             },
+            
            
     });
 };
