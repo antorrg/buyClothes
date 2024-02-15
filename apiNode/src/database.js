@@ -6,6 +6,8 @@ import CreateSize from './Models/size'
 import CreateCategory from './Models/category'
 import CreateExtra from './Models/extras'
 import CreateRating from './Models/rating'
+import CreateCompany from './Models/company'
+import CreateSales from './Models/sales';
 
 import dotenv from 'dotenv'
 dotenv.config();
@@ -25,8 +27,10 @@ CreateCategory(sequelize);
 CreateSize(sequelize);
 CreateExtra(sequelize);
 CreateRating(sequelize);
+CreateCompany(sequelize);
+CreateSales(sequelize);
 
-const {User, Product1, Image, Category, Size, Extra,Rating }= sequelize.models;
+const {User, Product1, Image, Category, Size, Extra,Rating, Company, Sales }= sequelize.models;
 
 //Asociations:
 
@@ -58,6 +62,8 @@ export {
     Size,
     Extra,
     Rating,
+    Company,
+    Sales,
 
     sequelize
 }

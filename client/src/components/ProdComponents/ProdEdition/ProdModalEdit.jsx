@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import style from '../styles/ModalEdit.module.css'
-import FormEdit from './FormEdit';
+import FormEdit from './ProdFormEdit';
 import axios from 'axios'
 import GenericButton from '../Buttons/GenericButton';
 import {showError, showSuccess,HandlError}from '../../Auth/HandlerError';

@@ -7,6 +7,8 @@ const getRoleName = (roleNumber) => {
         return 'Usuario';
       case 2:
         return 'Moderador';
+      case 3:
+        return 'Proveedor';
       default:
         return 'Desconocido';
     }

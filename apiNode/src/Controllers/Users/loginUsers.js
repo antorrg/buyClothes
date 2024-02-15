@@ -12,7 +12,7 @@ const loginUser = async(email, password)=>{
     const userf = await User.findOne({
         where: {
           email: email,
-          deleteAt: false,
+          deletedAt: false,
           //enable: true,
         },
       });

@@ -17,7 +17,7 @@ export default (sequelize)=>{
         picture: { type: DataTypes.STRING, allowNull: false},
         role:{type: DataTypes.SMALLINT, allowNull: false,defaultValue: 1,
           validate: {
-            isIn: [[0, 1, 2]], // Por ejemplo, 0: admin, 1: user, 2: moderator
+            isIn: [[0, 1, 2, 3]], // Por ejemplo, 0: admin, 1: user, 2: moderator
           },
       },
         country: {
