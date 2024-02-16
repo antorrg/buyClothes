@@ -1,13 +1,17 @@
 import {Sequelize} from 'sequelize';
-import CreateProduct1 from'./Models/product1';
-import CreateUser from'./Models/user';
-import CreateImage from './Models/image'
-import CreateSize from './Models/size'
-import CreateCategory from './Models/category'
-import CreateExtra from './Models/extras'
-import CreateRating from './Models/rating'
-import CreateCompany from './Models/company'
-import CreateSales from './Models/sales';
+import models from './Models/index.js'
+// import CreateProduct1 from'./Models/product1';
+// import CreateUser from'./Models/user';
+// import CreateImage from './Models/image'
+// import CreateSize from './Models/size'
+// import CreateCategory from './Models/category'
+// import CreateExtra from './Models/extras'
+// import CreateRating from './Models/rating'
+// import CreateCompany from './Models/company'
+// import CreateSales from './Models/sales';
+// import CreateTrademarck from './Models/trademarck'
+// import CreateGenre from './Models/genre'
+// import CreateDiscipline from './Models/discipline'
 
 import dotenv from 'dotenv'
 dotenv.config();
@@ -19,18 +23,22 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASS}@${DB_HOST}/${D
 {logging: false,
 native:false}
 );
+// Iterar sobre los modelos y crearlos con Sequelize
+Object.values(models).forEach((model) => model(sequelize));
 
-CreateProduct1(sequelize);
-CreateUser(sequelize);
-CreateImage(sequelize);
-CreateCategory(sequelize);
-CreateSize(sequelize);
-CreateExtra(sequelize);
-CreateRating(sequelize);
-CreateCompany(sequelize);
-CreateSales(sequelize);
+// CreateProduct1(sequelize);
+// CreateUser(sequelize);
+// CreateImage(sequelize);
+// CreateCategory(sequelize);
+// CreateSize(sequelize);
+// CreateExtra(sequelize);
+// CreateRating(sequelize);
+// CreateCompany(sequelize);
+// CreateSales(sequelize);
+// CreateTrademarck(sequelize);
+// CreateGenre(sequelize);
 
-const {User, Product1, Image, Category, Size, Extra,Rating, Company, Sales }= sequelize.models;
+const {User, Product1, Image, Category, Size, Extra,Rating, Company, Sales, Trademarck, Genre, Discipline }= sequelize.models;
 
 //Asociations:
 
@@ -42,6 +50,12 @@ Size.belongsToMany (Product1,{through: 'product_size'})
 
 Product1.belongsToMany (Extra,{through: 'product_extras'})
 Extra.belongsToMany (Product1,{through: 'product_extras'})
+
+Product1.belongsToMany (Genre,{through: 'product_genre'})
+Genre.belongsToMany (Product1,{through: 'product_genre'})
+
+Product1.belongsToMany (Trademarck,{through: 'product_trade'})
+Trademarck.belongsToMany (Product1,{through: 'product_trade'})
 
 Product1.hasMany(Image);
 Image.belongsTo(Product1);
@@ -64,6 +78,9 @@ export {
     Rating,
     Company,
     Sales,
+    Trademarck,
+    Genre,
+    Discipline,
 
     sequelize
 }

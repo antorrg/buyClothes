@@ -1,8 +1,8 @@
 import createProduct1 from './createProduct';
 import getProduct1 from './getProduct'
-import getProd1ById from './product1Controller'
+import getProd1ById from './getByIdController'
 import updateProduct1 from './updateProduct';
-import deleteProduct1 from './product1Controller'
+import deleteProduct1 from './delProdController'
 
 
 

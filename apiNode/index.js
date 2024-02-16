@@ -26,7 +26,7 @@ const {PORT} = process.env;
 
 server.listen(PORT, async ()=>{
     try {
-        await sequelize.sync({force:false});
+        await sequelize.sync({alter:true});
         await appUserTable();
         await fillTables();
         console.log(`Server is running in port ${PORT} ✔️

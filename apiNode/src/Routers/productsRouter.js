@@ -1,10 +1,13 @@
 import {Router} from 'express';
-//import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
-//import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
+// import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
+// import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
 import {getHandCategory, postHandCategory,putHandCategory,delHandCategory}from '../Handlers/ProductHandlers/catHand.js'
 import {getHandSize,postHandSize,putHandSize,delHandSize}from '../Handlers/ProductHandlers/sizeHand.js'
 import {getHandExtras,postHandExtras,putHandExtras,delHandExtras}from '../Handlers/ProductHandlers/extrasHand.js'
 import {getHandRating,postHandRating, putHandRating, delHandRating} from '../Handlers/ProductHandlers/ratingHand.js'
+import { getHandTrade, postHandTrade, putHandTrade, delHandTrade } from '../Handlers/ProductHandlers/tradeHand.js'
+import { getHandDisc, postHandDisc, putHandDisc, delHandDisc } from '../Handlers/ProductHandlers/discipHand.js'
+import { getHandGen, postHandGen, putHandGen, delHandGen } from '../Handlers/ProductHandlers/genHand.js'
 
 // import { validUserCreate, validUserLog } from '../utils/validateUsers';
 
@@ -35,5 +38,21 @@ productsRouter.delete('/extras/:id',delHandExtras);
 // productsRouter.get('/rating',getHandRating);
 // productsRouter.put('/rating/:id', putHandRating);
 // productsRouter.delete('/rating/:id',delHandRating);
+//*======= CRUD Trademarck ===============================================
+productsRouter.post('/trade',postHandTrade);
+productsRouter.get('/trade',getHandTrade);
+productsRouter.put('/trade/:id', putHandTrade);
+productsRouter.delete('/trade/:id',delHandTrade);
+//*======= CRUD Discipline ===============================================
+productsRouter.post('/disc',postHandDisc);
+productsRouter.get('/disc',getHandDisc);
+productsRouter.put('/disc/:id', putHandDisc);
+productsRouter.delete('/disc/:id',delHandDisc);
+//*======= CRUD Genre ===============================================
+productsRouter.post('/gen',postHandGen);
+productsRouter.get('/gen',getHandGen);
+productsRouter.put('/gen/:id', putHandGen);
+productsRouter.delete('/gen/:id',delHandGen);
+
 
 export default productsRouter;
