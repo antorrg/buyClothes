@@ -3,7 +3,9 @@ import {
     ISN_AUTH,
     ALL_USERS, 
     USER_BY_ID,
-    CLEAN_DETAIL
+    CLEAN_DETAIL,
+    GET_PRODUCTS,
+    PROD_BY_ID,
 } from './actions';
 
 const initialState ={
@@ -11,12 +13,15 @@ const initialState ={
     LogIn:[],
     isAuthenticate: false,
     detailUsers:[],
+    products:[],
+    prodById:[],
+    prodByName:[]
 };
 
 const reducer = (state=initialState, {type, payload})=>{
     switch(type){
         case LOGIN_USER:
-            console.log(payload)
+           // console.log(payload)
             return {
                 ...state,
                 LogIn: payload,
@@ -42,7 +47,21 @@ const reducer = (state=initialState, {type, payload})=>{
                 return {
                     ...state,
                     detailUsers: [],
+                    prodById: [],
                 }
+//? Cases relativos a productos:
+            case GET_PRODUCTS:
+                return {
+                    ...state,
+                    products:payload,
+                }
+            case PROD_BY_ID:
+                //console.log(payload)
+                return {
+                    ...state,
+                    prodById: payload,
+                }
+//------------------------------------------------------------------
         default:
             return{
                 ...state,

@@ -6,6 +6,8 @@ export const ALL_USERS= 'ALL_USERS';
 export const USER_BY_ID='USER_BY_ID';
 export const CLEAN_DETAIL='CLEAN_DETAIL';
 export const ISN_AUTH= 'ISN_AUTH'
+export const GET_PRODUCTS = 'GET_PRODUCTS'
+export const PROD_BY_ID = 'PROD_BY_ID'
 
 export const getAllUsers = ()=>{
   return async (dispatch)=>{
@@ -52,3 +54,32 @@ export const isNotAuth =()=>(dispatch)=>{
     payload: [],
   })
 }
+
+//? Rutas y actions relativas a productos:
+export const getAllProducts = ()=>{
+  return async (dispatch)=>{
+    try {
+      const data = await axios("/");
+      return dispatch({
+        type:GET_PRODUCTS,
+        payload: data.data,
+      })
+    } catch (error) {
+      HandlError(error)
+      //alert("Could not get the users");
+    }
+  }
+}
+
+export const productById = (id, token) => async (dispatch) => {
+  try {
+    const data = await axios(`/${id}`, setAuthHeader(token));
+    return dispatch({
+      type: PROD_BY_ID,
+      payload:data.data,
+    });
+  } catch (error) {
+    HandlError(error)
+    //console.error('Error fetching game', error);
+  }
+};

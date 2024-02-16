@@ -14,8 +14,8 @@ import { getHandImages } from '../Handlers/ProductHandlers/imageHand.js';
 
 const productsRouter = Router();
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
- productsRouter.get('/', getProductsHandler);
-// productsRouter.get('/:id', getProdByIdHand);
+productsRouter.get('/', getProductsHandler);
+productsRouter.get('/:id', getProdByIdHand);
  productsRouter.post('/', validCreateProduct, createProdHand);
 // productsRouter.put('/:id', updProdHand);
 // productsRouter.delete('/:id', delProdHand);

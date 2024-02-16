@@ -3,15 +3,15 @@ import  Navbar  from '../components/Navbar';
 import { useAuth } from '../Auth/AuthContext/AuthContext';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {getAllUsers}from '../Redux/actions'
+import {getAllProducts}from '../Redux/actions'
 //import userInfo from '../utils/infoParsed';
 
 function Home() {
   const {authenticated, user, logout}=useAuth();
   console.log(authenticated)
   //console.log('user: '+user)
-  const users = useSelector((state)=>state.allUsers)
-  const char = users
+  const products = useSelector((state)=>state.products)
+  const char = products
   const dispatch = useDispatch();
   // useEffect(()=>{
   //   if(authenticated){
@@ -22,14 +22,13 @@ function Home() {
   // },[authenticated]);
 
   useEffect(()=>{
-    dispatch(getAllUsers())
+    dispatch(getAllProducts ())
   },[dispatch])
 
   
     return (
       <div >
         <Navbar/>
-        
         <Cards character = {char}/>
       </div>
     );

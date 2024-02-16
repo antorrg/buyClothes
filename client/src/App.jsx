@@ -5,12 +5,12 @@ import { useEffect } from 'react';
 import {useDispatch}from 'react-redux';
 //Componentes:
 import {Landing, Detail, Home, Form, Error} from './views/Index';
-import { AdminHome,  } from './views/AdminIndex';
+import { AdminHome, AdminPanel, AdminDetail } from './views/AdminIndex';
 import './App.css';
 import { interceptor } from './Auth/axiosUtils'
 import {loginUser, isNotAuth} from './Redux/actions'
 
-function App() {
+function App() { 
   const {authenticated, user,logout}=useAuth();
 
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ function App() {
         <Route path="/home" element= {authenticated ? <Home/>: <Navigate to = '/'/>} />
         <Route path="/home/:id" element={authenticated? <Detail /> : <Navigate to="/"/>} />
         <Route path= "/admin" element={(authenticated && allow === 0) || (authenticated && allow === 2) ? <AdminHome/> : <Navigate to="/home"/>}/>
-        {/* <Route path= "/admin/:id" element={authenticated  && allow===2  && allow===0 ? <Detail/> : <Navigate to="/home"/>}/> */}
+        <Route path= "/admin/:id" element={authenticated  && allow===2  || allow===0 ? <AdminDetail/> : <Navigate to="/home"/>}/>
         <Route path="/" element={<Landing/>} />
         <Route path="/form" element={<Form />} />
         <Route path= "*" element = {<Error/>}/>

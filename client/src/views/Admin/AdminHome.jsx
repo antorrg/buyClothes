@@ -1,4 +1,4 @@
-import Cards from '../../components/Cards'
+import CardsUser from '../../components/UserComponents/CardsUser'
 import { useAuth } from '../../Auth/AuthContext/AuthContext';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +26,7 @@ function AdminHome() {
         <Link to ={'/home'}>
         <GenericButton buttonText='Home'/>
         </Link>
-        <Cards character = {char}/>
+        <CardsUser character = {char}/>
       </div>
     );
   }
