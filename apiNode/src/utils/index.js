@@ -4,6 +4,7 @@ import corsConfig from './corsConfig';
 import  validJson  from "./validJson";
 import  errorEndWare  from "./validJson";
 import checkRole from './checkRole.js'
+import validCreateProduct from "./productsFunctions/validCreateProduct.js";
 
 export {
     generateToken,
@@ -11,5 +12,6 @@ export {
     corsConfig,
     validJson,
     errorEndWare,
-    checkRole
+    checkRole,
+    validCreateProduct
 }

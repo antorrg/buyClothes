@@ -57,6 +57,10 @@ Genre.belongsToMany (Product1,{through: 'product_genre'})
 Product1.belongsToMany (Trademarck,{through: 'product_trade'})
 Trademarck.belongsToMany (Product1,{through: 'product_trade'})
 
+Product1.belongsToMany (Discipline,{through: 'product_disc'})
+Discipline.belongsToMany (Product1,{through: 'product_disc'})
+
+
 Product1.hasMany(Image);
 Image.belongsTo(Product1);
 

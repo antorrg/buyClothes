@@ -5,14 +5,13 @@ const imgsCreate = async(name, images)=>{
         const data = await Image.findOne({
             where: {
                 name:name,
-                deletedAt:false,
             }
         })
         if(!data){
             try {
                 const newImage = await Image.create({
-                    name:name,
-                    images:images,
+                    name:`image_${name}`,//Nombre por defecto
+                    images:images, //array de imagenes
                 });
                 return newImage;  
             } catch (error) {
@@ -27,11 +26,7 @@ const imgsCreate = async(name, images)=>{
 
 const imgsGet = async()=>{
     try {
-        const data = await Image.findAll({
-            where: {
-                deletedAt: false,
-            },
-        });
+        const data = await Image.findAll();
     if(data.length === 0){
         throw new Error('The images table is empty!!')
     }else{

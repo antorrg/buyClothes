@@ -9,14 +9,14 @@ export default (sequelize) => {
             },
             comment: {
                 type: DataTypes.TEXT,
-                allowNull: false
+                allowNull: true
             },
             score: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
+                allowNull: true,
                 validate: {
                     min : 0,
-                    max: 5
+                    max: 10
                 }
             },
             

@@ -1,6 +1,6 @@
 import {Router} from 'express';
-// import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
-// import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
+import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
+import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
 import {getHandCategory, postHandCategory,putHandCategory,delHandCategory}from '../Handlers/ProductHandlers/catHand.js'
 import {getHandSize,postHandSize,putHandSize,delHandSize}from '../Handlers/ProductHandlers/sizeHand.js'
 import {getHandExtras,postHandExtras,putHandExtras,delHandExtras}from '../Handlers/ProductHandlers/extrasHand.js'
@@ -8,14 +8,15 @@ import {getHandRating,postHandRating, putHandRating, delHandRating} from '../Han
 import { getHandTrade, postHandTrade, putHandTrade, delHandTrade } from '../Handlers/ProductHandlers/tradeHand.js'
 import { getHandDisc, postHandDisc, putHandDisc, delHandDisc } from '../Handlers/ProductHandlers/discipHand.js'
 import { getHandGen, postHandGen, putHandGen, delHandGen } from '../Handlers/ProductHandlers/genHand.js'
+import { getHandImages } from '../Handlers/ProductHandlers/imageHand.js';
 
-// import { validUserCreate, validUserLog } from '../utils/validateUsers';
+ import { validCreateProduct } from '../utils/index.js';
 
 const productsRouter = Router();
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-// productsRouter.get('/', getProductsHandler);
+ productsRouter.get('/', getProductsHandler);
 // productsRouter.get('/:id', getProdByIdHand);
-// productsRouter.post('/', createProdHand);
+ productsRouter.post('/', validCreateProduct, createProdHand);
 // productsRouter.put('/:id', updProdHand);
 // productsRouter.delete('/:id', delProdHand);
 //*========= CRUD Size =============================================
@@ -29,15 +30,15 @@ productsRouter.get('/cat',getHandCategory);
 productsRouter.put('/cat/:id', putHandCategory);
 productsRouter.delete('/cat/:id', delHandCategory);
 //*====== CRUD Extras ==================================================
-productsRouter.post('/extras',postHandExtras);
+productsRouter.post('/extras', postHandExtras);
 productsRouter.get('/extras',getHandExtras);
 productsRouter.put('/extras/:id',putHandExtras);
 productsRouter.delete('/extras/:id',delHandExtras);
 //*======= CRUD Rating ===============================================
-// productsRouter.post('/rating',postHandRating);
-// productsRouter.get('/rating',getHandRating);
-// productsRouter.put('/rating/:id', putHandRating);
-// productsRouter.delete('/rating/:id',delHandRating);
+productsRouter.post('/rating',postHandRating);
+productsRouter.get('/rating',getHandRating);
+productsRouter.put('/rating/:id', putHandRating);
+productsRouter.delete('/rating/:id',delHandRating);
 //*======= CRUD Trademarck ===============================================
 productsRouter.post('/trade',postHandTrade);
 productsRouter.get('/trade',getHandTrade);
@@ -53,6 +54,9 @@ productsRouter.post('/gen',postHandGen);
 productsRouter.get('/gen',getHandGen);
 productsRouter.put('/gen/:id', putHandGen);
 productsRouter.delete('/gen/:id',delHandGen);
+
+productsRouter.get('/img',getHandImages);
+
 
 
 export default productsRouter;
