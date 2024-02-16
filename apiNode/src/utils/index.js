@@ -1,9 +1,9 @@
-import generateToken from "./generate";
-import verifyToken from './verifyToken';
-import corsConfig from './corsConfig';
-import  validJson  from "./validJson";
-import  errorEndWare  from "./validJson";
-import checkRole from './checkRole.js'
+import generateToken from "./JWTFunctions/generate.js";
+import verifyToken from './JWTFunctions/verifyToken.js';
+import corsConfig from './appMiddlewares/corsConfig.js';
+import  validJson  from "./appMiddlewares/validJson.js";
+import  errorEndWare  from "./appMiddlewares/errorEndWare.js";
+import checkRole from './JWTFunctions/checkRole.js'
 import validCreateProduct from "./productsFunctions/validCreateProduct.js";
 
 export {

@@ -1,4 +1,4 @@
-import { getProduct1 } from "../../Controllers/Product1/prodControllers/index";
+import { getProduct1 } from "../../Controllers/Product1/prodControllers/index.js";
 
 const getProdHandler = async (req,res)=>{
     try {

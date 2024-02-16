@@ -1,3 +1,3 @@
-import users from './users.json'
+import users from './users.json' assert { type: "json" };
 
 export default users;

@@ -1,7 +1,7 @@
-import {User} from '../../database';
+import {User} from '../../database.js';
 import bcrypt from 'bcrypt';
-import generateToken from '../../utils/generate'
-import parsedUser from '../../Helpers/parsedUser'
+import {generateToken} from '../../utils/index.js'
+import parsedUser from '../../Helpers/parsedUser.js'
 import dotenv from 'dotenv';
 dotenv.config();
 const {USER_IMAGE} = process.env;

@@ -1,7 +1,7 @@
 import {Router} from 'express';
-import {getHandlerUsers, getHandlerId, updateUser } from '../Handlers/UsersHandlers/getHandlerUsers'
-import {userLogin, userCreate} from '../Handlers/UsersHandlers/userLoginHandler'
-import { validUserCreate, validUserLog } from '../utils/validateUsers';
+import {getHandlerUsers, getHandlerId, updateUser } from '../Handlers/UsersHandlers/getHandlerUsers.js'
+import {userLogin, userCreate} from '../Handlers/UsersHandlers/userLoginHandler.js'
+import { validUserCreate, validUserLog } from '../utils/validateUsers.js';
 import {verifyToken, checkRole} from '../utils/index.js'
 
 const userRouter = Router();

@@ -1,0 +1,163 @@
+{
+    
+    {
+      "id": "341ede8a-58a6-49b4-aff8-44bbe5476df9",
+      "name": "Pantalones vestir rayados",
+      "productCode": "20240216T053805094Z-LTYWG5",
+      "description": "Parece que safamos con esto, luego debo recorda editar todas estas tonterias",
+      "characteristics": "Ahora parece que al fin funciona, era hora",
+      "released": "2013-09-17",
+      "price": "5000.00",
+      "stock": 25,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-16T05:38:05.097Z",
+      "updatedAt": "2024-02-16T05:38:05.097Z",
+      "Images": [
+        {
+          "name": "image_Pantalones vestir rayados",
+          "images": [
+            "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+          ]
+        }
+      ],
+      "Categories": [
+        {
+          "name": "Pantalones"
+        }
+      ],
+      "Sizes": [
+        {
+          "name": "50"
+        }
+      ]
+    },
+    {
+      "id": "48c43626-70ac-4d03-a2ad-cf85ab4b7a69",
+      "name": "Pantalones vestir rayados",
+      "productCode": "20240216T052435906Z-PKI68D",
+      "description": "Parece que safamos con esto, luego debo recorda editar todas estas tonterias",
+      "characteristics": "Ahora parece que al fin funciona, era hora",
+      "released": "2013-09-17",
+      "price": "5000.00",
+      "stock": 25,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-16T05:24:35.907Z",
+      "updatedAt": "2024-02-16T05:24:35.907Z",
+      "Images": [
+        {
+          "name": "image_Pantalones vestir rayados",
+          "images": [
+            "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+          ]
+        }
+      ],
+      "Categories": [
+        {
+          "name": "Pantalones"
+        }
+      ],
+      "Sizes": [
+        {
+          "name": "50"
+        }
+      ]
+    },
+    {
+      "id": "b8e2a60d-4b81-4322-ad6d-a544a8a0cb6c",
+      "name": "Pantalones vestir rayados",
+      "productCode": "20240216T053544283Z-DFMAYI",
+      "description": "Parece que safamos con esto, luego debo recorda editar todas estas tonterias",
+      "characteristics": "Ahora parece que al fin funciona, era hora",
+      "released": "2013-09-17",
+      "price": "5000.00",
+      "stock": 25,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-16T05:35:44.290Z",
+      "updatedAt": "2024-02-16T05:35:44.290Z",
+      "Images": [
+        {
+          "name": "image_Pantalones vestir rayados",
+          "images": [
+            "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+          ]
+        }
+      ],
+      "Categories": [
+        {
+          "name": "Pantalones"
+        }
+      ],
+      "Sizes": [
+        {
+          "name": "50"
+        }
+      ]
+    },
+    {
+      "id": "be0a8657-36fe-4404-a780-07137822fceb",
+      "name": "Chaquetas",
+      "productCode": "20240216T052220642Z-EWWVCW",
+      "description": "Esta es una descripcion para probar el controller",
+      "characteristics": "las caracteristicas de esta chaqueta es unica, me ha hecho renegar bastante",
+      "released": "2013-09-17",
+      "price": "5000.00",
+      "stock": 25,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-16T05:22:20.650Z",
+      "updatedAt": "2024-02-16T05:22:20.650Z",
+      "Images": [
+        {
+          "name": "image_Chaquetas",
+          "images": [
+            "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+          ]
+        }
+      ],
+      "Categories": [
+        {
+          "name": "Pantalones"
+        }
+      ],
+      "Sizes": [
+        {
+          "name": "50"
+        }
+      ]
+    },
+    {
+      "id": "ef527520-bf3d-4200-befd-b33f5fa9b550",
+      "name": "Pantalones vestir rayados",
+      "productCode": "20240216T053431767Z-9N7K1R",
+      "description": "Parece que safamos con esto, luego debo recorda editar todas estas tonterias",
+      "characteristics": "Ahora parece que al fin funciona, era hora",
+      "released": "2013-09-17",
+      "price": "5000.00",
+      "stock": 25,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-16T05:34:31.771Z",
+      "updatedAt": "2024-02-16T05:34:31.771Z",
+      "Images": [
+        {
+          "name": "image_Pantalones vestir rayados",
+          "images": [
+            "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+          ]
+        }
+      ],
+      "Categories": [
+        {
+          "name": "Pantalones"
+        }
+      ],
+      "Sizes": [
+        {
+          "name": "50"
+        }
+      ]
+    }
+  ]}

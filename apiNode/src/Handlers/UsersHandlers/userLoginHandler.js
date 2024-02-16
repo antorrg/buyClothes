@@ -1,4 +1,4 @@
-import {loginUser, createUser}from '../../Controllers/Users/loginUsers';
+import {loginUser, createUser}from '../../Controllers/Users/loginUsers.js';
 
 const userLogin = async(req,res)=>{
     const {email, password}= req.body

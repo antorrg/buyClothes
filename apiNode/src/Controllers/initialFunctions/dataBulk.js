@@ -15,4 +15,4 @@ const dataBulk = async(table, data)=>{
        }
   };
 
-  module.exports = dataBulk;
+  export default dataBulk;

@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 dotenv.config();
 const {SUDO_AUTH } = process.env;
-import { getEmails, getUserIdByEmail} from './createSUs'
+import { getEmails, getUserIdByEmail} from './createSUs.js'
 
 //! Este es un modulo que contiene solo Middlewares.
 

@@ -1,4 +1,4 @@
-import { Product1, Image, Category, Size} from "../../../database";
+import { Product1, Image, Category, Size} from "../../../database.js";
 
 const getProduct1 = async()=>{
     try {

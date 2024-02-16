@@ -1,4 +1,4 @@
-import {getUsers, getById, updUserController } from '../../Controllers/Users/getUsers'
+import {getUsers, getById, updUserController } from '../../Controllers/Users/getUsers.js'
 
 const getHandlerUsers = async(req, res)=>{
     try {

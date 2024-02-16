@@ -1,5 +1,5 @@
 // En un archivo donde se manejan las operaciones relacionadas con el llenado de datos (por ejemplo, fillData.js)
-import dataBulk from './dataBulk';
+import dataBulk from './dataBulk.js';
 import { User} from '../../database.js'; // Importa tus modelos de tablas
 import users from '../../../data/indexData.js'; // Ruta relativa al archivo indexData (reune la informacion y la exporta en un objeto)
 

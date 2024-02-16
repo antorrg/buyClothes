@@ -1,4 +1,4 @@
-import {createProduct1, getProd1ById,updateProduct1,deleteProduct1} from '../../Controllers/Product1/index'
+import {createProduct1, getProd1ById,updateProduct1,deleteProduct1} from '../../Controllers/Product1/index.js'
 
 
 

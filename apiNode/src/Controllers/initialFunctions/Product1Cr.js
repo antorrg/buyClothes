@@ -1,5 +1,5 @@
-const {infoVideoGame}=require('../../../../Data/indexData');
-const {createGameDB}=require('../AdminControllers/gamesPostController');
+const {infoVideoGame}=require('../../../../Data/indexData.js');
+const {createGameDB}=require('../AdminControllers/gamesPostController.js');
 
 
 const product1Cr = async()=>{

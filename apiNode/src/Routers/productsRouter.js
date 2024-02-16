@@ -21,7 +21,7 @@ productsRouter.get('/:id', getProdByIdHand);
 // productsRouter.delete('/:id', delProdHand);
 //*========= CRUD Size =============================================
 productsRouter.post('/size', postHandSize);
-productsRouter.get('/size',getHandSize);
+productsRouter.get('/size', getHandSize);
 productsRouter.put('/size/:id', putHandSize);
 productsRouter.delete('/size/:id', delHandSize);
 //*=========CRUD Category ===========================================
@@ -46,7 +46,7 @@ productsRouter.put('/trade/:id', putHandTrade);
 productsRouter.delete('/trade/:id',delHandTrade);
 //*======= CRUD Discipline ===============================================
 productsRouter.post('/disc',postHandDisc);
-productsRouter.get('/disc',getHandDisc);
+productsRouter.get('/discipline',getHandDisc);
 productsRouter.put('/disc/:id', putHandDisc);
 productsRouter.delete('/disc/:id',delHandDisc);
 //*======= CRUD Genre ===============================================

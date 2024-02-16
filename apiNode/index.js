@@ -13,9 +13,9 @@
 //!:::: Proyecto Api REST con Node 21 y traspilacion con Babel :::::::::
 //*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-import server from './src/server'
-import {sequelize}from './src/database'
-import { appUserTable } from './src/utils/createSUs';
+import server from './src/server.js'
+import {sequelize}from './src/database.js'
+import { appUserTable } from './src/utils/createSUs.js';
 import fillTables from './src/Controllers/initialFunctions/fillTables.js'
 import dotenv from 'dotenv';
 dotenv.config();

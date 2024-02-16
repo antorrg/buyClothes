@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
-import {corsConfig, validJson, errorEndWare} from './utils/index'
-import mainRouter from './Routers/mainRouter'
+import {corsConfig, validJson, errorEndWare} from './utils/index.js'
+import mainRouter from './Routers/mainRouter.js'
 
 const server = express();
 

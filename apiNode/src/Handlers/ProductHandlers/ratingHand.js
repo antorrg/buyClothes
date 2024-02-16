@@ -1,4 +1,4 @@
-import { ratCreate, ratGet, ratUpdate, ratDelete } from '../../Controllers/Product1/ratingController'
+import { ratCreate, ratGet, ratUpdate, ratDelete } from '../../Controllers/Product1/ratingController.js'
 
 const getHandRating = async(req, res)=>{
     try {
