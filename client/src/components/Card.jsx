@@ -2,16 +2,18 @@ import style from './styles/Card.module.css'
 import {NavLink} from 'react-router-dom';
 
 function Card({characters}) {
-  const {id, name, description, released, price, stock, category, size, image,}=characters;
+  const {id, name, description, released, price, stock, Categories, Sizes, Images,}=characters;
+    const image = Images[0];
+   
     return (
       <div key= {id} className={style.cardContainer}>
+        <img src={image} alt= 'Not found'/>
+        <h2>$: {price}</h2>
         <NavLink to= {`/home/${id}`}>
-        <h2>{name}</h2>
+        <p>{name}</p>
         </NavLink>
-        <h4>$: {price}</h4>
-        <p>Descripción: {description}</p>
+      
         
-        {/* <img src={image[0].images} alt = {'not found'}/> */}
         
 
       </div>

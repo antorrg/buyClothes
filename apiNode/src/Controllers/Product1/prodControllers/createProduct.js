@@ -2,7 +2,7 @@ import {Product1, sequelize}from '../../../database.js';
 import { imgsCreate } from '../imageController.js';
 
 
-const createProduct1 = async(name, description, characteristics, released, price, stock, images, category, size,  discipline, genre, trademarck) => {
+const createProduct1 = async(name, description, characteristics, released, price, stock, images, category, sizes,  discipline, genre, trademarck) => {
     console.log('create imgs '+images)
     console.log('create char '+characteristics)
     let transaction;
@@ -43,7 +43,12 @@ const createProduct1 = async(name, description, characteristics, released, price
         await newData.addImage(newImage, { transaction });
         // Asociar las demas entidades al producto dentro de la transacción 
         await newData.addCategory(category, { transaction })
-        await newData.addSize(size, { transaction })
+        //await newData.addSize(size, { transaction })
+        if (Array.isArray(sizes) && sizes.length > 0) {
+            for (const size of sizes) {
+              await newData.addSize(size, { transaction });
+            }
+          }
         await newData.addDiscipline(discipline, { transaction })
         await newData.addGenre(genre, { transaction })
         await newData.addTrademarck(trademarck, { transaction })

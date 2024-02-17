@@ -3,9 +3,9 @@ import {createProduct1, getProd1ById,updateProduct1,deleteProduct1} from '../../
 
 
 const createProdHand = async (req,res)=>{
- const {name, description, characteristics, released, price, stock, images, category, size,  discipline, genre, trademarck}=req.body;
+ const {name, description, characteristics, released, price, stock, images, category, sizes,  discipline, genre, trademarck}=req.body;
  try {
-    const response = await createProduct1(name, description, characteristics, released, price, stock, images, category, size,  discipline, genre, trademarck);
+    const response = await createProduct1(name, description, characteristics, released, price, stock, images, category, sizes,  discipline, genre, trademarck);
     res.status(201).json(response);
  } catch (error) {
     res.status(400).json({error:error.message})

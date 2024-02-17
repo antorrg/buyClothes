@@ -7,6 +7,7 @@ import GenericButton from "../components/Buttons/GenericButton";
 import EditWindow from "../components/EditComponents/ModalEdit";
 import {productById, cleanData}from '../Redux/actions'
 import { useAuth } from '../Auth/AuthContext/AuthContext';
+import ParsedImages from '../components/ParsedImages/ParsedImages';
 
 
 const Detail=()=>{
@@ -39,6 +40,9 @@ const Detail=()=>{
   },[dispatch,id, cleanData]);
 
   const userBI = product;
+  const size = userBI.Sizes?.join(', ')
+  const cat = userBI.Categories?.join(', ')
+
   const puedeEditar = user && user.role === 0;
   const roleName = getRoleName(userBI.role);
   const status = statusUser(userBI.enable);
@@ -48,15 +52,17 @@ const Detail=()=>{
       <div className={style.body}>
       <div className={style.cont}>
       <div>
-      {/* <img  className={style.image} src={userBI?.picture} alt = {'not found'}/> */}
+      <ParsedImages objeto = {userBI}/>
       </div >
       <div className={style.text}>
       <GenericButton onClick = {goBack} buttonText='Volver'/>
       <h2>{userBI?.name}</h2>
       <h3>$ : {userBI?.price}</h3>
       <h3>Genero: {userBI?.genre}</h3> 
-      <h3>Talle: {userBI?.size}</h3>
+      <h3>Categoria: {cat}</h3>
+      <h3>Talle: {size}</h3>
       <p>Descripcion: {userBI?.description}</p>
+      <p>Stock: {userBI?.stock}</p>
       <h3>Caracteristicas: {userBI?.characteristics}</h3>
       {puedeEditar &&puedeEditar?
       <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={userBI}/> : null}
