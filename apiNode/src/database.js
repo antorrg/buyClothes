@@ -1,17 +1,6 @@
 import {Sequelize} from 'sequelize';
 import models from './Models/index.js'
-// import CreateProduct1 from'./Models/product1';
-// import CreateUser from'./Models/user';
-// import CreateImage from './Models/image'
-// import CreateSize from './Models/size'
-// import CreateCategory from './Models/category'
-// import CreateExtra from './Models/extras'
-// import CreateRating from './Models/rating'
-// import CreateCompany from './Models/company'
-// import CreateSales from './Models/sales';
-// import CreateTrademarck from './Models/trademarck'
-// import CreateGenre from './Models/genre'
-// import CreateDiscipline from './Models/discipline'
+
 
 import dotenv from 'dotenv'
 dotenv.config();
@@ -23,20 +12,12 @@ const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASS}@${DB_HOST}/${D
 {logging: false,
 native:false}
 );
+
+
 // Iterar sobre los modelos y crearlos con Sequelize
 Object.values(models).forEach((model) => model(sequelize));
 
-// CreateProduct1(sequelize);
-// CreateUser(sequelize);
-// CreateImage(sequelize);
-// CreateCategory(sequelize);
-// CreateSize(sequelize);
-// CreateExtra(sequelize);
-// CreateRating(sequelize);
-// CreateCompany(sequelize);
-// CreateSales(sequelize);
-// CreateTrademarck(sequelize);
-// CreateGenre(sequelize);
+
 
 const {User, Product1, Image, Category, Size, Extra,Rating, Company, Sales, Trademarck, Genre, Discipline }= sequelize.models;
 

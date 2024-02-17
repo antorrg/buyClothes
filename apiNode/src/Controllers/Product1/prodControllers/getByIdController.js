@@ -1,19 +1,17 @@
-import {Product1, Category, Size, Image} from '../../../database.js'
+import {Product1, Image, Category, Size } from '../../../database.js'
+import formatProductData from '../../../Helpers/formatProductData.js'
 
 const getProd1ById = async(id)=>{
     try {
-        const data = await Product1.findByPk(id, {
+        const dataFound = await Product1.findByPk(id, {
            include: [
-            { 
-                model: Image,
-                as: 'Images', // Alias de la asociación
-                attributes: ['name', 'images'],
-            },
+                { model: Image, attributes: ['images']},
                 { model: Category, attributes: ['name'], through: { attributes: [] } },
                 { model: Size, attributes: ['name'], through: { attributes: [] } }
            ]
         })
-        if(data.length===0){throw new Error('The products table is empty')}
+        if(!dataFound){throw new Error('The products table is empty')}
+        const data = formatProductData(dataFound, true);
         return data
     } catch (error) {
         throw error;

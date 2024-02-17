@@ -16,46 +16,46 @@ const productsRouter = Router();
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 productsRouter.get('/', getProductsHandler);
 productsRouter.get('/:id', getProdByIdHand);
- productsRouter.post('/', validCreateProduct, createProdHand);
+productsRouter.post('/', validCreateProduct, createProdHand);
 // productsRouter.put('/:id', updProdHand);
 // productsRouter.delete('/:id', delProdHand);
 //*========= CRUD Size =============================================
-productsRouter.post('/size', postHandSize);
-productsRouter.get('/size', getHandSize);
-productsRouter.put('/size/:id', putHandSize);
-productsRouter.delete('/size/:id', delHandSize);
+productsRouter.post('/sub/size', postHandSize);
+productsRouter.get('/sub/size', getHandSize);
+productsRouter.put('/sub/size/:id', putHandSize);
+productsRouter.delete('/sub/size/:id', delHandSize);
 //*=========CRUD Category ===========================================
-productsRouter.post('/cat', postHandCategory);
-productsRouter.get('/cat',getHandCategory);
-productsRouter.put('/cat/:id', putHandCategory);
-productsRouter.delete('/cat/:id', delHandCategory);
+productsRouter.post('/sub/cat', postHandCategory);
+productsRouter.get('/sub/cat',getHandCategory);
+productsRouter.put('/sub/cat/:id', putHandCategory);
+productsRouter.delete('/sub/cat/:id', delHandCategory);
 //*====== CRUD Extras ==================================================
-productsRouter.post('/extras', postHandExtras);
-productsRouter.get('/extras',getHandExtras);
-productsRouter.put('/extras/:id',putHandExtras);
-productsRouter.delete('/extras/:id',delHandExtras);
+productsRouter.post('/sub/extras', postHandExtras);
+productsRouter.get('/sub/extras',getHandExtras);
+productsRouter.put('/sub/extras/:id',putHandExtras);
+productsRouter.delete('/sub/extras/:id',delHandExtras);
 //*======= CRUD Rating ===============================================
-productsRouter.post('/rating',postHandRating);
-productsRouter.get('/rating',getHandRating);
-productsRouter.put('/rating/:id', putHandRating);
-productsRouter.delete('/rating/:id',delHandRating);
+productsRouter.post('/sub/rating',postHandRating);
+productsRouter.get('/sub/rating',getHandRating);
+productsRouter.put('/sub/rating/:id', putHandRating);
+productsRouter.delete('/sub/rating/:id',delHandRating);
 //*======= CRUD Trademarck ===============================================
-productsRouter.post('/trade',postHandTrade);
-productsRouter.get('/trade',getHandTrade);
-productsRouter.put('/trade/:id', putHandTrade);
-productsRouter.delete('/trade/:id',delHandTrade);
+productsRouter.post('/sub/trade',postHandTrade);
+productsRouter.get('/sub/trade',getHandTrade);
+productsRouter.put('sub/trade/:id', putHandTrade);
+productsRouter.delete('/sub/trade/:id',delHandTrade);
 //*======= CRUD Discipline ===============================================
-productsRouter.post('/disc',postHandDisc);
-productsRouter.get('/discipline',getHandDisc);
-productsRouter.put('/disc/:id', putHandDisc);
-productsRouter.delete('/disc/:id',delHandDisc);
+productsRouter.post('/sub/disc',postHandDisc);
+productsRouter.get('/sub/discipline',getHandDisc);
+productsRouter.put('/sub/disc/:id', putHandDisc);
+productsRouter.delete('/sub/disc/:id',delHandDisc);
 //*======= CRUD Genre ===============================================
-productsRouter.post('/gen',postHandGen);
-productsRouter.get('/gen',getHandGen);
-productsRouter.put('/gen/:id', putHandGen);
-productsRouter.delete('/gen/:id',delHandGen);
+productsRouter.post('/sub/gen',postHandGen);
+productsRouter.get('/sub/gen',getHandGen);
+productsRouter.put('/sub/gen/:id', putHandGen);
+productsRouter.delete('/sub/gen/:id',delHandGen);
 
-productsRouter.get('/img',getHandImages);
+productsRouter.get('/sub/img',getHandImages);
 
 
 
