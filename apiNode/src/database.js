@@ -19,12 +19,21 @@ Object.values(models).forEach((model) => model(sequelize));
 
 
 
-const {User, Product1, Image, Category, Size, Extra,Rating, Company, Sales, Trademarck, Genre, Discipline }= sequelize.models;
+const {User, GeneralProduct, Product1, Image, Category, Size, Extra, Rating, Company, Sales, Trademarck, Genre, Discipline }= sequelize.models;
 
 //Asociations:
 
-Product1.belongsToMany (Category, {through: 'product_cats'});
-Category.belongsToMany (Product1, {through: 'product_cats'});
+GeneralProduct.belongsToMany (Category, {through: 'general_cats'});
+Category.belongsToMany (GeneralProduct, {through: 'general_cats'});
+
+GeneralProduct.belongsToMany (Genre,{through: 'general_genre'})
+Genre.belongsToMany (GeneralProduct,{through: 'general_genre'})
+
+GeneralProduct.belongsToMany (Trademarck,{through: 'general_trade'})
+Trademarck.belongsToMany (GeneralProduct,{through: 'general_trade'})
+
+GeneralProduct.belongsToMany (Discipline,{through: 'general_disc'})
+Discipline.belongsToMany (GeneralProduct,{through: 'general_disc'})
 
 Product1.belongsToMany (Size,{through: 'product_size'})
 Size.belongsToMany (Product1,{through: 'product_size'})
@@ -32,15 +41,8 @@ Size.belongsToMany (Product1,{through: 'product_size'})
 Product1.belongsToMany (Extra,{through: 'product_extras'})
 Extra.belongsToMany (Product1,{through: 'product_extras'})
 
-Product1.belongsToMany (Genre,{through: 'product_genre'})
-Genre.belongsToMany (Product1,{through: 'product_genre'})
-
-Product1.belongsToMany (Trademarck,{through: 'product_trade'})
-Trademarck.belongsToMany (Product1,{through: 'product_trade'})
-
-Product1.belongsToMany (Discipline,{through: 'product_disc'})
-Discipline.belongsToMany (Product1,{through: 'product_disc'})
-
+GeneralProduct.hasMany(Product1);
+Product1.belongsTo(GeneralProduct);
 
 Product1.hasMany(Image);
 Image.belongsTo(Product1);
@@ -55,6 +57,7 @@ Rating.belongsTo(User)
 
 export {
     User,
+    GeneralProduct,
     Product1,
     Image,
     Category,

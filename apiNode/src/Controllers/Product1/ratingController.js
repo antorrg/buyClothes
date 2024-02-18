@@ -17,11 +17,7 @@ const ratCreate = async(comment, score)=>{
 
 const ratGet = async()=>{
     try {
-        const data = await Rating.findAll({
-            where: {
-                deletedAt: false,
-            },
-        });
+        const data = await Rating.findAll();
     if(data.length == 0){
         throw new Error('The rating table is empty!!')
     }else{

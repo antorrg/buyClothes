@@ -12,8 +12,7 @@ const extraCreate = async(name)=>{
         if(!data){
             try {
                 const newItem = await Extra.create({
-                    name,
-                
+                    name:name,
                 });
                 return newItem;  
             } catch (error) {

@@ -9,16 +9,20 @@ import { getHandTrade, postHandTrade, putHandTrade, delHandTrade } from '../Hand
 import { getHandDisc, postHandDisc, putHandDisc, delHandDisc } from '../Handlers/ProductHandlers/discipHand.js'
 import { getHandGen, postHandGen, putHandGen, delHandGen } from '../Handlers/ProductHandlers/genHand.js'
 import { getHandImages } from '../Handlers/ProductHandlers/imageHand.js';
+import {generalCreateHandler, generalGetHandler, generalGetByIdHandler, generalUpdateHandler, generalDeleteHandler} from '../Handlers/ProductHandlers/generalProductHandler.js'
+
 
  import { validCreateProduct } from '../utils/index.js';
 
 const productsRouter = Router();
+//?>>>>>>>>>>>> CRUD GeneralProduct <<<<<<<<<<<<<<<<<<<<<<<<
+productsRouter.get('/', generalGetHandler);
+productsRouter.get('/:id', generalGetByIdHandler);
+productsRouter.post('/', validCreateProduct, generalCreateHandler);
+// productsRouter.put('/:id', generalUpdateHandle);
+// productsRouter.delete('/:id', generalDeleteHandler);
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-productsRouter.get('/', getProductsHandler);
-productsRouter.get('/:id', getProdByIdHand);
-productsRouter.post('/', validCreateProduct, createProdHand);
-// productsRouter.put('/:id', updProdHand);
-// productsRouter.delete('/:id', delProdHand);
+productsRouter.get('/depend/', getProductsHandler);
 //*========= CRUD Size =============================================
 productsRouter.post('/sub/size', postHandSize);
 productsRouter.get('/sub/size', getHandSize);
@@ -46,7 +50,7 @@ productsRouter.put('sub/trade/:id', putHandTrade);
 productsRouter.delete('/sub/trade/:id',delHandTrade);
 //*======= CRUD Discipline ===============================================
 productsRouter.post('/sub/disc',postHandDisc);
-productsRouter.get('/sub/discipline',getHandDisc);
+productsRouter.get('/sub/disc',getHandDisc);
 productsRouter.put('/sub/disc/:id', putHandDisc);
 productsRouter.delete('/sub/disc/:id',delHandDisc);
 //*======= CRUD Genre ===============================================

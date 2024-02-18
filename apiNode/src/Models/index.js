@@ -10,6 +10,7 @@ import CreateSales from './sales.js';
 import CreateTrademarck from './trademarck.js'
 import CreateGenre from './genre.js'
 import CreateDiscipline from './discipline.js'
+import CreateGeneralProduct from './generalProduct.js'
 
 
 export default {
@@ -26,4 +27,5 @@ export default {
     CreateTrademarck,
     CreateUser,
     CreateCategory,
+    CreateGeneralProduct,
 };
