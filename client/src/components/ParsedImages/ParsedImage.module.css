@@ -2,3 +2,11 @@
     max-width:300px;
     max-height: 300px;
 }
+.button {
+    padding: 0.05rem 0.15rem; /* Ajusta el padding según tu preferencia */
+    /* font-size: 1.2rem; /* Tamaño de la fuente */
+    /*font-weight: bold; Negrita */
+    border: none;
+    border-radius: 0.1rem;
+    cursor: pointer;
+  }

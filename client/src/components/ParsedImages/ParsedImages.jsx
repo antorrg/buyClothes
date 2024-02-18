@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import style from './ParsedImage.module.css'
+
 const ParsedImages = ({ objeto }) => {
   const [imagenIndex, setImagenIndex] = useState(0);
-  console.log(objeto.Images)
   
   const renderizarImagenes = () => {
     if (objeto.Images && objeto.Images.length > 0) {
@@ -11,25 +11,37 @@ const ParsedImages = ({ objeto }) => {
       
 
       return (
-        <div>
-          <img src={objeto.Images[imagenIndex]} alt={`Imagen ${imagenIndex + 1}`} className={style.image}/>
           <div>
-            <button onClick={() => setImagenIndex(imagenIndex - 1)} disabled={imagenIndex === 0}>
+            <button onClick={() => setImagenIndex(imagenIndex - 1)} disabled={imagenIndex === 0} className={style.button}>
               ⬅️
             </button>
-            <span>Imagen {imagenIndex+1} de {finalImg}</span>
-            <button onClick={() => setImagenIndex(imagenIndex + 1)} disabled={imagenIndex === objeto.Images.length - 1}>
+            <button onClick={() => setImagenIndex(imagenIndex + 1)} disabled={imagenIndex === objeto.Images.length - 1} className={style.button}>
              ➡️
             </button>
+            <br/>
+          <img src={objeto.Images[imagenIndex]} alt={`Images ${imagenIndex + 1}`} className={style.image}/>
+            <br/>
+            <span>{imagenIndex+1} / {finalImg}</span>
           </div>
-        </div>
       );
     } else {
       return <p>No hay imágenes disponibles</p>;
     }
   };
 
-//   const renderizarTexto = () => {
+
+  return (
+   <>{renderizarImagenes()}</>
+  );
+};
+
+export default ParsedImages;
+
+
+
+//typeof objeto.Sizes === 'string'
+
+/*//   const renderizarTexto = () => {
 //     if (objeto.Sizes && typeof objeto.Sizes === 'string' && objeto.Talles.trim() !== '') {
 //       const talles = objeto.Sizes.split(',').map((talle, index) => <p key={index}>{talle.trim()}</p>);
 //       return <div>{talles}</div>;
@@ -53,15 +65,4 @@ const ParsedImages = ({ objeto }) => {
 //     } else {
 //       return <p>No hay información de talles disponibles</p>;
 //     }
-//   };
-
-  return (
-    <div>
-      <h2>Imágenes:</h2>
-      {renderizarImagenes()}
-    </div>
-  );
-};
-
-export default ParsedImages;
-//typeof objeto.Sizes === 'string'
+//   };*/

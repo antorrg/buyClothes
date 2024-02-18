@@ -21,8 +21,9 @@ function Landing() {
 
       <h1>
         Yo soy la Landing Page
-      
       </h1>
+      <p>(Creo que me faltan estilos 🤔)</p>
+      <br/>
       <GenericButton onClick={onChange} buttonText='Ingresar/Registrarse'/>
      
     

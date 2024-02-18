@@ -44,18 +44,21 @@ const Detail=()=>{
   const cat = userBI.Categories?.join(', ')
 
   const puedeEditar = user && user.role === 0;
-  const roleName = getRoleName(userBI.role);
   const status = statusUser(userBI.enable);
   //console.log('yo soy user '+user.id)
   
-    return (
-      <div className={style.body}>
+  return (
+    <div className={style.body}>
       <div className={style.cont}>
+        <br/>
+        <br/>
       <div>
       <ParsedImages objeto = {userBI}/>
       </div >
       <div className={style.text}>
-      <GenericButton onClick = {goBack} buttonText='Volver'/>
+        {puedeEditar &&puedeEditar?
+        <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={userBI}/> : null}
+        {isModalOpen && <EditWindow onClose={handleEditWindowClose} userEdit = {userBI}/>}
       <h2>{userBI?.name}</h2>
       <h3>$ : {userBI?.price}</h3>
       <h3>Genero: {userBI?.genre}</h3> 
@@ -64,9 +67,7 @@ const Detail=()=>{
       <p>Descripcion: {userBI?.description}</p>
       <p>Stock: {userBI?.stock}</p>
       <h3>Caracteristicas: {userBI?.characteristics}</h3>
-      {puedeEditar &&puedeEditar?
-      <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={userBI}/> : null}
-      {isModalOpen && <EditWindow onClose={handleEditWindowClose} userEdit = {userBI}/>}
+      <GenericButton onClick = {goBack} buttonText='Volver'/>
       </div>
       </div>
       </div>

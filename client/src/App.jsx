@@ -7,7 +7,7 @@ import {useDispatch}from 'react-redux';
 import {Landing, Detail, Home, Form, Error} from './views/Index';
 import { AdminHome, AdminPanel, AdminDetail } from './views/AdminIndex';
 import './App.css';
-import { interceptor } from './Auth/axiosUtils'
+import { interceptor, setAuthHeader } from './Auth/axiosUtils'
 import {loginUser, isNotAuth} from './Redux/actions'
 
 function App() { 
@@ -28,7 +28,10 @@ function App() {
 
  useEffect(()=>{
   interceptor(logout);
-  navigate('/')
+  setTimeout(()=>{
+    navigate('/')
+  },4000)
+  
  },[])
 
   
@@ -41,11 +44,12 @@ function App() {
      
         <Route path="/home" element= {authenticated ? <Home/>: <Navigate to = '/'/>} />
         <Route path="/home/:id" element={authenticated? <Detail /> : <Navigate to="/"/>} />
-        <Route path= "/admin" element={(authenticated && allow === 0) || (authenticated && allow === 2) ? <AdminHome/> : <Navigate to="/home"/>}/>
-        <Route path= "/admin/:id" element={authenticated  && allow===2  || allow===0 ? <AdminDetail/> : <Navigate to="/home"/>}/>
+        <Route path= "/admin" element={(authenticated && allow === 0) || (authenticated && allow === 2) ? <AdminHome/> : <Navigate to="/error"/>}/>
+        <Route path= "/admin/:id" element={authenticated  && allow===2  || allow===0 ? <AdminDetail/> : <Navigate to="/error"/>}/>
         <Route path="/" element={<Landing/>} />
         <Route path="/form" element={<Form />} />
-        <Route path= "*" element = {<Error/>}/>
+        <Route path= "/error" element = {<Error/>}/>
+        <Route path= "*"  element = {<Navigate to="/error"/>}/>
      
         
       </Routes>
