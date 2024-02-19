@@ -4,6 +4,7 @@ import ParsedImages from './ParsedImages/ParsedImages';
 
 function Card({characters}) {
   const {id, name, price, }=characters;
+  console.log(characters)
     
    
     return (

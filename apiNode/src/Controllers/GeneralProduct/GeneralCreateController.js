@@ -99,6 +99,7 @@ const generalProdCreate = async (name, description, released, category, discipli
         const createdVariants = await Promise.all(
             variants.map(async (variant) => {
                 const newProduct1 = await Product1.create({
+                    order:variant.order,
                     characteristics: variant.characteristics,
                     images:variant.images,
                     size: variant.size,

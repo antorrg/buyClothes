@@ -21,10 +21,9 @@ const generalProdGet = async (req, res) => {
             ],
         });
         if(dataFound.length===0){throw new Error('The products table is empty')}
-       // Enviar la respuesta con los productos
-        // const data = formatProductData(dataFound, false)
-        // return data
-        return dataFound
+       //Enviar la respuesta con los productos
+        const data = formatProductData(dataFound, false)
+        return data
     } catch (error) {
         throw error;
     }

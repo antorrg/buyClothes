@@ -9,6 +9,7 @@ const generalProd = [
     "trademarck": "2",
     "variants": [
       {
+        "order":1,
         "characteristics": "Características de la Variante 1",
         "price": 19.99,
         "stock": 100,
@@ -21,6 +22,7 @@ const generalProd = [
         "extra": "1"
       },
       {
+        "order":2,
         "characteristics": "Características de la Variante 2",
         "price": 24.99,
         "stock": 50,
@@ -32,6 +34,7 @@ const generalProd = [
         "extra": "1"
       },
       {
+        "order":3,
         "characteristics": "Características de la Variante 3",
         "price": 24.99,
         "stock": 50,
@@ -54,6 +57,7 @@ const generalProd = [
     "trademarck": "2",
     "variants": [
       {
+        "order":1,
         "characteristics": "Características de la Variante 1",
         "price": 19.99,
         "stock": 100,
@@ -78,6 +82,7 @@ const generalProd = [
     "trademarck": "2",
     "variants": [
       {
+        "order":1,
         "characteristics": "Características de la Variante 1",
         "price": 19.99,
         "stock": 100,
@@ -90,6 +95,7 @@ const generalProd = [
         "extra": "1"
       },
       {
+        "order":2,
         "characteristics": "Características de la Variante 2",
         "price": 24.99,
         "stock": 50,
@@ -101,6 +107,7 @@ const generalProd = [
         "extra": "1"
       },
       {
+        "order":3,
         "characteristics": "Características de la Variante 3",
         "price": 24.99,
         "stock": 50,
@@ -112,6 +119,7 @@ const generalProd = [
         "extra": "2"
       },
       {
+        "order":4,
         "characteristics": "Características de la Variante 4",
         "price": 24.99,
         "stock": 50,
@@ -125,6 +133,7 @@ const generalProd = [
         "extra": "40"
       },
       {
+        "order":5,
         "characteristics": "Características de la Variante 5",
         "price": 26.99,
         "stock": 50,
@@ -147,6 +156,7 @@ const generalProd = [
     "trademarck": "2",
     "variants": [
       {
+        "order":1,
         "characteristics": "Características de la Variante 1",
         "price": 20.20,
         "stock": 100,
@@ -159,6 +169,7 @@ const generalProd = [
         "extra": "1"
       },
       {
+        "order":2,
         "characteristics": "Características de la Variante 2",
         "price": 24.99,
         "stock": 50,
@@ -170,6 +181,7 @@ const generalProd = [
         "extra": "1"
       },
       {
+        "order":3,
         "characteristics": "Características de la Variante 3",
         "price": 24.50,
         "stock": 50,
@@ -181,6 +193,7 @@ const generalProd = [
         "extra": "2"
       },
       {
+        "order":4,
         "characteristics": "Características de la Variante 4",
         "price": 24.99,
         "stock": 50,
@@ -205,6 +218,7 @@ const generalProd = [
         "trademarck": "2",
         "variants": [
           {
+            "order":1,
             "characteristics": "Características de la Variante 1",
             "price": 19.99,
             "stock": 100,
@@ -217,6 +231,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":2,
             "characteristics": "Características de la Variante 2",
             "price": 24.99,
             "stock": 50,
@@ -228,6 +243,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":3,
             "characteristics": "Características de la Variante 3",
             "price": 24.99,
             "stock": 50,
@@ -239,6 +255,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":4,
             "characteristics": "Características de la Variante 4",
             "price": 24.99,
             "stock": 50,
@@ -252,6 +269,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":5,
             "characteristics": "Características de la Variante 5",
             "price": 26.99,
             "stock": 50,
@@ -274,6 +292,7 @@ const generalProd = [
         "trademarck": "2",
         "variants": [
           {
+            "order":1,
             "characteristics": "Características de la Variante 1",
             "price": 19.99,
             "stock": 100,
@@ -286,6 +305,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":2,
             "characteristics": "Características de la Variante 2",
             "price": 24.99,
             "stock": 50,
@@ -297,6 +317,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":3,
             "characteristics": "Características de la Variante 3",
             "price": 24.99,
             "stock": 50,
@@ -308,6 +329,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":4,
             "characteristics": "Características de la Variante 4",
             "price": 24.99,
             "stock": 50,
@@ -321,6 +343,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":5,
             "characteristics": "Características de la Variante 5",
             "price": 26.99,
             "stock": 50,
@@ -343,6 +366,7 @@ const generalProd = [
         "trademarck": "2",
         "variants": [
           {
+            "order":1,
             "characteristics": "Características de la Variante 1",
             "price": 19.99,
             "stock": 100,
@@ -355,6 +379,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":2,
             "characteristics": "Características de la Variante 2",
             "price": 24.99,
             "stock": 50,
@@ -366,6 +391,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":3,
             "characteristics": "Características de la Variante 3",
             "price": 24.99,
             "stock": 50,
@@ -377,6 +403,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":4,
             "characteristics": "Características de la Variante 4",
             "price": 24.99,
             "stock": 50,
@@ -390,6 +417,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":5,
             "characteristics": "Características de la Variante 5",
             "price": 26.99,
             "stock": 50,
@@ -412,6 +440,7 @@ const generalProd = [
         "trademarck": "2",
         "variants": [
           {
+            "order":1,
             "characteristics": "Características de la Variante 1",
             "price": 19.99,
             "stock": 100,
@@ -424,6 +453,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":2,
             "characteristics": "Características de la Variante 2",
             "price": 24.99,
             "stock": 50,
@@ -435,6 +465,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":3,
             "characteristics": "Características de la Variante 3",
             "price": 24.99,
             "stock": 50,
@@ -446,6 +477,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":4,
             "characteristics": "Características de la Variante 4",
             "price": 24.99,
             "stock": 50,
@@ -459,6 +491,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":5,
             "characteristics": "Características de la Variante 5",
             "price": 26.99,
             "stock": 50,
@@ -481,6 +514,7 @@ const generalProd = [
         "trademarck": "2",
         "variants": [
           {
+            "order":1,
             "characteristics": "Características de la Variante 1",
             "price": 19.99,
             "stock": 100,
@@ -493,6 +527,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":2,
             "characteristics": "Características de la Variante 2",
             "price": 24.99,
             "stock": 50,
@@ -504,6 +539,7 @@ const generalProd = [
             "extra": "1"
           },
           {
+            "order":3,
             "characteristics": "Características de la Variante 3",
             "price": 24.99,
             "stock": 50,
@@ -515,6 +551,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":4,
             "characteristics": "Características de la Variante 4",
             "price": 24.99,
             "stock": 50,
@@ -528,6 +565,7 @@ const generalProd = [
             "extra": "2"
           },
           {
+            "order":5,
             "characteristics": "Características de la Variante 5",
             "price": 26.99,
             "stock": 50,
