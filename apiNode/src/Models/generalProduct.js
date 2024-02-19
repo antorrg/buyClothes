@@ -21,7 +21,7 @@ export default (sequelize) => {
             type: DataTypes.DATEONLY,
             allowNull: false,
         },
-        
+
         enable:{
             type: DataTypes.BOOLEAN,
             defaultValue:true

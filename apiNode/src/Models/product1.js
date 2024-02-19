@@ -8,11 +8,17 @@ export default (sequelize) => {
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
-       
-      
         characteristics: {
             type: DataTypes.TEXT,
             allowNull: true,
+        },
+        images: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true,
+          },
+          size:{
+            type: DataTypes.STRING,
+            allownull: false
         },
         price:{
             type: DataTypes.DECIMAL(7,2),

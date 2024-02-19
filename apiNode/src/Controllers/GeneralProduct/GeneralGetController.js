@@ -1,4 +1,5 @@
-import { GeneralProduct, Product1, Category, Discipline, Genre, Image, Extra, Trademarck, Size } from '../../database.js';
+import { GeneralProduct, Product1, Category, Discipline, Genre, Extra, Trademarck, } from '../../database.js';
+import formatProductData from '../../Helpers/formatProductData.js';
 
 const generalProdGet = async (req, res) => {
     try {
@@ -12,8 +13,6 @@ const generalProdGet = async (req, res) => {
                 {
                     model: Product1,
                     include: [
-                        { model: Size, attributes: ['name'], through: { attributes: [] } },
-                        { model: Image,  attributes: ['images']},
                         { model: Extra, attributes: ['name'] , through: { attributes: [] } },
                         // Puedes agregar otras relaciones aquí según sea necesario
                     ],
@@ -22,8 +21,10 @@ const generalProdGet = async (req, res) => {
             ],
         });
         if(dataFound.length===0){throw new Error('The products table is empty')}
-        // Enviar la respuesta con los productos
-       return dataFound;
+       // Enviar la respuesta con los productos
+        // const data = formatProductData(dataFound, false)
+        // return data
+        return dataFound
     } catch (error) {
         throw error;
     }

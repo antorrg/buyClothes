@@ -1,31 +1,67 @@
 //Cuando estoy formateando un solo elemento (por id) debo colocar como segundo parametro "true",
 //de lo contrario "false";
-const formatProductData = (products, isSingle) => {
+const formatProductData = (genProducts, isSingle) => {
   return isSingle
-    ? formatSingleProduct(products)
-    : products.map(product => formatSingleProduct(product));
+    ? formatSingleProduct(genProducts)
+    : genProducts.map(genProduct => formatSingleProduct(genProduct));
 };
 
-const formatSingleProduct = (product) => {
+const formatSingleProduct = (genProduct) => {
   const formattedProduct = {
-    id: product.id,
-    name: product.name,
-    productCode: product.productCode,
-    description: product.description,
-    characteristics: product.characteristics,
-    released: product.released,
-    price: product.price,
-    stock: product.stock,
-    enable: product.enable,
-    deletedAt: product.deletedAt,
-    createdAt: product.createdAt,
-    updatedAt: product.updatedAt,
-    Images: product.Images.map(image => image.images.map(url => url)).flat(),
-    Categories: product.Categories.map(category => category.name),
-     Sizes: product.Sizes.map(size => size.name),
+    id: genProduct.id,
+    name: genProduct.name,
+    description: genProduct.description,
+    released: genProduct.released,
+     Categories: genProduct.Categories.map(category => category.name),
+     Disciplines: genProduct.Disciplines.map(disc => disc.name),
+     Genres: genProduct.Genres.map(genre => genre.name),
+     Trademarcks: genProduct.Trademarcks.map(trade => trade.name),
+    enable: genProduct.enable,
+    createdAt: genProduct.createdAt,
+    updatedAt: genProduct.updatedAt,
+
+    Product1s: genProduct.Product1s.map(product => ({
+      id: product.id,
+      characteristics: product.characteristics,
+      images: product.images.map(img => img),
+      price: product.price,
+      stock: product.stock,
+      size: product.size,
+      extras: product.Extras.map(name=>name.name),
+      enable: product.enable,
+    })) ||[],
   };
 
   return formattedProduct;
 };
 
 export default formatProductData;
+// const formatSingleProduct = (genProduct) => {
+//   const formattedProduct = {
+//     id: genProduct.id,
+//     name: genProduct.name,
+//     description: genProduct.description,
+//     released: genProduct.released,
+//     Categories: genProduct.Categories.map(category => category.name),
+//     Discipline: genProduct.Discipline.map(disc => disc.name),
+//     Genres: genProduct.Genres.map(genre => genre.name),
+//     Trademarck: genProduct.Trademarck.map(trade => trade.name),
+//     enable: genProduct.enable,
+//     createdAt: genProduct.createdAt,
+//     updatedAt: genProduct.updatedAt,
+
+//     Product1s:genProduct.Product1s.map(product=>{
+//       product.id, 
+//       product.characteristics,
+//       images: product.images.map(img => img.map(url => url)).flat(),
+//       product.price,
+//       product.stock,
+//       product.size,
+//       product.enable,
+//     })
+   
+//   };
+
+//   return formattedProduct;
+// };
+

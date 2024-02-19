@@ -1,4 +1,4 @@
-[
+const users = [
     {
       "id": "895cd6f4-63de-4d51-b9bc-d6da0fb23c5e",
       "email": "juanperez@gmail.com",
@@ -274,3 +274,4 @@
       "updatedAt": "2024-02-03T21:54:11.168Z"
     }
   ]
+export default users;

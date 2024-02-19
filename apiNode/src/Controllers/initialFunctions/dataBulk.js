@@ -1,8 +1,9 @@
-const dataBulk = async(table, data)=>{
+
+const dataBulk = async(table, data, num)=>{
     try {
       //Verificar si ya hay datos en la base de datos, si no, entonces los incorpora
       const existingdatas = await table.findAll();
-      if (existingdatas.length ===2) {
+      if (existingdatas.length ===num) {
           // Hacer una lectura de la data.json para llenar la tabla
           await table.bulkCreate(data);
           console.log(`"${table.getTableName()}" table filled successfully`);
@@ -14,5 +15,6 @@ const dataBulk = async(table, data)=>{
         
        }
   };
+
 
   export default dataBulk;

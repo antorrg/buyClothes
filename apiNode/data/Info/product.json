@@ -1,0 +1,1453 @@
+
+  [
+    {
+      "name": "Producto general dos",
+      "description": "Descripción del Producto General, en este utilizo set en lugar de add",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T12:47:12.328Z",
+      "updatedAt": "2024-02-18T12:47:12.328Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "d157f2f3-fa74-4abf-853f-45e0472d9fc2",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:47:12.365Z",
+          "updatedAt": "2024-02-18T12:47:12.375Z",
+          "GeneralProductId": "0303e269-94cb-4ad9-a9c9-d0d2a2c7961a",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "2b4bb203-1a4b-4a0e-b2fe-2412aef40739",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:47:12.366Z",
+          "updatedAt": "2024-02-18T12:47:12.378Z",
+          "GeneralProductId": "0303e269-94cb-4ad9-a9c9-d0d2a2c7961a",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "6fbf0617-b784-420f-97f1-3a91329b701c",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:47:12.367Z",
+          "updatedAt": "2024-02-18T12:47:12.381Z",
+          "GeneralProductId": "0303e269-94cb-4ad9-a9c9-d0d2a2c7961a",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0b25870a-b426-433a-92b8-6bafae461c4b",
+      "name": "Producto general seis",
+      "description": "Descripción del Producto General, me parece que me esta jodiendo",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:13:14.198Z",
+      "updatedAt": "2024-02-18T13:13:14.198Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "a4e9272f-aef0-4d23-b1dd-37556064c13e",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:13:14.222Z",
+          "updatedAt": "2024-02-18T13:13:14.239Z",
+          "GeneralProductId": "0b25870a-b426-433a-92b8-6bafae461c4b",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "37abffb3-19f3-49c3-81ec-31b2a51360c5",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:13:14.222Z",
+          "updatedAt": "2024-02-18T13:13:14.236Z",
+          "GeneralProductId": "0b25870a-b426-433a-92b8-6bafae461c4b",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "96ff3742-e188-4a43-837f-a0bb8307d140",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:13:14.222Z",
+          "updatedAt": "2024-02-18T13:13:14.231Z",
+          "GeneralProductId": "0b25870a-b426-433a-92b8-6bafae461c4b",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0e8506e9-765c-419b-a031-62a639247a1b",
+      "name": "Producto general nueve",
+      "description": "Descripción del Producto General,vuelvo al controller anterior",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:53:03.953Z",
+      "updatedAt": "2024-02-18T13:53:03.953Z",
+      "Categories": [
+        {
+          "name": "Sport"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "dos"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Unisex"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "8fc40242-6545-4710-9733-4de0bd16001e",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:53:03.989Z",
+          "updatedAt": "2024-02-18T13:53:03.996Z",
+          "GeneralProductId": "0e8506e9-765c-419b-a031-62a639247a1b",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "af1283f0-e1fb-4190-8c92-11f2735e190e",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:53:03.990Z",
+          "updatedAt": "2024-02-18T13:53:04.003Z",
+          "GeneralProductId": "0e8506e9-765c-419b-a031-62a639247a1b",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "2e75a5c5-10ad-4427-88b5-595f84dc894c",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:53:03.990Z",
+          "updatedAt": "2024-02-18T13:53:04.000Z",
+          "GeneralProductId": "0e8506e9-765c-419b-a031-62a639247a1b",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "301425c0-483f-4259-b070-d173cc7e4a5d",
+      "name": "Producto general cinco",
+      "description": "Descripción del Producto General, con add pero sin transaction",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T12:54:31.042Z",
+      "updatedAt": "2024-02-18T12:54:31.042Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "a5d0e51c-2c1a-42fa-9cef-4a26f934d2d1",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:54:31.080Z",
+          "updatedAt": "2024-02-18T12:54:31.097Z",
+          "GeneralProductId": "301425c0-483f-4259-b070-d173cc7e4a5d",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "a8cb01b6-9377-4e5a-a6de-24a4232a770b",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:54:31.080Z",
+          "updatedAt": "2024-02-18T12:54:31.091Z",
+          "GeneralProductId": "301425c0-483f-4259-b070-d173cc7e4a5d",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "ad9401ae-a0d5-44b9-9866-281b3fc272bb",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:54:31.081Z",
+          "updatedAt": "2024-02-18T12:54:31.100Z",
+          "GeneralProductId": "301425c0-483f-4259-b070-d173cc7e4a5d",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "41b0f9f8-01ce-4d02-9ac9-a3bf35803c3b",
+      "name": "Producto general cinco",
+      "description": "Descripción del Producto General",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T12:39:47.079Z",
+      "updatedAt": "2024-02-18T12:39:47.079Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "53c82786-fa14-4400-8e8e-e502c46dac32",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:39:47.116Z",
+          "updatedAt": "2024-02-18T12:39:47.131Z",
+          "GeneralProductId": "41b0f9f8-01ce-4d02-9ac9-a3bf35803c3b",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "9c88da3a-eb19-441d-9362-c72c93eafb54",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:39:47.115Z",
+          "updatedAt": "2024-02-18T12:39:47.123Z",
+          "GeneralProductId": "41b0f9f8-01ce-4d02-9ac9-a3bf35803c3b",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "0379d7b8-30c6-4dd1-a9e1-8d7b856cb9da",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:39:47.116Z",
+          "updatedAt": "2024-02-18T12:39:47.128Z",
+          "GeneralProductId": "41b0f9f8-01ce-4d02-9ac9-a3bf35803c3b",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "47da2ac6-4170-4492-a86c-f5e0199e91b0",
+      "name": "Producto general uno",
+      "description": "Descripción del Producto General",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T12:45:05.493Z",
+      "updatedAt": "2024-02-18T12:45:05.493Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "6b8a3dcc-441b-465e-b513-2e50d3f140ca",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:45:05.517Z",
+          "updatedAt": "2024-02-18T12:45:05.524Z",
+          "GeneralProductId": "47da2ac6-4170-4492-a86c-f5e0199e91b0",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "53cc0b98-38fc-4d03-9b9c-d74c2971db1e",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:45:05.518Z",
+          "updatedAt": "2024-02-18T12:45:05.529Z",
+          "GeneralProductId": "47da2ac6-4170-4492-a86c-f5e0199e91b0",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "fbfddb6f-85f4-40a1-8d7a-5748df708baa",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:45:05.517Z",
+          "updatedAt": "2024-02-18T12:45:05.526Z",
+          "GeneralProductId": "47da2ac6-4170-4492-a86c-f5e0199e91b0",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "548e0428-4497-48fe-9ffc-583ff480e909",
+      "name": "Producto general seis",
+      "description": "Descripción del Producto General, con add pero depurada",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:04:42.162Z",
+      "updatedAt": "2024-02-18T13:04:42.162Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "42cf5a37-feb7-480e-bdd0-330a79584012",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:04:42.200Z",
+          "updatedAt": "2024-02-18T13:04:42.212Z",
+          "GeneralProductId": "548e0428-4497-48fe-9ffc-583ff480e909",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "9774f5d4-e4dd-4693-943c-2ce31e493d59",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:04:42.201Z",
+          "updatedAt": "2024-02-18T13:04:42.217Z",
+          "GeneralProductId": "548e0428-4497-48fe-9ffc-583ff480e909",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "4a5557ab-4d54-43b3-8e19-5bcc5ac197d5",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:04:42.201Z",
+          "updatedAt": "2024-02-18T13:04:42.220Z",
+          "GeneralProductId": "548e0428-4497-48fe-9ffc-583ff480e909",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "75098068-5d06-4c4c-9976-0261e46d40c2",
+      "name": "Producto general tres",
+      "description": "Descripción del Producto General, con add pero sin transaction",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T12:51:24.594Z",
+      "updatedAt": "2024-02-18T12:51:24.594Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "8fdc8236-2986-4595-9237-b231c3bf65f5",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:51:24.634Z",
+          "updatedAt": "2024-02-18T12:51:24.646Z",
+          "GeneralProductId": "75098068-5d06-4c4c-9976-0261e46d40c2",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "44d47b4e-a27d-4999-9412-480ae933452d",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:51:24.634Z",
+          "updatedAt": "2024-02-18T12:51:24.652Z",
+          "GeneralProductId": "75098068-5d06-4c4c-9976-0261e46d40c2",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "cf9267c6-692a-43ad-b902-e36bb97c89f3",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:51:24.634Z",
+          "updatedAt": "2024-02-18T12:51:24.656Z",
+          "GeneralProductId": "75098068-5d06-4c4c-9976-0261e46d40c2",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "a4b902de-8f11-433b-be6a-376e979e4f5d",
+      "name": "Producto general ocho",
+      "description": "Descripción del Producto General,vuelvo al controller anterior",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:42:32.940Z",
+      "updatedAt": "2024-02-18T13:42:32.940Z",
+      "Categories": [
+        {
+          "name": "Sport"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "dos"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Unisex"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "18560ad6-0566-49bc-bbf7-d5e3e78e3de2",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:42:32.975Z",
+          "updatedAt": "2024-02-18T13:42:32.982Z",
+          "GeneralProductId": "a4b902de-8f11-433b-be6a-376e979e4f5d",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "f5fd1de4-c6bb-4df3-a02f-2f81753dff32",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:42:32.975Z",
+          "updatedAt": "2024-02-18T13:42:32.988Z",
+          "GeneralProductId": "a4b902de-8f11-433b-be6a-376e979e4f5d",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "88e6a6ee-d873-45be-b186-13905c06d33f",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:42:32.975Z",
+          "updatedAt": "2024-02-18T13:42:32.986Z",
+          "GeneralProductId": "a4b902de-8f11-433b-be6a-376e979e4f5d",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dc7f9af0-4df2-41f1-a114-d91584a88ab0",
+      "name": "Producto general uno",
+      "description": "Descripción del Producto General",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T12:44:08.210Z",
+      "updatedAt": "2024-02-18T12:44:08.210Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "e31a7174-40c7-4444-9f42-5b2f754a43e8",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:44:08.252Z",
+          "updatedAt": "2024-02-18T12:44:08.268Z",
+          "GeneralProductId": "dc7f9af0-4df2-41f1-a114-d91584a88ab0",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "64e217fc-c30b-4b44-b858-2cf80a3c83eb",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:44:08.252Z",
+          "updatedAt": "2024-02-18T12:44:08.263Z",
+          "GeneralProductId": "dc7f9af0-4df2-41f1-a114-d91584a88ab0",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "b58e4076-862a-47f1-9b1a-2b2df496b8a6",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T12:44:08.252Z",
+          "updatedAt": "2024-02-18T12:44:08.273Z",
+          "GeneralProductId": "dc7f9af0-4df2-41f1-a114-d91584a88ab0",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "e60dac90-4829-48a6-880c-d6d909654513",
+      "name": "Producto general siete",
+      "description": "Descripción del Producto General, me parece que me esta jodiendo",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:38:20.979Z",
+      "updatedAt": "2024-02-18T13:38:20.979Z",
+      "Categories": [
+        {
+          "name": "Sport"
+        }
+      ],
+      "Disciplines": [],
+      "Genres": [],
+      "Trademarcks": [],
+      "Product1s": []
+    },
+    {
+      "id": "e8ec70f4-90ef-47a9-bc56-9738f5b60324",
+      "name": "Producto general seis",
+      "description": "Descripción del Producto General, me parece que me esta jodiendo",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:10:37.126Z",
+      "updatedAt": "2024-02-18T13:10:37.126Z",
+      "Categories": [
+        {
+          "name": "Gala"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "uno"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Hombre"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": []
+    },
+    {
+      "id": "fdcb17fe-9159-4376-97ec-c9220f65301c",
+      "name": "Producto general siete",
+      "description": "Descripción del Producto General, me parece que me esta jodiendo",
+      "released": "2024-02-18",
+      "images": null,
+      "size": null,
+      "enable": true,
+      "deletedAt": false,
+      "createdAt": "2024-02-18T13:38:43.540Z",
+      "updatedAt": "2024-02-18T13:38:43.540Z",
+      "Categories": [
+        {
+          "name": "Sport"
+        }
+      ],
+      "Disciplines": [
+        {
+          "name": "dos"
+        }
+      ],
+      "Genres": [
+        {
+          "name": "Unisex"
+        }
+      ],
+      "Trademarcks": [
+        {
+          "name": "Poquito"
+        }
+      ],
+      "Product1s": [
+        {
+          "id": "d4c5c6b1-9e0f-40c4-bff9-d2a66783225d",
+          "characteristics": "Características de la Variante 1",
+          "price": "19.99",
+          "stock": 100,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:38:43.567Z",
+          "updatedAt": "2024-02-18T13:38:43.577Z",
+          "GeneralProductId": "fdcb17fe-9159-4376-97ec-c9220f65301c",
+          "Sizes": [
+            {
+              "name": "38"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        },
+        {
+          "id": "9f7366d3-e11e-40ae-bfe2-539478bd0cd5",
+          "characteristics": "Características de la Variante 3",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:38:43.567Z",
+          "updatedAt": "2024-02-18T13:38:43.586Z",
+          "GeneralProductId": "fdcb17fe-9159-4376-97ec-c9220f65301c",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Negro"
+            }
+          ]
+        },
+        {
+          "id": "9149c0a4-d109-487b-b478-ea3ece41ffa7",
+          "characteristics": "Características de la Variante 2",
+          "price": "24.99",
+          "stock": 50,
+          "enable": true,
+          "deletedAt": false,
+          "createdAt": "2024-02-18T13:38:43.567Z",
+          "updatedAt": "2024-02-18T13:38:43.582Z",
+          "GeneralProductId": "fdcb17fe-9159-4376-97ec-c9220f65301c",
+          "Sizes": [
+            {
+              "name": "40"
+            }
+          ],
+          "Images": [
+            {
+              "images": [
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
+                "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
+                "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
+              ]
+            }
+          ],
+          "Extras": [
+            {
+              "name": "Blanco"
+            }
+          ]
+        }
+      ]
+    }
+  ]

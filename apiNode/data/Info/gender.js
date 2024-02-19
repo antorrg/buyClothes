@@ -1,4 +1,5 @@
-[
+
+const gender = [
     {
       "id": 1,
       "name": "Hombre",
@@ -24,3 +25,5 @@
       "updatedAt": "2024-02-16T18:49:23.913Z"
     }
   ]
+
+  export default gender;

@@ -1,4 +1,4 @@
-import { Product1, Image, Category, Size} from "../../../database.js";
+import { Product1, Category,} from "../../../database.js";
 import formatProductData from "../../../Helpers/formatProductData.js";
 
 const getProduct1 = async()=>{

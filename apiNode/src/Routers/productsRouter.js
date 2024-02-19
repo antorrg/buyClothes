@@ -1,14 +1,11 @@
 import {Router} from 'express';
 import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
-import { createProdHand,getProdByIdHand,updProdHand,delProdHand } from '../Handlers/ProductHandlers/product1hand.js';
 import {getHandCategory, postHandCategory,putHandCategory,delHandCategory}from '../Handlers/ProductHandlers/catHand.js'
-import {getHandSize,postHandSize,putHandSize,delHandSize}from '../Handlers/ProductHandlers/sizeHand.js'
 import {getHandExtras,postHandExtras,putHandExtras,delHandExtras}from '../Handlers/ProductHandlers/extrasHand.js'
 import {getHandRating,postHandRating, putHandRating, delHandRating} from '../Handlers/ProductHandlers/ratingHand.js'
 import { getHandTrade, postHandTrade, putHandTrade, delHandTrade } from '../Handlers/ProductHandlers/tradeHand.js'
 import { getHandDisc, postHandDisc, putHandDisc, delHandDisc } from '../Handlers/ProductHandlers/discipHand.js'
 import { getHandGen, postHandGen, putHandGen, delHandGen } from '../Handlers/ProductHandlers/genHand.js'
-import { getHandImages } from '../Handlers/ProductHandlers/imageHand.js';
 import {generalCreateHandler, generalGetHandler, generalGetByIdHandler, generalUpdateHandler, generalDeleteHandler} from '../Handlers/ProductHandlers/generalProductHandler.js'
 
 
@@ -23,11 +20,6 @@ productsRouter.post('/', validCreateProduct, generalCreateHandler);
 // productsRouter.delete('/:id', generalDeleteHandler);
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 productsRouter.get('/depend/', getProductsHandler);
-//*========= CRUD Size =============================================
-productsRouter.post('/sub/size', postHandSize);
-productsRouter.get('/sub/size', getHandSize);
-productsRouter.put('/sub/size/:id', putHandSize);
-productsRouter.delete('/sub/size/:id', delHandSize);
 //*=========CRUD Category ===========================================
 productsRouter.post('/sub/cat', postHandCategory);
 productsRouter.get('/sub/cat',getHandCategory);
@@ -59,7 +51,6 @@ productsRouter.get('/sub/gen',getHandGen);
 productsRouter.put('/sub/gen/:id', putHandGen);
 productsRouter.delete('/sub/gen/:id',delHandGen);
 
-productsRouter.get('/sub/img',getHandImages);
 
 
 
