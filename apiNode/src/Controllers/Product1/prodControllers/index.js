@@ -1,4 +1,5 @@
 import getProduct1 from './getProduct.js'
+import updateProduct1 from './updateProduct.js'
 
 
 
@@ -6,5 +7,6 @@ import getProduct1 from './getProduct.js'
 
 export {
     getProduct1,
+    updateProduct1
     
 };

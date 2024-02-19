@@ -36,32 +36,3 @@ const formatSingleProduct = (genProduct) => {
 };
 
 export default formatProductData;
-// const formatSingleProduct = (genProduct) => {
-//   const formattedProduct = {
-//     id: genProduct.id,
-//     name: genProduct.name,
-//     description: genProduct.description,
-//     released: genProduct.released,
-//     Categories: genProduct.Categories.map(category => category.name),
-//     Discipline: genProduct.Discipline.map(disc => disc.name),
-//     Genres: genProduct.Genres.map(genre => genre.name),
-//     Trademarck: genProduct.Trademarck.map(trade => trade.name),
-//     enable: genProduct.enable,
-//     createdAt: genProduct.createdAt,
-//     updatedAt: genProduct.updatedAt,
-
-//     Product1s:genProduct.Product1s.map(product=>{
-//       product.id, 
-//       product.characteristics,
-//       images: product.images.map(img => img.map(url => url)).flat(),
-//       product.price,
-//       product.stock,
-//       product.size,
-//       product.enable,
-//     })
-   
-//   };
-
-//   return formattedProduct;
-// };
-

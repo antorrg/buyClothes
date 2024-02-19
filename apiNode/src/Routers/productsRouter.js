@@ -6,10 +6,8 @@ import {getHandRating,postHandRating, putHandRating, delHandRating} from '../Han
 import { getHandTrade, postHandTrade, putHandTrade, delHandTrade } from '../Handlers/ProductHandlers/tradeHand.js'
 import { getHandDisc, postHandDisc, putHandDisc, delHandDisc } from '../Handlers/ProductHandlers/discipHand.js'
 import { getHandGen, postHandGen, putHandGen, delHandGen } from '../Handlers/ProductHandlers/genHand.js'
-import {generalCreateHandler, generalGetHandler, generalGetByIdHandler, generalUpdateHandler, generalDeleteHandler} from '../Handlers/ProductHandlers/generalProductHandler.js'
-
-
- import { validCreateProduct } from '../utils/index.js';
+import {generalCreateHandler, generalGetHandler, generalGetByIdHandler, generalUpdateHandler, generalDeleteHandler} from '../Handlers/ProductHandlers/generalProductHandler.js';
+import { validCreateProduct } from '../utils/index.js';
 
 const productsRouter = Router();
 //?>>>>>>>>>>>> CRUD GeneralProduct <<<<<<<<<<<<<<<<<<<<<<<<
