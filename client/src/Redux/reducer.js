@@ -21,7 +21,7 @@ const initialState ={
 const reducer = (state=initialState, {type, payload})=>{
     switch(type){
         case LOGIN_USER:
-           // console.log(payload)
+            console.log('usuario comun reducer  '+payload)
             return {
                 ...state,
                 LogIn: payload,
@@ -56,7 +56,7 @@ const reducer = (state=initialState, {type, payload})=>{
                     products:payload,
                 }
             case PROD_BY_ID:
-                //console.log(payload)
+                console.log('estoy en el reducer '+payload)
                 return {
                     ...state,
                     prodById: payload,

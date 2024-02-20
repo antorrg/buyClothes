@@ -8,6 +8,7 @@ import EditWindow from "../components/EditComponents/ModalEdit";
 import {productById, cleanData}from '../Redux/actions'
 import { useAuth } from '../Auth/AuthContext/AuthContext';
 import ParsedImages from '../components/ParsedImages/ParsedImages';
+import ParsedDetail from '../utils/ParsedDetail'
 
 
 const Detail=()=>{
@@ -39,12 +40,12 @@ const Detail=()=>{
 
   },[dispatch,id, cleanData]);
 
-  const userBI = product;
-  const size = userBI.Sizes?.join(', ')
-  const cat = userBI.Categories?.join(', ')
-
+ 
+  const data2 = ParsedDetail(product)
+  console.log(data2)
+  
   const puedeEditar = user && user.role === 0;
-  const status = statusUser(userBI.enable);
+  //const status = statusUser(product.enable);
   //console.log('yo soy user '+user.id)
   
   return (
@@ -53,20 +54,21 @@ const Detail=()=>{
         <br/>
         <br/>
       <div>
-      <ParsedImages objeto = {userBI}/>
+      {/* <ParsedImages objeto = {userB}/> */}
       </div >
       <div className={style.text}>
         {puedeEditar &&puedeEditar?
-        <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={userBI}/> : null}
-        {isModalOpen && <EditWindow onClose={handleEditWindowClose} userEdit = {userBI}/>}
-      <h2>{userBI?.name}</h2>
-      <h3>$ : {userBI?.price}</h3>
-      <h3>Genero: {userBI?.genre}</h3> 
-      <h3>Categoria: {cat}</h3>
-      <h3>Talle: {size}</h3>
-      <p>Descripcion: {userBI?.description}</p>
-      <p>Stock: {userBI?.stock}</p>
-      <h3>Caracteristicas: {userBI?.characteristics}</h3>
+        <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={product}/> : null}
+        {isModalOpen && <EditWindow onClose={handleEditWindowClose} userEdit = {product}/>}
+      <h2>{product?.name}</h2>
+      {/* <h3>$ : {product?.Product1s[0].price}</h3> */}
+      <h3>Genero: {product?.Genres}</h3> 
+      {/* <h3>Categoria: {cat}</h3> */}
+      {/* <h3>Talle: {product.Product1[0].size}</h3> */}
+      <p>Descripcion: {product?.description}</p>
+      <p>Marca: {product?.Trademarcks}</p>
+      {/* <p>Stock: {productoOrden1.stock}</p>
+      <h3>Caracteristicas: {productoOrden1.characteristics}</h3> */}
       <GenericButton onClick = {goBack} buttonText='Volver'/>
       </div>
       </div>

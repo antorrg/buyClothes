@@ -5,9 +5,9 @@ const ParsedImages = ({ objeto }) => {
   const [imagenIndex, setImagenIndex] = useState(0);
   
   const renderizarImagenes = () => {
-    if (objeto.Images && objeto.Images.length > 0) {
+    if (objeto.images && objeto.images.length > 0) {
 
-      const finalImg = objeto.Images.length;
+      const finalImg = objeto.images.length;
       
 
       return (
@@ -15,11 +15,11 @@ const ParsedImages = ({ objeto }) => {
             <button onClick={() => setImagenIndex(imagenIndex - 1)} disabled={imagenIndex === 0} className={style.button}>
               ⬅️
             </button>
-            <button onClick={() => setImagenIndex(imagenIndex + 1)} disabled={imagenIndex === objeto.Images.length - 1} className={style.button}>
+            <button onClick={() => setImagenIndex(imagenIndex + 1)} disabled={imagenIndex === objeto.images.length - 1} className={style.button}>
              ➡️
             </button>
             <br/>
-          <img src={objeto.Images[imagenIndex]} alt={`Images ${imagenIndex + 1}`} className={style.image}/>
+          <img src={objeto.images[imagenIndex]} alt={`Images ${imagenIndex + 1}`} className={style.image}/>
             <br/>
             <span>{imagenIndex+1} / {finalImg}</span>
           </div>
