@@ -8,9 +8,9 @@ import { ToastContainer } from "react-toastify";
 import {Provider}from 'react-redux';
 import store from './Redux/store'
 import { AuthProvider} from './Auth/AuthContext/AuthContext';
+
+
 const apiUrl = import.meta.env.VITE_URL;
-
-
 
 axios.defaults.baseURL = apiUrl;
 

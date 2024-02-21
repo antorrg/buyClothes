@@ -8,7 +8,7 @@ import EditWindow from "../components/EditComponents/ModalEdit";
 import {productById, cleanData}from '../Redux/actions'
 import { useAuth } from '../Auth/AuthContext/AuthContext';
 import ParsedImages from '../components/ParsedImages/ParsedImages';
-import ParsedDetail from '../utils/ParsedDetail'
+
 
 
 const Detail=()=>{
@@ -17,8 +17,25 @@ const Detail=()=>{
   const navigate = useNavigate();
   const {id}= useParams();
   const product = useSelector((state)=>state.prodById)
-  console.log('soyDetail: '+product)
+ //?=============== Esta es la parte de las variantes ======================================================
+  const proById = useSelector((state)=>state.detailProd)
+  console.log(proById)
 
+  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedColor, setSelectedColor] = useState('');
+
+  // Obtén las opciones únicas de tamaños y colores disponibles
+  const uniqueSizes = [...new Set(Object.values(proById).map((variant) => variant.size))];
+  const uniqueColors = [...new Set(Object.values(proById).map((variant) => variant.extras))];
+
+  // Encuentra la variante seleccionada o usa el primer objeto (objeto 0) por defecto
+  const selectedVariant =
+    selectedSize && selectedColor
+      ? Object.values(proById).find(
+          (variant) => variant.size === selectedSize && variant.extras === selectedColor
+        ) || Object.values(proById)[0]
+      : Object.values(proById)[0];
+//*Hasta aqui llega la parte de las variantes >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   const goBack = () => {
     navigate(-1);
   };
@@ -41,8 +58,8 @@ const Detail=()=>{
   },[dispatch,id, cleanData]);
 
  
-  const data2 = ParsedDetail(product)
-  console.log(data2)
+  //const data2 = ParsedDetail(product)
+  //console.log(data2)
   
   const puedeEditar = user && user.role === 0;
   //const status = statusUser(product.enable);
@@ -54,21 +71,44 @@ const Detail=()=>{
         <br/>
         <br/>
       <div>
-      {/* <ParsedImages objeto = {userB}/> */}
+      <ParsedImages objeto = {selectedVariant}/>
       </div >
       <div className={style.text}>
         {puedeEditar &&puedeEditar?
         <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={product}/> : null}
         {isModalOpen && <EditWindow onClose={handleEditWindowClose} userEdit = {product}/>}
       <h2>{product?.name}</h2>
-      {/* <h3>$ : {product?.Product1s[0].price}</h3> */}
+      <h3>$ : {selectedVariant.price}</h3>
       <h3>Genero: {product?.Genres}</h3> 
-      {/* <h3>Categoria: {cat}</h3> */}
-      {/* <h3>Talle: {product.Product1[0].size}</h3> */}
       <p>Descripcion: {product?.description}</p>
       <p>Marca: {product?.Trademarcks}</p>
-      {/* <p>Stock: {productoOrden1.stock}</p>
-      <h3>Caracteristicas: {productoOrden1.characteristics}</h3> */}
+
+       {/* Select dinámico para tamaños */}
+       <select onChange={(e) => setSelectedSize(e.target.value)} value={selectedSize}>
+        <option value="" disabled>
+          Seleccione el Talle:
+        </option>
+        {uniqueSizes.map((size) => (
+          <option key={size} value={size}>
+            {size}
+          </option>
+        ))}
+      </select>
+
+      {/* Select dinámico para colores */}
+      <select onChange={(e) => setSelectedColor(e.target.value)} value={selectedColor}>
+        <option value="" disabled>
+          Seleccione un Color:
+        </option>
+        {uniqueColors.map((color) => (
+          <option key={color} value={color}>
+            {color}
+          </option>
+        ))}
+      </select>
+      
+      <p>Stock: {selectedVariant.stock}</p>
+      <h3>Caracteristicas: {selectedVariant.characteristics}</h3>
       <GenericButton onClick = {goBack} buttonText='Volver'/>
       </div>
       </div>

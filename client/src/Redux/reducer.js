@@ -15,6 +15,7 @@ const initialState ={
     detailUsers:[],
     products:[],
     prodById:[],
+    detailProd: [],
     prodByName:[]
 };
 
@@ -60,6 +61,7 @@ const reducer = (state=initialState, {type, payload})=>{
                 return {
                     ...state,
                     prodById: payload,
+                    detailProd: payload.Product1s,
                 }
 //------------------------------------------------------------------
         default:

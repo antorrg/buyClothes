@@ -1,9 +1,11 @@
 
 
 const productoOrden1 = (data)=>{
+    const color= [];
+    const talle=[]
+for(let i = 0; i <=data.length; i++){
     
-let prod= data.Product1s.find(producto => producto.order === 1);
-return prod;
+}
 }
 
 export default productoOrden1
