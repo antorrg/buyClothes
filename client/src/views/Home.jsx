@@ -8,7 +8,7 @@ import {getAllProducts}from '../Redux/actions'
 
 function Home() {
   const {authenticated, user, logout}=useAuth();
-  console.log(authenticated)
+  //console.log(authenticated)
   //console.log('user: '+user)
   const products = useSelector((state)=>state.products)
   const char = products

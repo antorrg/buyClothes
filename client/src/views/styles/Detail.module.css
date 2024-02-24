@@ -1,7 +1,9 @@
 .body {
+    position: relative;
     background-color: rgb(231, 195, 167);
    width: 100vw;
    height: 60vw;
+   overflow: auto; /* Agrega esta línea para permitir el desplazamiento (scroll) */
   }  
 .cont{
   
@@ -28,7 +30,7 @@
         width: 200px;
         overflow:auto;
     }
-    
+overflow: auto; /* Agrega esta línea para permitir el desplazamiento (scroll) */
 }
 .image{
     display:flex;

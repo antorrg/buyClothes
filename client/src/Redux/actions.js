@@ -7,7 +7,9 @@ export const USER_BY_ID='USER_BY_ID';
 export const CLEAN_DETAIL='CLEAN_DETAIL';
 export const ISN_AUTH= 'ISN_AUTH'
 export const GET_PRODUCTS = 'GET_PRODUCTS'
-export const PROD_BY_ID = 'PROD_BY_ID'
+export const PROD_BY_ID = 'PROD_BY_ID';
+export const GET_SIZES= 'GET_SIZES';
+export const GET_COLOR= 'GET_COLOR'
 
 export const getAllUsers = ()=>{
   return async (dispatch)=>{
@@ -82,4 +84,19 @@ export const productById = (id, token) => async (dispatch) => {
     HandlError(error)
     //console.error('Error fetching game', error);
   }
+};
+
+export const getSize = (value) => async (dispatch) => {
+    return dispatch({
+      type: GET_SIZES,
+      payload:value,
+    });
+  
+};
+export const getColor = (value) => async (dispatch) => {
+    return dispatch({
+      type: GET_COLOR,
+      payload: value,
+    });
+  
 };

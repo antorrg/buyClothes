@@ -6,7 +6,7 @@ import { useAuth } from '../Auth/AuthContext/AuthContext'
 const Navbar = () => {
   const {authenticated, user, logout}=useAuth();
   const allow = user? user.role : 1;
-  console.log(allow)
+  //console.log(allow)
   return (
     <div className={style.nav}>
     <Link>

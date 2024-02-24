@@ -14,9 +14,9 @@ function App() {
   const {authenticated, user,logout}=useAuth();
 
   const dispatch = useDispatch();
-  console.log(authenticated)
+  //console.log(authenticated)
   const allow = user? user.role : 1;
-  console.log(allow)
+  //console.log(allow)
   const navigate = useNavigate()
   useEffect(()=>{
     if(authenticated){
