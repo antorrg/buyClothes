@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import style from '../styles/ModalEdit.module.css'
-import FormEdit from './ProdFormEdit';
+import style from '../../styles/ModalEdit.module.css'
+import FormEdit2 from './UserFormEdit';
 import axios from 'axios'
-import GenericButton from '../Buttons/GenericButton';
-import {showError, showSuccess,HandlError}from '../../Auth/HandlerError';
+import GenericButton from '../../Buttons/GenericButton';
+import {showError, showSuccess,HandlError}from '../../../Auth/HandlerError';
 
 
-const EditWindow = ({ onClose, userEdit}) => {
+const EditWindow2 = ({ onClose, userEdit}) => {
   const {id, name,surname, country, role, enable, picture}= userEdit;
   //console.log('A: '+id)
   //console.log ('A: '+name)
@@ -68,10 +68,10 @@ const EditWindow = ({ onClose, userEdit}) => {
   return (
     <div className={style.modal}>
       <h2>Editar Usuario</h2>
-      <FormEdit id = {id} editedUser={editedUser} onInputChange={handleInputChange} onSaveChanges={handleSaveChanges} />
+      <FormEdit2 id = {id} editedUser={editedUser} onInputChange={handleInputChange} onSaveChanges={handleSaveChanges} />
       <GenericButton onClick= {onClose} buttonText='Cancelar'/>
     </div>
   );
 };
 
-export default EditWindow;
+export default EditWindow2;

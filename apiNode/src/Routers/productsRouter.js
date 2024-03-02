@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import getProductsHandler from '../Handlers/ProductHandlers/getProdHandler.js';
+import {getProductsHandler, updateProductsHand} from '../Handlers/ProductHandlers/getProdHandler.js';
 import {getHandCategory, postHandCategory,putHandCategory,delHandCategory}from '../Handlers/ProductHandlers/catHand.js'
 import {getHandExtras,postHandExtras,putHandExtras,delHandExtras}from '../Handlers/ProductHandlers/extrasHand.js'
 import {getHandRating,postHandRating, putHandRating, delHandRating} from '../Handlers/ProductHandlers/ratingHand.js'
@@ -18,6 +18,8 @@ productsRouter.post('/', validCreateProduct, generalCreateHandler);
 // productsRouter.delete('/:id', generalDeleteHandler);
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 productsRouter.get('/depend/', getProductsHandler);
+productsRouter.put('/depend/:id', updateProductsHand);
+//productsRouter.get('/depend/', jdjdjdjd);
 //*=========CRUD Category ===========================================
 productsRouter.post('/sub/cat', postHandCategory);
 productsRouter.get('/sub/cat',getHandCategory);

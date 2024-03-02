@@ -17,6 +17,7 @@ const Detail = () => {
   const product = useSelector((state) => state.prodById);
   //?=============== Esta es la parte de las variantes ======================================================
   const proById = useSelector((state) => state.allDetailProd);
+  const selectProd = useSelector((state)=> state.allDetailProd)
 
 
  
@@ -38,9 +39,10 @@ const Detail = () => {
     dispatch(cleanData());
 
     dispatch(productById(id, token));
+    return ()=>{dispatch(cleanData())}
   }, [dispatch, id, cleanData]);
 
-  const puedeEditar = user && user.role === 0;
+  const puedeEditar = user && user.role === 0||user.role=== 2;
   //const status = statusUser(product.enable);
   //console.log('yo soy user '+user.id)
 
@@ -58,11 +60,11 @@ const Detail = () => {
             <GenericButton
               onClick={handleEditClick}
               buttonText="Editar"
-              userEdit={product}
+              userEdit={selectProd}
             />
           ) : null}
           {isModalOpen && (
-            <EditWindow onClose={handleEditWindowClose} userEdit={product} />
+            <EditWindow onClose={handleEditWindowClose} productEdit={selectProd} />
           )}
           <h2>{product?.name}</h2>
           <p>Descripcion: {product?.description}</p>

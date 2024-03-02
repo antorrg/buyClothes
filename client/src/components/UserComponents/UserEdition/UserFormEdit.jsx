@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import axios from 'axios'
-import style from '../styles/Form.module.css';
-import GenericButton from '../Buttons/GenericButton';
-import CloudinaryUpload from './CloudinaryUpload';
+import style from '../../styles/Form.module.css';
+import GenericButton from '../../Buttons/GenericButton';
+import CloudinaryUpload from '../../EditComponents/CloudinaryUpload';
 //import { showSuccess, showError } from '../../Auth/HandlerError';
 
 
  const uplPreset= import.meta.env.VITE_PRESET
 
-const FormEdit = ({ editedUser, onInputChange, onSaveChanges }) => {
+const FormEdit2 = ({ editedUser, onInputChange, onSaveChanges }) => {
   const [imageUrl, setImageUrl] = useState(editedUser.picture);
  
   const onImageChange = (url) => {
@@ -103,7 +103,7 @@ const FormEdit = ({ editedUser, onInputChange, onSaveChanges }) => {
   );
 };
 
-export default FormEdit;
+export default FormEdit2;
 
 // const FormEdit = ({ editedUser, onInputChange,onSaveChanges}) => {
 //     const handleInputChange = (e) => {

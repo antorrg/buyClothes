@@ -2,9 +2,11 @@ import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import ParsedImages from './ParsedImages/ParsedImages';
 import GenericSelect from './SubCompDetail/GenericSelect/GenericSelect';
-import {getSize, getColor} from '../Redux/actions'
+import {getSize, getColor, cleanFilters} from '../Redux/actions'
+import GenericButton from './Buttons/GenericButton';
 
 const InnerDetail = ({proById}) => {
+  const dispatch = useDispatch();
     const product = useSelector((state) => state.detailProd);
 
    
@@ -16,7 +18,11 @@ const InnerDetail = ({proById}) => {
     const uniqueColors = [
       ...new Set(Object.values(proById).map((variant) => variant.extras)),
     ];
+//---------------- reset selects
   
+    const resetSelects = () => {
+      dispatch(cleanFilters())
+    };
     //Encuentra la variante seleccionada o usa el primer objeto (objeto 0) por defecto
    // const selectedVariant = Object.values(product)? Object.values(product) : Object.values(product)[0];
     const selectedVariant = product? Object.values(product)[0] : null;
@@ -31,6 +37,7 @@ const InnerDetail = ({proById}) => {
     <h3>$ : {selectedVariant?.price}</h3>
     <GenericSelect items={uniqueSizes} functionProp={getSize} itemText={'Seleccione un talle:'}  />
     <GenericSelect items={uniqueColors} functionProp={getColor} itemText={'Seleccione un color:'}/>
+    <GenericButton onClick={resetSelects} buttonText={'Reiniciar filtros'}/>
      <p>Stock: {selectedVariant?.stock}</p> 
     <p>Caracteristicas: {selectedVariant?.characteristics}</p>
     <p>Id: {selectedVariant?.id}</p>

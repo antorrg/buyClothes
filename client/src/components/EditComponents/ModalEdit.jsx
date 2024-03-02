@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {useSelector} from 'react-redux'
 import style from '../styles/ModalEdit.module.css'
 import FormEdit from './FormEdit';
 import axios from 'axios'
@@ -6,22 +7,27 @@ import GenericButton from '../Buttons/GenericButton';
 import {showError, showSuccess,HandlError}from '../../Auth/HandlerError';
 
 
-const EditWindow = ({ onClose, userEdit}) => {
-  const {id, name,surname, country, role, enable, picture}= userEdit;
-  //console.log('A: '+id)
-  //console.log ('A: '+name)
-  //console.log ('A: '+surname)
-  console.log (picture)
-  //console.log (role)
-  //console.log (enable)
+const EditWindow = ({ onClose, }) => {
+  const productEdit = useSelector((state)=> state.detailProd)
 
-  const [editedUser, setEditedUser] = useState({
-    name,
-    picture,
-    surname,
-    country,
-    role,
-    enable,
+  const {id, order,characteristics, images, size, price, stock, enable}= productEdit;
+  console.log('A: '+id)
+  console.log('orden: '+order)
+  console.log ('A: '+characteristics)
+  console.log ('A: '+price)
+  //console.log (picture)
+  console.log (stock)
+  console.log (enable)
+
+  const [editedProd, setEditedProd] = useState({
+    id, 
+    order,
+    characteristics, 
+    images, 
+    size,
+    price, 
+    stock, 
+    enable
   });
 
   const handleInputChange = (name, value) => {
@@ -29,37 +35,32 @@ const EditWindow = ({ onClose, userEdit}) => {
     // console.log('value: ', value);
     // console.log('picture: ', picture)
     const processedValue = name === 'enable' ? value === 'true' : value;
-    setEditedUser((prevUser) => ({
-      ...prevUser,
+    setEditedProd((prevProd) => ({
+      ...prevProd,
       [name]: processedValue,
     }));
   };
 
   const handleSaveChanges = async () => {
-    // console.log('B id: '+id)
-    // console.log('B user: '+editedUser.name)
-    // console.log('B user: '+editedUser.surname)
-    // console.log(editedUser.country)
-    // console.log(editedUser.role)
-    // console.log(editedUser.enable)
-    console.log(editedUser.picture)
+    
+
     //Lógica para guardar los cambios (puedes conectarlo a tus acciones de Redux)
     try {
       // Realiza la solicitud PUT con Axios
-      const response = await axios.put(`/user/update/${id}`,editedUser);
+      const response = await axios.put(`/depend/${id}`,editedProd);
       
       if (response.status === 200) {
-        showSuccess('Usuario actualizado con éxito')
-        //alert('Usuario actualizado con éxito');
+        showSuccess('Producto actualizado con éxito')
+        //alert('Producto actualizado con éxito');
        onClose(); // Cierra el modal después de guardar los cambios
       } else {
-        showError('Error al actualizar el usuario')
-        //alert('Error al actualizar el usuario');
+        showError('Error al actualizar el Producto')
+        //alert('Error al actualizar el Producto');
       }
     } catch (error) {
       HandlError({error:error.message})
-      console.error('Error al actualizar el usuario:', error);
-      //alert('Error al actualizar el usuario');
+      console.error('Error al actualizar el producto:', error);
+     
     }
   };
   
@@ -67,8 +68,8 @@ const EditWindow = ({ onClose, userEdit}) => {
 
   return (
     <div className={style.modal}>
-      <h2>Editar Usuario</h2>
-      <FormEdit id = {id} editedUser={editedUser} onInputChange={handleInputChange} onSaveChanges={handleSaveChanges} />
+      <h2>Editar Producto</h2>
+      <FormEdit id = {id} editedProd={editedProd} onInputChange={handleInputChange} onSaveChanges={handleSaveChanges} />
       <GenericButton onClick= {onClose} buttonText='Cancelar'/>
     </div>
   );

@@ -4,6 +4,7 @@ import {
   ALL_USERS,
   USER_BY_ID,
   CLEAN_DETAIL,
+  CLEAN_FILTERS,
   GET_PRODUCTS,
   PROD_BY_ID,
   GET_COLOR,
@@ -55,7 +56,13 @@ const reducer = (state = initialState, { type, payload }) => {
         ...state,
         detailUsers: [],
         prodById: [],
+        allDetailProd:[],
       };
+      case CLEAN_FILTERS:
+        return {
+          ...state,
+          detailProd: [],
+        }
     //? Cases relativos a productos: ======================================================================
     case GET_PRODUCTS:
       return {
@@ -70,6 +77,8 @@ const reducer = (state = initialState, { type, payload }) => {
         detailProd: payload.Product1s,
         allDetailProd: payload.Product1s,
       };
+  //!--------------------------------------------------------------------------------------------
+//!----------------------------------------------------------------------------------------------
       case GET_SIZES:
     console.log(payload);
     selectsSizes = [...state.allDetailProd];
@@ -83,31 +92,38 @@ const reducer = (state = initialState, { type, payload }) => {
         "No hay prendas con este tamaño. Para buscar otro tamaño, vuelva el selector a la posición inicial."
       );
     }
+    return{
+      ...state,
+      detailProd: selectsSizes,
+    }
 
   case GET_COLOR:
     console.log(payload);
-    selectsColor = [...state.allDetailProd];
+    selectsColor = [...state.detailProd];
     if (payload !== "All") {
       selectsColor = selectsColor.filter((prod) =>
         prod.extras.includes(payload)
       );
     }
-
     if (selectsColor.length === 0) {
       alert(
         "No hay prendas con este color. Para buscar otro color, vuelva el selector a la posición inicial."
       );
     }
     
-  // Combina ambas selecciones, utilizando solo los productos que cumplen ambas condiciones
-  const combinedSelection = selectsSizes.filter((prod) =>
-    selectsColor.some((selectedProd) => selectedProd.id === prod.id)
-  );
-
-  return {
+  // // Combina ambas selecciones, utilizando solo los productos que cumplen ambas condiciones
+  // const combinedSelection = selectsSizes.filter((prod) =>
+  //   selectsColor.some((selectedProd) => selectedProd.order === prod.order)
+  // );
+  return{
     ...state,
-    detailProd: combinedSelection,
-  };
+    detailProd: selectsColor,
+  }
+  // return {
+  //   ...state,
+  //   //detailProd: combinedSelection,
+  //   detailProd: combinedSelection,
+  // };
     //? +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     default:
       return {

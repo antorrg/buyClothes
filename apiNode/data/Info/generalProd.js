@@ -6,7 +6,7 @@ const generalProd = [
     "category": "2",
     "discipline": "2",
     "genre": "1",
-    "trademarck": "2",
+    "trademarck": "1",
     "variants": [
       {
         "order":1,
@@ -18,7 +18,7 @@ const generalProd = [
          "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
          "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
         ],
-        "size": "46",
+        "size": "38",
         "extra": "1"
       },
       {
@@ -30,7 +30,7 @@ const generalProd = [
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
       "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"],
-        "size": "38",
+        "size": "40",
         "extra": "1"
       },
       {
@@ -42,7 +42,7 @@ const generalProd = [
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
       "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"],
-        "size": "2",
+        "size": "40",
         "extra": "2"
       }
     ]
@@ -67,7 +67,7 @@ const generalProd = [
          "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
         ],
         "size": "42",
-        "extra": "1"
+        "extra": "2"
       }
     
     ]
@@ -92,7 +92,7 @@ const generalProd = [
          "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"
         ],
         "size": "44",
-        "extra": "1"
+        "extra": "2"
       },
       {
         "order":2,
@@ -103,7 +103,7 @@ const generalProd = [
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
       "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"],
-        "size": "40",
+        "size": "44",
         "extra": "1"
       },
       {
@@ -129,8 +129,8 @@ const generalProd = [
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp", 
       "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"],
-        "size": "3",
-        "extra": "40"
+        "size": "40",
+        "extra": "3"
       },
       {
         "order":5,
@@ -141,7 +141,7 @@ const generalProd = [
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp",
       "https://res.cloudinary.com/dmhxl1rpc/image/upload/c_scale,w_250/v1701669223/gameworld/avatar_gamer.jpg",
       "https://res.cloudinary.com/dt1lpgumr/image/upload/v1708046933/ac1e24294ac4bff00e5eaef22b93594d.webp"],
-        "size": "38",
+        "size": "46",
         "extra": "3"
       },
     ]
@@ -153,7 +153,7 @@ const generalProd = [
     "category": "2",
     "discipline": "2",
     "genre": "1",
-    "trademarck": "2",
+    "trademarck": "3",
     "variants": [
       {
         "order":1,
@@ -215,7 +215,7 @@ const generalProd = [
         "category": "2",
         "discipline": "2",
         "genre": "1",
-        "trademarck": "2",
+        "trademarck": "4",
         "variants": [
           {
             "order":1,
@@ -289,7 +289,7 @@ const generalProd = [
         "category": "2",
         "discipline": "2",
         "genre": "1",
-        "trademarck": "2",
+        "trademarck": "1",
         "variants": [
           {
             "order":1,

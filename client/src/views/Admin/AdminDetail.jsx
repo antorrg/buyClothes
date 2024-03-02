@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {getRoleName, statusUser } from '../../utils/RoleName'
 import GenericButton from "../../components/Buttons/GenericButton";
-import EditWindow from "../../components/EditComponents/ModalEdit";
+import EditWindow2 from "../../components/UserComponents/UserEdition/UserModalEdit";
 import {getById, cleanData}from '../../Redux/actions'
 import { useAuth } from '../../Auth/AuthContext/AuthContext';
 
@@ -60,7 +60,7 @@ const AdminDetail=()=>{
       <h3>Estado: {status}</h3>
       {puedeEditar &&puedeEditar?
       <GenericButton onClick={handleEditClick} buttonText='Editar' userEdit={userBI}/> : null}
-      {isModalOpen && <EditWindow onClose={handleEditWindowClose} userEdit = {userBI}/>}
+      {isModalOpen && <EditWindow2 onClose={handleEditWindowClose} userEdit = {userBI}/>}
       </div>
       </div>
       </div>

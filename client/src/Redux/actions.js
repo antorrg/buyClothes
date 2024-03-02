@@ -5,6 +5,7 @@ export const LOGIN_USER= 'LOGIN_USER';
 export const ALL_USERS= 'ALL_USERS';
 export const USER_BY_ID='USER_BY_ID';
 export const CLEAN_DETAIL='CLEAN_DETAIL';
+export const CLEAN_FILTERS='CLEAN_FILTERS';
 export const ISN_AUTH= 'ISN_AUTH'
 export const GET_PRODUCTS = 'GET_PRODUCTS'
 export const PROD_BY_ID = 'PROD_BY_ID';
@@ -40,6 +41,12 @@ export const getById = (id, token) => async (dispatch) => {
 export const cleanData =()=> (dispatch)=>{
   return dispatch({
     type: CLEAN_DETAIL,
+    payload: [],
+  })
+}
+export const cleanFilters =()=> (dispatch)=>{
+  return dispatch({
+    type: CLEAN_FILTERS,
     payload: [],
   })
 }
