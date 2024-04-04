@@ -34,7 +34,7 @@ const FormEdit = ({ editedProd, onInputChange, onSaveChanges }) => {
           Caracteristicas:
           <input type="text" name="characteristics" value={editedProd.characteristics} onChange={handleInputChange} />
         </label>
-        <label>
+        <label >
           {imageUrl && <img src={imageUrl} alt="Current User" />}
         </label>
         <CloudinaryUpload onImageChange={onImageChange}/>

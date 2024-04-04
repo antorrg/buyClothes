@@ -61,7 +61,7 @@ const FormEdit2 = ({ editedUser, onInputChange, onSaveChanges }) => {
     <div className={style.formContainer}>
       <form onSubmit={handleSubmit}>
         <label>
-          {imageUrl && <img src={imageUrl} alt="Current User" />}
+          {imageUrl && <img src={imageUrl} alt="Current User" style={{width:300}} />}
         </label>
         <CloudinaryUpload onImageChange={onImageChange}/>
         {/* <div>
