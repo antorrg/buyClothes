@@ -65,10 +65,10 @@ export const isNotAuth =()=>(dispatch)=>{
 }
 
 //? Rutas y actions relativas a productos:
-export const getAllProducts = ()=>{
+export const getAllProducts = (page)=>{
   return async (dispatch)=>{
     try {
-      const data = await axios("/");
+      const data = await axios(`/?page=${page}`);
       return dispatch({
         type:GET_PRODUCTS,
         payload: data.data,
@@ -80,9 +80,9 @@ export const getAllProducts = ()=>{
   }
 }
 
-export const productById = (id, token) => async (dispatch) => {
+export const productById = (id, size, color, token) => async (dispatch) => {
   try {
-    const data = await axios(`/${id}`, setAuthHeader(token));
+    const data = await axios(`/${id}?size=${size}&color=${color}`, setAuthHeader(token));
     return dispatch({
       type: PROD_BY_ID,
       payload:data.data,
@@ -93,17 +93,12 @@ export const productById = (id, token) => async (dispatch) => {
   }
 };
 
-export const getSize = (value) => async (dispatch) => {
+
+export const resetFilters = (id) => async (dispatch) => {
+  const data = await axios(`/${id}`);
     return dispatch({
-      type: GET_SIZES,
-      payload:value,
-    });
-  
-};
-export const getColor = (value) => async (dispatch) => {
-    return dispatch({
-      type: GET_COLOR,
-      payload: value,
+      type: PROD_BY_ID,
+      payload: data.data,
     });
   
 };

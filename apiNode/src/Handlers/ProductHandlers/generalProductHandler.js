@@ -11,8 +11,9 @@ const generalCreateHandler = async (req, res)=>{
 };
 
 const generalGetHandler = async (req, res)=>{
+    const page = req.query.page || 1;
     try {
-        const response = await generalProdGet();
+        const response = await generalProdGet(req, page);
         res.status(200).json(response);
     } catch (error) {
         res.status(500).json({error: error.message});
@@ -21,8 +22,11 @@ const generalGetHandler = async (req, res)=>{
 
 const generalGetByIdHandler = async (req, res)=>{
         const {id}=req.params;
+        const size = req.query.size;
+        const colorQ = req.query.color;
+        const color = colorQ? colorQ.charAt(0).toUpperCase() + colorQ.slice(1):'';
     try {
-        const response = await generalProdGetById(id);
+        const response = await generalProdGetById(id, size, color);
         res.status(200).json(response);
     } catch (error) {
         res.status(500).json({error: error.message});

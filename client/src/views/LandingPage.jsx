@@ -5,7 +5,7 @@ import { useAuth } from '../Auth/AuthContext/AuthContext'
 
 function Landing() {
   const {authenticated}=useAuth();
-  console.log(authenticated)
+  //console.log(authenticated)
   const navigate = useNavigate()
 
   const onChange=()=>{
@@ -22,7 +22,7 @@ function Landing() {
       <h1>
         Yo soy la Landing Page
       </h1>
-      <p>(Creo que me faltan estilos 🤔)</p>
+      <p>(Creo que me faltan estilos )</p>
       <br/>
       <GenericButton onClick={onChange} buttonText='Ingresar/Registrarse'/>
      

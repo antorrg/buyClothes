@@ -5,6 +5,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr ;
     grid-template-rows: 1fr 1fr ;
     grid-gap: 1.25rem; */
+    margin-top: 12rem;
     display: flex;
     flex-wrap:wrap;
     justify-content: center;

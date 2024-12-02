@@ -49,8 +49,8 @@ const loginUser = async(userData,login)=>{
           
             showSuccess('Login sucessfully')
             
-            console.log(token)
-            console.log(user)
+            //console.log(token)
+            //console.log(user)
             
               return user;
         }

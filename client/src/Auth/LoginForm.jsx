@@ -51,7 +51,11 @@ const LoginForm = ({handleSignClick, auth}) => {
       }
     //}
   }
-
+  const permit =
+  !input.email.trim() ||
+  !input.password.trim() ||
+  error.email ||
+  error.password;
 
   return (
     <div className={style.form}>
@@ -85,7 +89,7 @@ const LoginForm = ({handleSignClick, auth}) => {
           />
           {error.password && <p className={style.errorMessage}>{error.password}</p>}
         </div>
-        <GenericButton type='submit' buttonText={'Iniciar Sesion'}/>
+        <GenericButton type='submit' buttonText={'Iniciar Sesion'} disabled= {null} />
       </form>
       <h4>¿No tiene cuenta? Registrese:</h4>
       <GenericButton onClick={handleSignClick} buttonText={'Registrarse'} /> 

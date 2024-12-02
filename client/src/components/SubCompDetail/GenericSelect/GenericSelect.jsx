@@ -1,18 +1,18 @@
-import {useDispatch}from 'react-redux'
+
 
 const GenericSelect = ({ items, functionProp, name, itemText }) => {
- const dispatch = useDispatch()
 
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
-    dispatch(functionProp(selectedValue));
+    console.log('soy el valor ',selectedValue)
+    functionProp(selectedValue)
    
   };
 
   return (
     <div>
       <select onChange={(event) => handleSelectChange(event)}>
-        <option value="All">
+        <option value=''>
           {itemText}
         </option>
         {items.map((item, index) => (

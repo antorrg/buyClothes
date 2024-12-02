@@ -3,9 +3,9 @@
         width: 15rem;
         display: flex;  
         flex-direction: column;
-        background-color:rgb(219, 231, 216);
-        border: 1px solid grey;
-        border-radius: 1rem;
+        background-color:#f5efdc;;
+        border: 1px solid #D4AF37;
+        border-radius: 0rem;
         padding: 1.6rem;
         cursor: pointer;
         -moz-osx-font-smoothing: grayscale;
@@ -15,10 +15,12 @@
         z-index:1;
         margin: 0.7rem; 
         text-decoration:none;
+          /* Agregar sombra */
+        box-shadow: -10px 1px 6px rgba(0, 0, 0, 0.1), -10px 15px 6px rgba(0, 0, 0, 0.1);
     }
     
     .cardContainer:hover {
-        transform: scale(1.05);
+        transform: scale(1.01);
         z-index:2;
     }
     .card {
@@ -26,3 +28,8 @@
         border: 1px solid #ccc;
         margin: 0.7rem;
       }
+/* box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.1), esto es a mi derecha como observador
+0px 4px 6px rgba(0, 0, 0, 0.1); esto es abajo como observador
+0px -4px 6px rgba(0, 0, 0, 0.1), esto seria arriba
+-4px 0px 6px rgba(0, 0, 0, 0.1); esto seria a la izquierda
+*/

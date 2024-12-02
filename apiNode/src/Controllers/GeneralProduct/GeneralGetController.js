@@ -1,10 +1,16 @@
 import { GeneralProduct, Product1, Category, Discipline, Genre, Extra, Trademarck, } from '../../database.js';
 import formatProductData from '../../Helpers/formatProductData.js';
+import {prevPageUrl, nextPageUrl} from './helpers/index.js'
 
-const generalProdGet = async (req, res) => {
-    try {
-        // Obtener todos los productos generales con sus variantes y relaciones
-        const dataFound = await GeneralProduct.findAll({
+const generalProdGet = async (req, page) => {
+      const pageSize = 3;
+      const offSet = (page-1)*pageSize
+    try {    
+        const {rows: dataFound, count: totalCount }= await GeneralProduct.findAndCountAll({
+                limit: pageSize,
+                offset: offSet,
+                distinct: true,
+
             include: [
                 { model: Category, attributes: ['name'] , through: { attributes: [] } },
                 { model: Discipline, attributes: ['name'] , through: { attributes: [] } },
@@ -20,10 +26,23 @@ const generalProdGet = async (req, res) => {
                 
             ],
         });
-        if(dataFound.length===0){throw new Error('The products table is empty')}
-       //Enviar la respuesta con los productos
-        const data = formatProductData(dataFound, false)
-        return data
+        if(dataFound.length===0){throw new Error('Not found. The products table is empty')
+        }else{
+          const data = formatProductData(dataFound, false)
+            const totalPages = Math.ceil(totalCount / pageSize)
+            const responseData = {
+                info: {
+                    count: totalCount,
+                    pages: totalPages,
+                    prev: prevPageUrl(req, totalPages, page),
+                    currentPage: page,
+                    next: nextPageUrl(req, totalPages, page)
+                },
+                results: data,
+            }
+            return responseData;
+        }
+        
     } catch (error) {
         throw error;
     }
@@ -32,10 +51,3 @@ const generalProdGet = async (req, res) => {
 
 
 export default generalProdGet;
-
-// if(dataFound.length===0){throw new Error('The products table is empty')}
-// const data = formatProductData(dataFound, false)
-// return data
-// } catch (error) {
-// throw error;
-// }

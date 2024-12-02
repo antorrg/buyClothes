@@ -1,0 +1,115 @@
+
+.pagination-top  {
+  width: fit-content; /* Cambio de 15vw a fit-content */
+  height: auto; /* Cambio de 0.10vh a auto */
+  background-color: none;
+  position: fixed;
+  top: 8rem; /* Ajustado para que esté justo debajo de la barra de navegación */
+  left: 50%; /* Añadido para centrar horizontalmente */
+  transform: translateX(-50%); /* Añadido para centrar horizontalmente */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  /* z-index: 0; */
+}
+.pagination-bottom {
+  width: fit-content; /* Cambio de 15vw a fit-content */
+  height: auto; /* Cambio de 0.10vh a auto */
+  background-color: none;
+  position: fixed;
+  bottom: 1rem; /* Ajustado para que esté justo debajo de la barra de navegación */
+  left: 50%; /* Añadido para centrar horizontalmente */
+  transform: translateX(-50%); /* Añadido para centrar horizontalmente */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  /* z-index: 0; */
+}
+  
+  .pagMain {
+    flex: 1;
+   
+  }
+  
+  .pagNavigate {
+    
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    
+    margin-bottom: 15px;
+  }
+  
+  .span {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .button {
+    background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+    padding: 0.09rem .8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(235, 229, 236);
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin: 5px;
+  }
+  
+  .button:hover {
+    background: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  }
+  
+  .button:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para el botón de la hamburguesa */
+  .hamburgerButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    display: none; /* Por defecto, ocultar el botón en pantallas no móviles */
+  }
+  
+  /* Estilos para las líneas del botón de la hamburguesa */
+  .hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    display: block;
+    z-index: 1000;
+  }
+  
+  /* Estilos para el menú hamburguesa cuando está abierto */
+  .navNavigateOpen {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Media query para mostrar el botón de la hamburguesa en dispositivos móviles */
+  @media screen and (max-width: 768px) {
+    .hamburgerButton {
+        display: block;
+        z-index: 1000;
+    }
+    .navbarContainer{
+      background: none;
+    }
+  
+    .navNavigate {
+        display: none;
+    }
+  }
+  

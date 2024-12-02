@@ -1,7 +1,8 @@
 .button {
-    background: rgb(231, 195, 167);
-    padding: 0.25rem 1.2rem; /* Ajusta el padding según tu preferencia */
-    font-size: 1.2rem; /* Tamaño de la fuente */
+    background:transparent;
+    /* background: rgb(231, 195, 167); */
+    /*padding: 0.25rem 1.2rem;  Ajusta el padding según tu preferencia */
+    font-size: 1.1rem; /* Tamaño de la fuente */
     font-weight: bold; /* Negrita */
     color: rgb(7, 69, 27);
     border: none;
@@ -11,7 +12,8 @@
   }
   
   .button:hover {
-    /* background: rgb(211, 175, 147); Cambia el color en hover */
+    background: rgb(242, 221, 204); 
+     /*background: rgb(211, 175, 147); /*Cambia el color en hover */
     box-shadow: 
     0 0 5px rgb(255, 248, 243),
     0 0 10px rgb(252, 234, 220),
@@ -26,4 +28,9 @@
     transform: translateY(2px); /* Efecto de hundimiento en click */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /*Sombra ligera en click*/
  
+  }
+
+  .button:disabled {
+    opacity: 0.5; /* Cambia la opacidad del botón */
+    cursor: not-allowed; 
   }

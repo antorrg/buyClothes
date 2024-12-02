@@ -1,7 +1,18 @@
 import { GeneralProduct, Product1, Category, Discipline, Genre, Extra, Trademarck, } from '../../database.js';
+import {Op} from 'sequelize'
 import formatProductData from '../../Helpers/formatProductData.js';
-const generalProdGetById = async(id)=>{
+import {sizeFilter, colorFilter} from './helpers/getById.js'
+const generalProdGetById = async(id, size, color,)=>{
     try {
+        const searchConditions = {};
+        if (size) {
+            searchConditions.size = size;
+        }
+        if (color) {
+            searchConditions['$Product1.Extra.name$'] = color;
+        }
+        const sizeClause = sizeFilter(size)
+        const colorClause = colorFilter(color)
         // Obtener todos los productos generales con sus variantes y relaciones
         const dataFound = await GeneralProduct.findByPk(id, {
             include: [
@@ -12,9 +23,13 @@ const generalProdGetById = async(id)=>{
                 {
                     model: Product1,
                     include: [
-                        { model: Extra, attributes: ['name'] , through: { attributes: [] } },
+                        { model: Extra, 
+                            where: colorClause,
+                            attributes: ['name'] , through: { attributes: [] }, 
+                        },
                         // Puedes agregar otras relaciones aquí según sea necesario
                     ],
+                    where: sizeClause
                 },
                 
             ],
@@ -29,5 +44,4 @@ const generalProdGetById = async(id)=>{
 };
 
 export default generalProdGetById;
-
 

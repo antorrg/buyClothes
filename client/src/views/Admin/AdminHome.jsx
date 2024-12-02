@@ -9,8 +9,8 @@ import {Link}from 'react-router-dom'
 
 function AdminHome() {
   const {authenticated, user}=useAuth();
-  console.log(authenticated)
-  console.log('user: '+user)
+  //console.log(authenticated)
+  //console.log('user: '+user)
   
   const users = useSelector((state)=>state.allUsers)
   const char = users

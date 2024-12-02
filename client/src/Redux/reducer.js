@@ -17,15 +17,15 @@ const initialState = {
   isAuthenticate: false,
   detailUsers: [],
   products: [],
+  currentPage:1,
+  totalPages: 1,
+  loading:true,
   prodById: [],
   detailProd: [],
-  allDetailProd: [],
   prodByName: [],
 };
 
 const reducer = (state = initialState, { type, payload }) => {
-    let selectsSizes = [...state.allDetailProd];
-    let selectsColor = [...state.allDetailProd];
 
   switch (type) {
     case LOGIN_USER:
@@ -67,63 +67,20 @@ const reducer = (state = initialState, { type, payload }) => {
     case GET_PRODUCTS:
       return {
         ...state,
-        products: payload,
+        products: payload.results,
+        currentPage: payload.info.currentPage,
+        totalPages: payload.info.pages,
+        loading: false,
       };
     case PROD_BY_ID:
-      console.log("estoy en el reducer " + payload);
+      //console.log("estoy en el reducer " + payload);
       return {
         ...state,
         prodById: payload,
         detailProd: payload.Product1s,
-        allDetailProd: payload.Product1s,
+       // allDetailProd: payload.Product1s,
       };
   //!--------------------------------------------------------------------------------------------
-//!----------------------------------------------------------------------------------------------
-      case GET_SIZES:
-    console.log(payload);
-    selectsSizes = [...state.allDetailProd];
-    if (payload !== "All") {
-      selectsSizes = selectsSizes.filter((prod) =>
-        prod.sizes.includes(payload)
-      );
-    }
-    if (selectsSizes.length === 0) {
-      alert(
-        "No hay prendas con este tamaño. Para buscar otro tamaño, vuelva el selector a la posición inicial."
-      );
-    }
-    return{
-      ...state,
-      detailProd: selectsSizes,
-    }
-
-  case GET_COLOR:
-    console.log(payload);
-    selectsColor = [...state.detailProd];
-    if (payload !== "All") {
-      selectsColor = selectsColor.filter((prod) =>
-        prod.extras.includes(payload)
-      );
-    }
-    if (selectsColor.length === 0) {
-      alert(
-        "No hay prendas con este color. Para buscar otro color, vuelva el selector a la posición inicial."
-      );
-    }
-    
-  // // Combina ambas selecciones, utilizando solo los productos que cumplen ambas condiciones
-  // const combinedSelection = selectsSizes.filter((prod) =>
-  //   selectsColor.some((selectedProd) => selectedProd.order === prod.order)
-  // );
-  return{
-    ...state,
-    detailProd: selectsColor,
-  }
-  // return {
-  //   ...state,
-  //   //detailProd: combinedSelection,
-  //   detailProd: combinedSelection,
-  // };
     //? +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     default:
       return {
