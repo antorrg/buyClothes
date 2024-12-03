@@ -1,13 +1,24 @@
 import eh from '../utils/errors/errorHandlers.js'
 import * as parser from '../Helpers/universalHelpers.js'
+import { deleteImages } from '../services/mediaService.js';
 import NodeCache from 'node-cache';
 
 const cache = new NodeCache({ stdTTL: 1800 }); // TTL (Time To Live) de media hora
 
 class GenericService {
-    constructor(Model, useCache= false) {
+    constructor(Model, useCache= false, useImage= false) {
         this.Model = Model;
         this.useCache = useCache;
+        this.useImage = useImage;
+    }
+    clearCache() {
+        cache.del(`${this.Model.name.toLowerCase()}`);
+    }
+
+    async handleImageDeletion(imageUrl) {
+        if (this.useImage && imageUrl) {
+            await deleteImages(imageUrl);
+        }
     }
 
     async create(data, uniqueField=null, parserFunction=null) {
@@ -27,10 +38,10 @@ class GenericService {
             return parserFunction ? parserFunction(newRecord) : newRecord;
             
         } catch (error) {
-            eh.throwError(`Error creating ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
-    async getAll(parserFunction = null) {
+    async getAll(parserFunction = false) {
         let cacheKey = `${this.Model.name.toLowerCase()}`;
         if (this.useCache) { let cachedData = cache.get(cacheKey);
             if (cachedData) {
@@ -53,13 +64,13 @@ class GenericService {
             
             const dataParsed = parserFunction ? data.map(parserFunction) : data;
             if (this.useCache) {
-                cache.set(cacheKey, parsedData)}
+                cache.set(cacheKey, dataParsed)}
                 
             return {data: dataParsed,
                    cache: false
                    }
         } catch (error) {
-            eh.throwError(`Error retrieving ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
     async getById(id, parserFunction = null) {
@@ -72,11 +83,12 @@ class GenericService {
             
             return parserFunction ? parserFunction(data) : data;
         } catch (error) {
-            eh.throwError(`Error retrieving ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 
     async update(id, newData, parserFunction=null) {
+        let imageUrl =''
         try {
             const dataFound = await this.Model.findByPk(id);
             
@@ -88,17 +100,23 @@ class GenericService {
             if (newData.enable !== undefined) {
                 newData.enable = parser.parserBoolean(newData.enable);
             }
-            const upData = await dataFound.update(newData);
-            if (this.useCache) {
-                cache.del(`${this.Model.name.toLowerCase()}`);
+            if(this.useImage && dataFound.picture && dataFound.picture !== newData.picture){
+             imageUrl= dataFound.picture;
             }
+            
+            const upData = await dataFound.update(newData);
+
+            await this.handleImageDeletion(imageUrl);
+            
+            if (this.useCache) clearCache();
             return parserFunction ? parserFunction(upData) : upData;
         } catch (error) {
-            eh.throwError(`Error updating ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 
     async patcher(id, newData, parserFunction=null) {
+        let imageUrl =''
         try {
             const dataFound = await this.Model.findByPk(id);
             
@@ -110,37 +128,45 @@ class GenericService {
             if (newData.enable !== undefined) {
                 newData.enable = parser.parserBoolean(newData.enable);
             }
-            
+            if(this.useImage && dataFound.picture && dataFound.picture !== newData.picture){
+                imageUrl= dataFound.picture;
+               }
             const upData = await dataFound.update(newData);
+
+            await this.handleImageDeletion(imageUrl);
             
-            if (this.useCache) {
-                cache.del(`${this.Model.name.toLowerCase()}`);
-            }
+            if (this.useCache) clearCache();
+
             return parserFunction ? parserFunction(upData) : upData;
             //return `${this.Model.name} updated succesfully`;
         } catch (error) {
-            eh.throwError(`Error updating ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 
     async delete(id, isHard) {
+        let imageUrl =''
         try {
             const dataFound = await this.Model.findByPk(id);
             if (!dataFound) {
                 eh.throwError(`${this.Model} not found`, 404);
             }
+            this.useImage? imageUrl = dataFound.picture : '';
             if(isHard){
                 await dataFound.destroy();
+                await this.handleImageDeletion(imageUrl);
+
+                if (this.useCache) clearCache();
                 return `${this.Model.name} deleted successfully`;
             }
              await dataFound.update({ deletedAt: true });
+             await this.handleImageDeletion(imageUrl);
 
-             if (this.useCache) {
-                cache.del(`${this.Model.name.toLowerCase()}`);
-            }
+             if (this.useCache) clearCache();
+
              return `${this.Model.name} deleted successfully`;
         } catch (error) {
-            eh.throwError(`Error deleting ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 }

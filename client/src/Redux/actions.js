@@ -18,7 +18,7 @@ export const getAllUsers = ()=>{
       const data = await axios("/user");
       return dispatch({
         type:ALL_USERS,
-        payload: data.data,
+        payload: data.data.data,
       })
     } catch (error) {
       HandlError(error)
@@ -31,7 +31,7 @@ export const getById = (id, token) => async (dispatch) => {
     const data = await axios(`/user/${id}`, setAuthHeader(token));
     return dispatch({
       type: USER_BY_ID,
-      payload:data.data,
+      payload:data.data.data,
     });
   } catch (error) {
     HandlError(error)
@@ -68,10 +68,10 @@ export const isNotAuth =()=>(dispatch)=>{
 export const getAllProducts = (page)=>{
   return async (dispatch)=>{
     try {
-      const data = await axios(`/?page=${page}`);
+      const data = await axios(`/?page=${page}&size=3`);
       return dispatch({
         type:GET_PRODUCTS,
-        payload: data.data,
+        payload: data.data.data,
       })
     } catch (error) {
       HandlError(error)
@@ -85,7 +85,7 @@ export const productById = (id, size, color, token) => async (dispatch) => {
     const data = await axios(`/${id}?size=${size}&color=${color}`, setAuthHeader(token));
     return dispatch({
       type: PROD_BY_ID,
-      payload:data.data,
+      payload:data.data.data,
     });
   } catch (error) {
     HandlError(error)
@@ -98,7 +98,7 @@ export const resetFilters = (id) => async (dispatch) => {
   const data = await axios(`/${id}`);
     return dispatch({
       type: PROD_BY_ID,
-      payload: data.data,
+      payload: data.data.data,
     });
   
 };

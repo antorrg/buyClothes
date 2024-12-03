@@ -62,7 +62,7 @@ class ProductService extends GenericService{
             if (transaction) {
                 await transaction.rollback();
             }
-            eh.throwError(`Error creating ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
     async createVariant( data) {
@@ -124,7 +124,7 @@ class ProductService extends GenericService{
             if (transaction) {
                 await transaction.rollback();
             }
-            eh.throwError(`Error creating ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
      
@@ -171,7 +171,7 @@ class ProductService extends GenericService{
                 data: responseData}
             }
         } catch (error) {
-            eh.throwError(`Error retrieving ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 
@@ -216,7 +216,7 @@ class ProductService extends GenericService{
             return parserFunction ? parserFunction(dataFound) : dataFound;
 
         } catch (error) {
-            eh.throwError(`Error retrieving ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
         // Método para eliminar un producto general y sus variantes (Product1)
@@ -252,7 +252,7 @@ class ProductService extends GenericService{
             if (transaction) {
                 await transaction.rollback();
             }
-            eh.throwError(`Error deleting ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 }

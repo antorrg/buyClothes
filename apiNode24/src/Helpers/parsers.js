@@ -9,7 +9,7 @@ export const generalParser = (info)=>{//discipline, extra, genre, trademarck, ca
 export const companyParser = (info)=>{
     return {
         id: info.id,
-        name : info.name.map().join(', '),
+        name : info.name.map(nm =>nm).join(', '),
         picture: info.picture,
         email: info.email,
         web_site: info.web_site,

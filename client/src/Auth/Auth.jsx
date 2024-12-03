@@ -40,8 +40,8 @@ const loginUser = async(userData,login)=>{
         });
         if (response.status === 200) {
           console.log(response.data.data)
-          const token = response.data.token;
-          const user = response.data.data;
+          const token = response.data.data.token;
+          const user = response.data.data.user;
           login(token, user);
           console.log(token)
           console.log("Token almacenado en localStorage:", localStorage.getItem('validToken'));

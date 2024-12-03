@@ -21,7 +21,7 @@ class UserService extends GenericService{
         const newRecord = await this.Model.create(data);
         return parserFunction ? parserFunction(newRecord) : newRecord;
        }catch(error){
-        eh.throwError(`Error creating ${this.Model.name.toLowerCase()}`, 500);
+        throw error;
        }
     }
     async login(data, parserFunction = null) {
@@ -45,7 +45,7 @@ class UserService extends GenericService{
                 token: generateToken(existingRecord)
             }
         } catch (error) {
-            eh.throwError(`Error logging ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 

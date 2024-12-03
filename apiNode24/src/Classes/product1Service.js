@@ -28,7 +28,7 @@ class Product1Service extends GenericService{
             
             return parserFunction ? data.map(parserFunction) : data;
         } catch (error) {
-            eh.throwError(`Error retrieving ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
     async getById(id, parserFunction = null) {
@@ -47,7 +47,7 @@ class Product1Service extends GenericService{
             }
             return parserFunction ? parserFunction(data) : data;
         } catch (error) {
-            eh.throwError(`Error retrieving ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
     async update(id, newData){
@@ -70,7 +70,7 @@ class Product1Service extends GenericService{
             return upData
             //return `${this.Model.name} updated succesfully`;
         } catch (error) {
-            eh.throwError(`Error updating ${this.Model.name.toLowerCase()}`, 500);
+            throw error;
         }
     }
 }

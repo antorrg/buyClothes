@@ -3,7 +3,7 @@ import GenericService from '../Classes/genericServices.js'
 import GenericController from '../Classes/genericController.js';
 import * as parser from '../Helpers/parsers.js'
 import parserUser from '../Helpers/parserUser.js'
-import UserService from '../Classes/UserService.js';
+import UserService from '../Classes/userService.js';
 import ProductService from '../Classes/GeneralProductServices.js';
 import Product1Service from '../Classes/Product1Service.js';
 import { generalProductParser, product1Parser } from '../Helpers/generalProductParser..js';
@@ -22,8 +22,8 @@ export const extra = new GenericController(extraService, parser.generalParser)
 const ratingService = new GenericService(db.Rating)
 export const rating = new GenericController(ratingService, parser.ratingParser)
 
-const companyService = new GenericService(db.Company)
-export const company = new GenericController(companyService, parser.companyParser)
+const companyService = new GenericService(db.Company, false, true)
+export const company = new GenericController(companyService, parser.companyParser, false)
 
 const salesService = new GenericService(db.Sales)
 export const sales = new GenericController(salesService, parser.salesParser)
@@ -45,7 +45,7 @@ export const generalProduct = new GenericController(generalProductService, gener
 
 //*%%%%%%%% Funciones y controlador de usuario: 
 
-export const usersService = new UserService(db.User)
+export const usersService = new UserService(db.User, false, true)
 
 export const userController = new GenericController(usersService, parserUser)
 

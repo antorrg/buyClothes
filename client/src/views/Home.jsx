@@ -32,7 +32,7 @@ function Home() {
         {loading? 
         <Loading/>:
         <>
-        {/* <Pagination page={page} setPage={setPage} totalPages={totalPages} position={true}/> */}
+         <Pagination page={page} setPage={setPage} totalPages={totalPages} position={true}/> 
         <Cards character = {char}/>
         <Pagination page={page} setPage={setPage} totalPages={totalPages} position={false} />
         </>}

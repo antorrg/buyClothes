@@ -1,5 +1,5 @@
 import express from 'express';
-import {generalProduct, product1, category, extra, rating, trademarck, discipline, genre  } from '../Controllers/servicesAndControllers.js'
+import {generalProduct, product1, category, extra, rating, trademarck, discipline, genre, company  } from '../Controllers/servicesAndControllers.js'
 import mid from '../middlewares/middlewares.js'
 
 const productsRouter = express.Router();
@@ -43,7 +43,11 @@ productsRouter.post('/sub/gen',genre.create);
 productsRouter.get('/sub/gen',genre.getAll);
 productsRouter.put('/sub/gen/:id', genre.update);
 productsRouter.delete('/sub/gen/:id',genre.delete);
-
+//*====== CRUD Company ==================================================
+productsRouter.post('/sub/company/create', company.create);
+productsRouter.get('/sub/company',company.getAll);
+productsRouter.put('/sub/company/:id', company.update);
+productsRouter.delete('/sub/company/:id',company.delete);
 
 
 
