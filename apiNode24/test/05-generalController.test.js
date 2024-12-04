@@ -19,19 +19,20 @@ describe('Test de rutas Usuario, Project, Landing', () => {
                     .expect('Content-Type', /json/)
                     .expect(201);
                     const result = help.userParser(response)
-                    console.log(response.body)
-                expect(response.body).toMatchObject(help.respUserCreate)
-                store.setUserId(response.body.id)
+                expect(response.body.results).toMatchObject(help.respUserCreate)
+                store.setUserId(response.body.results.id)
             })
-            xit('Deberia responder con status 400 si faltan parametros', async () => {
-                const email = "josenomeacuerdo@hotmail.com";
-                const password = ''
+            it('Deberia responder con status 400 si faltan parametros', async () => {
+                const email = "josenomeacuerdo. ..otmail.com";
+                const password = 'L1234567'
+                const picture = 'url'
+                const role = 1;
                 const response = await agent
-                    .post('/api/user/create')
-                    .send({ email, password })
+                    .post('/test/user/create')
+                    .send({  email, password, picture, role })
                     .expect('Content-Type', /json/)
                     .expect(400);
-                expect(response.body).toEqual({ error: "missing password" })
+                expect(response.body.message).toEqual("Invalid email format" )
             })
         })
     })

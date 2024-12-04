@@ -14,15 +14,13 @@ export const userParser  = ({info})=>{
   }
 }
 export const respUserCreate = {
-    "id": expect.any(String),
-    "email": "josenomeacuerdo@hotmail.com",
-    "password": expect.any(String),
+"id": expect.any(String),
+"email": "josenomeacuerdo@hotmail.com",
 "nickname": "josenomeacuerdo",
-"name": null,
-"surname": null,
+"name": "unknown",
+"surname": "unknown",
 "picture": "url",
-"role": 1,
-"country": null,
-"enable": true,
-"deletedAt": false,
+"role": "User",
+"country": "unknown",
+"enable": "active",
 }

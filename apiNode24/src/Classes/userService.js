@@ -1,11 +1,12 @@
 import GenericService from './genericServices.js';
+import eh from '../utils/errors/errorHandlers.js'
 import bcrypt from 'bcrypt'
 import {generateToken} from '../middlewares/jwt.js'
 
 
 class UserService extends GenericService{
-    constructor(Model){
-        super(Model)
+    constructor(Model, useCache= false, useImage= false){
+        super(Model, useCache, useImage)
     }
 
     async create(data, uniqueField= null, parserFunction= null) {

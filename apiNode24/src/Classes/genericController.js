@@ -6,8 +6,8 @@ class GenericController {
         this.parserFunction = parserFunction || null;
         this.isHard = isHard || false;
     }
-    static responder(res, status, success, message = null, data = null, ) {
-        res.status(status).json({ success,  message , data});
+    static responder(res, status, success, message = null, results = null, ) {
+        res.status(status).json({ success,  message , results});
     }
     create = eh.catchController(async (req, res) => {
         const {uniqueField, ...data}  = req.body;

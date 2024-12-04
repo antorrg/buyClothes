@@ -4,7 +4,7 @@ import GenericController from '../../src/Classes/genericController.js'
 import UserService from '../../src/Classes/userService.js'
 import GenericService from '../../src/Classes/genericServices.js'
 import  parserUser  from '../../src/Helpers/parserUser.js'
-import mid from '../../src/middlewares/appMiddlewares.js'
+import mid from '../../src/middlewares/middlewares.js'
 
 import * as store from './testStore.js'
 const user = new UserService(User)
@@ -15,7 +15,7 @@ const productController = new GenericController(cat)
 const constrollerServer = express()
 constrollerServer.use(express.json())
 
-constrollerServer.post('/test/user/create', userController.create)
+constrollerServer.post('/test/user/create',mid.createUser, userController.create)
 
 constrollerServer.post('/test/user/login', userController.login)
 

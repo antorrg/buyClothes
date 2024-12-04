@@ -14,13 +14,13 @@ export default {
           next();
         }
       },
-      errorEndWare : (err, req, res, next) => {
-        const status = err.status || 500;
-        const message = err.message || "Error interno del servidor";
-        console.error(err);
+      errorEndWare : (error, req, res, next) => {
+        const status = error.status || 500;
+        const message = error.message || "Error interno del servidor";
+        console.error(error);
         res.status(status).json({
             success: false,
-            data: null,
+            results:null,
             message,
         });
     }
