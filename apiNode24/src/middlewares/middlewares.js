@@ -133,52 +133,6 @@ validateMethodGet :  (req, res, next) => {
            if (id && !idIsNumber) {return next(eh.middError('Invalid parameters', 400))}
             next()
     },
-//*%%%%%%%%%  Usuarios: %%%%%%%%%%%%%%%%%%%%%%%%%%
-createUser : async (req, res, next)=>{
-    if (req.method !== 'POST'){return next(eh.middError(`Method ${req.method} Not Allowed`,405))}
-    const{email, password, picture, role}= req.body;
-    const defaultPicture = env.UserImage;
-    const defaultRole = 1;
-    // Validar si existe el email y su formato usando una expresión regular
-    if(!email){return next(eh.middError('Missing email',400))}
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {return next(eh.middError('Invalid email format',400))}
-    //Password 
-    if(!password){return next(eh.middError('Missing User ID',400))}
-    //picture:
-    if(!picture){req.body.picture = defaultPicture}
-    if(!role){req.body.role = defaultRole}
-    
-    next()
-},
-loginUser : async (req, res, next)=>{
-    if (req.method !== 'POST'){return next(eh.middError(`Method ${req.method} Not Allowed`,405))}
-    const{email, password}= req.body;
-    // Validar si existe el email y su formato usando una expresión regular
-    if(!email){return next(eh.middError('Missing email',400))}
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {return next(eh.middError('Invalid email format',400))}
-    if(!password){return next(eh.middError('Missing User ID',400))}
-    //const passwordRegex = /^(?=.*[A-Z]).{8,}$/; // Al menos 8 caracteres y una letra mayúscula
-    //if (!passwordRegex.test(password)) {eh.middError('Contraseña invalida. Esta debe tener al menos 8 caracteres y una mayuscula',400)}
-    next()
-},
 
-updUserMidd : (req, res, next) => {
-if (req.method !== 'PUT'){return next(eh.middError(`Method ${req.method} Not Allowed`,405))}
-const { id } = req.params; const newData = req.body;
-// Validar que el ID esté presente
-if (!id) {return next(eh.middError('Missing id',400))}
-// Validar que el ID sea un UUID v4 válido
-if (!uuidValidate(id) || uuidVersion(id) !== 4) {return next(eh.middError('Invalid id format',400))}
-// Validar que el cuerpo de la solicitud esté presente y no vacío
-if (!newData || Object.keys(newData).length === 0) {return next(eh.middError('Missing parameters',400))}
-
-// Puedes agregar validaciones adicionales para los campos esperados en newData
-const requiredFields = ['email', 'given_name', 'picture', 'country',];
-const missingFields = requiredFields.filter(field => !(field in newData));
-if (missingFields.length > 0) {return next(eh.middError(`Missing parameters: ${missingFields.join(', ')}`, 400))}
-next();
-},
  } 
  

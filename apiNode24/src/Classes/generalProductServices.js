@@ -128,7 +128,7 @@ class ProductService extends GenericService{
         }
     }
      
-    async getAll(parserFunction = null, queryObject) {
+    async getAll(parserFunction = null, queryObject, isAdmin=false) {
         const {page, size} = queryObject;
         const pageSize = size;
         const offSet = (page - 1) * pageSize;
@@ -156,7 +156,7 @@ class ProductService extends GenericService{
                 eh.throwError('Not found. The products table is empty', 404);
             } else {
                
-                const data = parserFunction ? dataFound.map(parserFunction) : dataFound
+                const data = parserFunction ? dataFound.map(dat => parserFunction(dat, isAdmin)) : dataFound
                 const totalPages = Math.ceil(totalCount / pageSize);
                 const responseData = {
                     info: {
@@ -175,7 +175,7 @@ class ProductService extends GenericService{
         }
     }
 
-    async getById(id, parserFunction=null, queryObject) {
+    async getById(id, parserFunction=null, queryObject, isAdmin=false) {
         const {size, color} = queryObject;
         try {
             const searchConditions = {};
@@ -213,7 +213,7 @@ class ProductService extends GenericService{
             if (!dataFound) {
                 eh.throwError('The product was not found', 404);
             }
-            return parserFunction ? parserFunction(dataFound) : dataFound;
+            return parserFunction ? parserFunction(dataFound, isAdmin) : dataFound;
 
         } catch (error) {
             throw error;

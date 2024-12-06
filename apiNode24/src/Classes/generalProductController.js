@@ -1,6 +1,6 @@
 import eh from '../utils/errors/errorHandlers.js'
 
-class GenericController {
+class GeneralProductController {
     constructor(service, parserFunction, isHard) {
         this.service = service;
         this.parserFunction = parserFunction || null;
@@ -35,7 +35,7 @@ class GenericController {
         const queryObject = req.query || null;
         const {isAdmin}= req.query
         console.log('req.query: ', queryObject)
-        const response = await this.service.getAll( this.parserFunction,queryObject, isAdmin);
+        const response = await this.service.getAll(uniqueField, this.parserFunction, isAdmin);
         if(response.cache===true){return GenericController.responder(res, 203, true,  null , response.data, )}
         return GenericController.responder(res, 200, true,  null , response.data, )
     });
@@ -43,8 +43,7 @@ class GenericController {
     getById = eh.catchController(async (req, res) => {
         const { id } = req.params;
         const queryObject = req.query || null;
-        const {isAdmin}= req.query
-        const response = await this.service.getById(id,this.parserFunction, queryObject, isAdmin);
+        const response = await this.service.getById(id,this.parserFunction, queryObject);
         return GenericController.responder(res, 200, true, null, response, )
     });
 
@@ -68,4 +67,4 @@ class GenericController {
     });
 }
 
-export default GenericController;
+export default GeneralProductController;

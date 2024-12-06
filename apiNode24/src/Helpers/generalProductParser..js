@@ -1,7 +1,8 @@
+import { filterData } from "./universalHelpers.js";
 
-export const product1Parser = (product)=>{
-    return {
-        id: product.id,
+export const product1Parser = (product, isAdmin)=>{
+  
+        return { id: product.id,
         order: product.order,
         characteristics: product.characteristics,
         images: product.images.map(img => img),
@@ -9,10 +10,16 @@ export const product1Parser = (product)=>{
         stock: product.stock,
         size: product.size,
         extras: product.Extras.map(name=>name.name).join(','),
-        enable: product.enable,
-    }
+        enable: isAdmin ? product.enable : (product.enable || null),
+        // Si no es admin, solo muestra el producto si está habilitado
+        ...(isAdmin || product.enable ? {} : null)
+        }
+    
 };
-export const generalProductParser = (genProduct) => {
+export const generalProductParser = (genProduct, isAdmin) => {
+  if (!isAdmin && !genProduct.enable) {
+    return null;
+}
     return {
       id: genProduct.id,
       name: genProduct.name,
@@ -22,9 +29,10 @@ export const generalProductParser = (genProduct) => {
        Disciplines: genProduct.Disciplines.map(disc => disc.name)[0],
        Genres: genProduct.Genres.map(genre => genre.name)[0],
        Trademarcks: genProduct.Trademarcks.map(trade => trade.name)[0],
-      enable: genProduct.enable,
+      enable:  genProduct.enable,
       createdAt: genProduct.createdAt,
       updatedAt: genProduct.updatedAt,
+      
   
       Product1s: genProduct.Product1s.map(product => ({
         id: product.id,
@@ -35,7 +43,9 @@ export const generalProductParser = (genProduct) => {
         stock: product.stock,
         size: product.size,
         extras: product.Extras.map(name=>name.name)[0],
-        enable: product.enable,
+        enable: isAdmin ? product.enable : (product.enable || null),
+        // Si no es admin, solo muestra el producto si está habilitado
+        ...(isAdmin || product.enable ? {} : null)
       })),
     };
     

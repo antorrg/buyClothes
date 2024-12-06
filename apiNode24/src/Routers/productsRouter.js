@@ -1,18 +1,19 @@
 import express from 'express';
 import {generalProduct, product1, category, extra, rating, trademarck, discipline, genre, company  } from '../Controllers/servicesAndControllers.js'
 import mid from '../middlewares/middlewares.js'
+import * as jwt from '../middlewares/jwt.js'
 
 const productsRouter = express.Router();
 //?>>>>>>>>>>>> CRUD GeneralProduct <<<<<<<<<<<<<<<<<<<<<<<<
-productsRouter.get('/', mid.genProdGetAll, generalProduct.getAll);
-productsRouter.get('/:id', generalProduct.getById);
+productsRouter.get('/', jwt.setAdminVar, mid.genProdGetAll, generalProduct.getAll);
+productsRouter.get('/:id', jwt.setAdminVar, generalProduct.getById);
 productsRouter.post('/', generalProduct.create);
-// productsRouter.put('/:id', generalUpdateHandle);
+productsRouter.put('/:id', generalProduct.update);
 // productsRouter.delete('/:id', generalDeleteHandler);
 //?>>>>>>>>>>>> CRUD Products1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-productsRouter.get('/depend/', product1.getAll);
+productsRouter.get('/depend/', jwt.setAdminVar,product1.getAll);
 productsRouter.put('/depend/:id', product1.update);
-productsRouter.get('/depend/:id', product1.getById);
+productsRouter.get('/depend/:id', jwt.setAdminVar,product1.getById);
 //*=========CRUD Category ===========================================
 productsRouter.post('/sub/cat', category.create);
 productsRouter.get('/sub/cat',category.getAll);

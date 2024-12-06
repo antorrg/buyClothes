@@ -21,7 +21,7 @@ class GenericService {
         }
     }
 
-    async create(data, uniqueField=null, parserFunction=null) {
+    async create(data, uniqueField=null, parserFunction=null, isAdmin = false) {
         try {
             const whereClause = {deletedAt: false,};
             if (uniqueField) {
@@ -35,13 +35,13 @@ class GenericService {
             
             const newRecord = await this.Model.create(data);
             
-            return parserFunction ? parserFunction(newRecord) : newRecord;
+            return parserFunction ? parserFunction(data, isAdmin) : data;
             
         } catch (error) {
             throw error;
         }
     }
-    async getAll(parserFunction = false) {
+    async getAll(parserFunction = false, isAdmin = false) {
         let cacheKey = `${this.Model.name.toLowerCase()}`;
         if (this.useCache) { let cachedData = cache.get(cacheKey);
             if (cachedData) {
@@ -52,6 +52,7 @@ class GenericService {
             }
         }
         try {
+            
             const data = await this.Model.findAll({
                 where: {
                     deletedAt: false
@@ -62,7 +63,7 @@ class GenericService {
                 eh.throwError(`The ${this.Model.name.toLowerCase()} table is empty!!`, 400);
             }
             
-            const dataParsed = parserFunction ? data.map(parserFunction) : data;
+            const dataParsed =  parserFunction ? data.map(dat => parserFunction(dat,isAdmin)) : data;
             if (this.useCache) {
                 cache.set(cacheKey, dataParsed)}
                 
@@ -73,7 +74,7 @@ class GenericService {
             throw error;
         }
     }
-    async getById(id, parserFunction = null) {
+    async getById(id, parserFunction = null, isAdmin = false) {
         try {
             const data = await this.Model.findByPk(id);
             
@@ -81,13 +82,13 @@ class GenericService {
                 eh.throwError(`The ${this.Model.name.toLowerCase()} table is empty!!`, 400);
             }
             
-            return parserFunction ? parserFunction(data) : data;
+            return parserFunction ? parserFunction(data, isAdmin) : data;
         } catch (error) {
             throw error;
         }
     }
 
-    async update(id, newData, parserFunction=null) {
+    async update(id, newData, parserFunction=null, isAdmin = false) {
         let imageUrl =''
         try {
             const dataFound = await this.Model.findByPk(id);
@@ -109,13 +110,13 @@ class GenericService {
             await this.handleImageDeletion(imageUrl);
             
             if (this.useCache) clearCache();
-            return parserFunction ? parserFunction(upData) : upData;
+            return parserFunction ? parserFunction(upData, isAdmin) : upData;
         } catch (error) {
             throw error;
         }
     }
 
-    async patcher(id, newData, parserFunction=null) {
+    async patcher(id, newData, parserFunction=null, isAdmin = false) {
         let imageUrl =''
         try {
             const dataFound = await this.Model.findByPk(id);
@@ -137,7 +138,7 @@ class GenericService {
             
             if (this.useCache) clearCache();
 
-            return parserFunction ? parserFunction(upData) : upData;
+            return parserFunction ? parserFunction(upData, isAdmin) : upData;
             //return `${this.Model.name} updated succesfully`;
         } catch (error) {
             throw error;

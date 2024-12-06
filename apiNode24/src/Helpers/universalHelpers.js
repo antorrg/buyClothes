@@ -15,3 +15,11 @@ export const parserInteger = (info) => {
         return null; // No es un número entero válido
     }
 };
+export function filterData (data, isAdmin, emptyData=null){
+    
+    const item = isAdmin? data : data.filter(item =>item.enable===true);
+    if(item.length===0 && emptyData){
+        return emptyData()
+    }
+    return item;
+  }

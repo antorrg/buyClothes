@@ -7,7 +7,8 @@ class Product1Service extends GenericService{
     constructor(Model){
         super(Model)
     }
-    async getAll(generalProdId, parserFunction = null) {
+    async getAll(generalProdId, parserFunction = null, isAdmin = false) {
+      
         try {
             const data = await this.Model.findAll({
                 where: {
@@ -26,12 +27,12 @@ class Product1Service extends GenericService{
                 eh.throwError(`No records found in the ${this.Model.name} table.`, 404);
             }
             
-            return parserFunction ? data.map(parserFunction) : data;
+            return parserFunction ? data.map(dat => parserFunction(dat,isAdmin)) : data;
         } catch (error) {
             throw error;
         }
     }
-    async getById(id, parserFunction = null) {
+    async getById(id, parserFunction = null, isAdmin = false) {
         try {
             const data = await this.Model.findByPk(id, {
                 include: [
@@ -45,7 +46,7 @@ class Product1Service extends GenericService{
             if (!data) {
                 eh.throwError(`No records found in the ${this.Model.name} table.`, 404);
             }
-            return parserFunction ? parserFunction(data) : data;
+            return parserFunction ? parserFunction(data, isAdmin) : data;
         } catch (error) {
             throw error;
         }
