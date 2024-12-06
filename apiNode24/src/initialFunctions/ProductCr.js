@@ -1,5 +1,5 @@
 import {generalProd} from '../../../data/Info/index.js'
-import {generalProdCreate} from '../GeneralProduct/index.js';
+import {generalProductService} from '../Controllers/servicesAndControllers.js';
 
 
 const productCr = async()=>{
@@ -8,7 +8,7 @@ for (let i = 0; i <generalProd.length; i++) {
 
     try {
         // Llamar al controlador post aquí, usando los datos del json
-        await generalProdCreate(data.name, data.description, data.released, data.category, data.discipline, data.genre, data.trademarck, data.variants);
+        await generalProductService.create(data);
 
         console.log(`Successfully: ${data.name}`);
     } catch (error) {
