@@ -1,10 +1,18 @@
 import dotenv from 'dotenv'
-const envFile = process.env.NODE_ENV==='development'? '.env.development': process.env.NODE_ENV==='test'? '.env.test' : '.env.production';
+
+const configEnv = {
+    development: '.env.development',
+    test: '.env.test',
+    production: '.env'
+  };
+  
+const envFile = configEnv[process.env.NODE_ENV] || '.env';
+
 dotenv.config({ path : envFile })
 
 const status = process.env.NODE_ENV==='development'? 'development': process.env.NODE_ENV==='test'? 'test' : 'production'
 
-const {NODE_ENV,PORT, DB_USER,DB_PASS, DB_HOST, DB_NAME, USER_IMAGE, SECRET_KEY, EMAIL, PASS, IMG, SUDO_AUTH } = process.env
+const {PORT, DB_USER,DB_PASS, DB_HOST, DB_NAME, USER_IMAGE, SECRET_KEY, EMAIL, PASS, IMG, SUDO_AUTH } = process.env
 const DbConnect = `postgres://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}`;
 
 export default {

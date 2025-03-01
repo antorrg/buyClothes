@@ -10,7 +10,7 @@ class Product1Service extends GenericService{
     async getAll(generalProdId, parserFunction = null, isAdmin = false) {
       
         try {
-            const data = await this.Model.findAll({
+            const data = await this.Model.scope(isAdmin ? 'allRecords' : 'enabledOnly').findAll({
                 where: {
                     GeneralProductId:generalProdId
                 },
@@ -27,7 +27,7 @@ class Product1Service extends GenericService{
                 eh.throwError(`No records found in the ${this.Model.name} table.`, 404);
             }
             
-            return parserFunction ? data.map(dat => parserFunction(dat,isAdmin)) : data;
+            return parserFunction ? data.map(dat => parserFunction(dat)) : data;
         } catch (error) {
             throw error;
         }

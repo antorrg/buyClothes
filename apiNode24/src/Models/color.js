@@ -1,15 +1,15 @@
-import {DataTypes}from 'sequelize';
+import {DataTypes} from 'sequelize';
 
 export default (sequelize)=>{
-    sequelize.define('Genre', {
+    sequelize.define('Color', {
         id:{
-            type:DataTypes.INTEGER,
-            primaryKey: true, 
-            autoIncrement: true,
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement:true,
         },
         name:{
             type: DataTypes.STRING,
-            allownull: false
+            allowNull: true,
         },
         enable:{
             type: DataTypes.BOOLEAN,
@@ -19,7 +19,5 @@ export default (sequelize)=>{
             type: DataTypes.BOOLEAN,
             defaultValue:false
         }
-    },
-    {timestamps: true},
-    )
+    })
 }

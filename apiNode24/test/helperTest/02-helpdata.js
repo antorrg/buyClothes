@@ -1,6 +1,7 @@
 
 export const createParser = (info)=>{// for tables discipline, extra, genre, trademarck, category
-    return {
+  //console.log(info)  
+  return {
         id: info.id,
         name:info.name,
         enable:info.enable,
@@ -12,7 +13,7 @@ export const dataCreated = {
     id:1,
     name: "Hola",
     enable: true,
-    deletedAt: false,
+    deletedAt: null,
   };
   export const createParserWithType = (info)=>{// for tables discipline, extra, genre, trademarck, category
     return {

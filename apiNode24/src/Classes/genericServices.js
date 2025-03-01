@@ -23,7 +23,7 @@ class GenericService {
 
     async create(data, uniqueField=null, parserFunction=null, isAdmin = false) {
         try {
-            const whereClause = {deletedAt: false,};
+            let whereClause = {};
             if (uniqueField) {
                 whereClause[uniqueField] = data[uniqueField];
             }
@@ -32,16 +32,16 @@ class GenericService {
             if (existingRecord) {
                 eh.throwError(`This ${this.Model.name.toLowerCase()} ${uniqueField || 'entry'} already exists`, 400);
             }
-            
+           
             const newRecord = await this.Model.create(data);
             
-            return parserFunction ? parserFunction(data, isAdmin) : data;
+            return parserFunction ? parserFunction(newRecord, isAdmin) : newRecord;
             
         } catch (error) {
             throw error;
         }
     }
-    async getAll(parserFunction = false, isAdmin = false) {
+    async getAll(parserFunction = false, emptyData = null, isAdmin = false) {
         let cacheKey = `${this.Model.name.toLowerCase()}`;
         if (this.useCache) { let cachedData = cache.get(cacheKey);
             if (cachedData) {
@@ -52,14 +52,14 @@ class GenericService {
             }
         }
         try {
-            
-            const data = await this.Model.findAll({
-                where: {
-                    deletedAt: false
-                }
-            });
-            
+
+            const data = await this.Model.scope(isAdmin ? 'allRecords' : 'enabledOnly').findAll();
+           
             if (data.length === 0) {
+                emptyData? {data: emptyData(),
+                             cache: false
+                                     } 
+                :
                 eh.throwError(`The ${this.Model.name.toLowerCase()} table is empty!!`, 400);
             }
             
@@ -145,7 +145,7 @@ class GenericService {
         }
     }
 
-    async delete(id, isHard) {
+    async delete(id) {
         let imageUrl =''
         try {
             const dataFound = await this.Model.findByPk(id);
@@ -153,16 +153,9 @@ class GenericService {
                 eh.throwError(`${this.Model} not found`, 404);
             }
             this.useImage? imageUrl = dataFound.picture : '';
-            if(isHard){
+        
                 await dataFound.destroy();
                 await this.handleImageDeletion(imageUrl);
-
-                if (this.useCache) clearCache();
-                return `${this.Model.name} deleted successfully`;
-            }
-             await dataFound.update({ deletedAt: true });
-             await this.handleImageDeletion(imageUrl);
-
              if (this.useCache) clearCache();
 
              return `${this.Model.name} deleted successfully`;

@@ -4,13 +4,13 @@ import * as help from './helperTest/02-helpdata.js'
 import {Category} from '../src/database.js'
 
 
-const test = new GenericService(Category)
+const test = new GenericService(Category, false, false)
 
 describe('Unit testing of the GenericService class: CRUD operations.', ()=>{
   describe('The "create" function for creating a service', ()=>{
     it('should create an element with the correct parameters', async() => {
-      const element = {name:'Hola'};
-      const response = await test.create(element)
+      const element = {name:'Hola', enable :true, deletedAt: false}; //data, uniqueField=null, parserFunction=null, isAdmin = false
+      const response = await test.create(element, 'name', false, true )
       const responseJs = help.createParser(response)
       expect(responseJs).toMatchObject(help.dataCreated) 
     });
@@ -20,7 +20,7 @@ describe('Unit testing of the GenericService class: CRUD operations.', ()=>{
           await test.create(element)
       } catch (error) {
           expect(error).toBeInstanceOf(Error);
-          expect(error.message).toBe(`This category name already exists`);
+          expect(error.message).toBe(`This category entry already exists`);
           expect(error.status).toBe(400);
       }
        });
