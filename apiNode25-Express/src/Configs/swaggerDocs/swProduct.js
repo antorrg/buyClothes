@@ -1,4 +1,3 @@
-
 /**
  * @swagger
  * tags:
@@ -15,7 +14,7 @@
  *     responses:
  *       200:
  *         description: Un arreglo con la portada
- * 
+ *
  */
 
 /**

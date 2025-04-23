@@ -1,22 +1,18 @@
-
-
-let token = '';
-let userId = '';
-
+let token = ''
+let userId = ''
 
 export const setToken = (newToken) => {
-  token = newToken;
-};
+  token = newToken
+}
 
 export const getToken = () => {
-  return token;
-};
+  return token
+}
 
 export const setUserId = (newid) => {
-  userId = newid;
-};
+  userId = newid
+}
 
 export const getUserId = () => {
-  return userId;
-};
-
+  return userId
+}

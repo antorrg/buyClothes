@@ -1,59 +1,65 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-
+import { useState, useEffect, Suspense, lazy } from "react";
+import { ToastContainer } from "react-toastify";
+import { Routes, Route } from "react-router-dom";
+import { Landing, Home, Detail, Login } from "./Pages/index";
+const CustomApp = lazy(() => import("./Customers/CustomApp"));
+const AdminApp = lazy(() => import("./Admin/AdminApp"));
+import ProtectedRoutes from "./Utils/ProtectedRoutes";
+import RoleBasedRoute from "./Utils/RoleBasedRoute";
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState("light");
 
   //Cambiar tema
-  const toggleTheme = ()=>{
-    const newTheme = theme === 'light'? 'dark' : 'light';
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     // Guardar preferencia en localStorage
-    localStorage.setItem('theme', newTheme);
-  }
-  useEffect(()=>{
-    document.documentElement.setAttribute('data-bs-theme', theme);
-  },[theme])
+    localStorage.setItem("theme", newTheme);
+  };
+  useEffect(() => {
+    document.documentElement.setAttribute("data-bs-theme", theme);
+  }, [theme]);
 
   return (
     <div className={`app ${theme}-mode`}>
-    <button 
-      onClick={toggleTheme} 
-      className="btn btn-sm btn-outline-secondary position-fixed top-0 end-0 m-3"
-    >
-      {theme === 'light' ? '🌙' : '☀️'}
-    </button>
-      <div className='container-md'>
-      <div className='row'>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button className='btn btn-sm btn-outline-primary' onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-        <div className='card border p-2 '>
-          <p className='h3'>Titulo</p>
-          <p>Este es un pequeño test para ver si funciona el modo dark</p>
-        </div>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <button
+        onClick={toggleTheme}
+        className="btn btn-sm btn-outline-secondary position-fixed top-0 end-0 m-3"
+      >
+        {theme === "light" ? "🌙" : "☀️"}
+      </button>
+      <ToastContainer limit={2} theme={theme} />
+      <Suspense fallback={<div>...loading</div>}>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/user/*"
+            element={
+              <RoleBasedRoute redirectTo="/login">
+                <CustomApp />
+              </RoleBasedRoute>
+            }
+          />
+          {/* <Route path="/user/*" element={<CustomApp />} /> */}
+          <Route
+            path="/admin/*"
+            element={
+              <RoleBasedRoute
+                allowedRoles={["Moderator", "Admin", "Super Admin"]}
+                redirectTo="/login"
+              >
+                <AdminApp />
+              </RoleBasedRoute>
+            }
+          />
+        </Routes>
+      </Suspense>
     </div>
-    </div>
-  )
+  );
 }
 
-export default App
+export default App;

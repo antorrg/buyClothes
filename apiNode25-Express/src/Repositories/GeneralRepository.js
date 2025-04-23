@@ -1,10 +1,9 @@
-import BaseRepository from "./BaseRepository.js";
+import BaseRepository from './BaseRepository.js'
 
-
-class GeneralRepository extends BaseRepository{
-    constructor(Model){
-        super(Model)
-    }
+class GeneralRepository extends BaseRepository {
+  constructor (Model) {
+    super(Model)
+  }
 }
 
-export default GeneralRepository;
+export default GeneralRepository

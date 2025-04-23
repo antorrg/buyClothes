@@ -1,33 +1,32 @@
-import {sequelize} from '../src/Configs/database.js'
+import { sequelize } from '../src/Configs/database.js'
 
 // Esta función inicializa la base de datos
-async function initializeDatabase() {
+async function initializeDatabase () {
   try {
-    await sequelize.authenticate();
-    await sequelize.sync({ force: true }); // Esto limpia y sincroniza la base de datos
-    //console.log('Base de datos sincronizada exitosamente ✔️')
+    await sequelize.authenticate()
+    await sequelize.sync({ force: true }) // Esto limpia y sincroniza la base de datos
+    // console.log('Base de datos sincronizada exitosamente ✔️')
   } catch (error) {
-    console.error('Error sincronizando DB ❌ ',error)
+    console.error('Error sincronizando DB ❌ ', error)
   }
 }
 
-//Esta función resetea la base de datos antes de cada prueba si es necesario
-async function resetDatabase() {
-    await sequelize.sync({ force: true });
-    console.log('Reset DB')
+// Esta función resetea la base de datos antes de cada prueba si es necesario
+async function resetDatabase () {
+  await sequelize.sync({ force: true })
+  console.log('Reset DB')
 }
 
-
 beforeAll(async () => {
-  await initializeDatabase();
-});
+  await initializeDatabase()
+})
 
 // beforeEach(async () => {
 //   await resetDatabase();
 // });
 
 afterAll(async () => {
-    await resetDatabase();
-    await sequelize.close();
-    console.log('DB cerrada')
-});
+  await resetDatabase()
+  await sequelize.close()
+  console.log('DB cerrada')
+})
