@@ -1,12 +1,49 @@
+import GeneralService from './GeneralService.js'
+import bcrypt from 'bcrypt'
+import env from '../Configs/envConfig.js'
 import eh from '../Configs/errorHandlers.js'
 
-const throwError = eh.throwError
+class UserService extends GeneralService {
+  constructor (Repository, fieldName, parserFunction = null, useImage = false, deleteImages = null) {
+    super(Repository, fieldName, parserFunction, useImage, deleteImages)
+  }
 
-class GeneralService {
-  constructor (Repository, fieldName, useCache = false, parserFunction = null, useImage = false, deleteImages = null) {
+  async create (data, uniqueField = null) {
+    const setNickname = data.email.split('@')[0]
+    const hashedPassword = await bcrypt.hash(data.password, 12)
+    const setRole = data.role || 1
+    const setPicture = data.picture || env.UserImg
+    const dataSetled = {
+      email: data.email,
+      setNickname,
+      password: hashedPassword,
+      role: setRole,
+      picture: setPicture
+    }
+    const newRecord = await this.Repository.create(dataSetled, uniqueField)
+
+    return this.parserFunction ? this.parserFunction(newRecord) : newRecord
+  }
+
+  async login (data) { // data, uniqueField, isAdmin
+    const userFound = await this.Repository.getOne(data.email, 'email', true)
+    if (userFound.enable === false) { eh.throwError('Usuario bloqueado', 400) }
+    const paswordMatch = bcrypt.compare(userFound.password, data.password)
+    if (!paswordMatch) { eh.throwError('Contraseña incorrecta', 400) }
+    return {
+      message: 'Autenticacion exitosa. Bienvenido',
+      results: {
+        user: this.parserFunction ? this.parserFunction(newRecord) : newRecord,
+        token: ''
+      }
+    }
+  }
+}
+export default UserService
+/* class GeneralService {
+  constructor (Repository, fieldName,  parserFunction = null, useImage = false, deleteImages = null) {
     this.Repository = Repository
     this.fieldName = fieldName
-    this.useCache = useCache
     this.useImage = useImage
     this.deleteImages = deleteImages
     this.parserFunction = parserFunction
@@ -19,9 +56,13 @@ class GeneralService {
   }
 
   async create (data, uniqueField = null) {
-    const newRecord = await this.Repository.create(data, uniqueField)
+    try {
+      const newRecord = await this.Repository.create(data, uniqueField)
 
-    return this.parserFunction ? this.parserFunction(newRecord) : newRecord
+      return this.parserFunction ? this.parserFunction(newRecord) : newRecord
+    } catch (error) {
+      throw error
+    }
   }
 
   async getAll (isAdmin = false) {
@@ -35,7 +76,7 @@ class GeneralService {
 
       // console.log(dataParsed)
       return {
-        data: dataParsed
+        data: dataParsed,
       }
     } catch (error) {
       throw error
@@ -88,20 +129,18 @@ class GeneralService {
     try {
       const dataFound = await this.Repository.getById(id)
 
-      if (this.useImage) {
-        imageUrl = dataFound.picture
+      if(this.useImage){
+        imageUrl = dataFound.picture;
         deleteImg = true
-      }
+        }
 
       await this.Repository.delete(id)
 
-      if (deleteImg) { await this.handleImageDeletion(imageUrl) }
+      if(deleteImg){await this.handleImageDeletion(imageUrl)}
 
       return `${this.fieldName} deleted successfully`
     } catch (error) {
       throw error
     }
   }
-}
-
-export default GeneralService
+} */

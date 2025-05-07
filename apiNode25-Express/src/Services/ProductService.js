@@ -1,4 +1,5 @@
-import GeneralService from './GeneralService'
+import GeneralService from './GeneralService.js'
+import eh from '../Configs/errorHandlers.js'
 
 class ProductService extends GeneralService {
   constructor (Repository, fieldName, useCache = false, parserFunction = null, useImage = false, deleteImages = null) {
@@ -33,19 +34,21 @@ class ProductService extends GeneralService {
         }
       }
     }
-      const data = await this.Repository.getProduct(page, size, name, trademark, fields, isAdmin)
+    const data = await this.Repository.getProduct(queryObject, isAdmin)
 
-      const dataParsed = this.parserFunction ? data.map(dat => this.parserFunction(dat)) : data
-      // console.log('soy la data: ', dataParsed)
-      if (this.useCache) {
-        cache.set(cacheKey, dataParsed)
-      }
-      // console.log(dataParsed)
-      return {
-        data: dataParsed,
-        cache: false
-      }
-    
+    const dataParsed = this.parserFunction ? data.results.map(dat => this.parserFunction(dat)) : data.results
+    const finalData = {
+      info: data.info,
+      results: dataParsed
+    }
+    if (this.useCache) {
+      cache.set(cacheKey, finalData)
+    }
+    // console.log(dataParsed)
+    return {
+      data: finalData,
+      cache: false
+    }
   }
 
   async getById (id, queryObject, isAdmin) {
@@ -53,7 +56,7 @@ class ProductService extends GeneralService {
     try {
       const data = await this.Repository.getById(id, size, color, isAdmin)
 
-      return this.parserFunction ? this.parserFunction(data) : data
+      return this.parserFunction ? this.parserFunction(data, true) : data
     } catch (error) {
       throw error
     }
@@ -122,20 +125,16 @@ class ProductService extends GeneralService {
 
   async delete (id) {
     let imageUrl = ''
-    try {
-      const dataFound = await this.Repository.getById(id)
+    const dataFound = await this.Repository.getById(id)
 
-      this.useImage ? imageUrl = dataFound.picture : ''
+    this.useImage ? imageUrl = dataFound.picture : ''
 
-      await this.Repository.delete(id)
+    await this.Repository.delete(id)
 
-      await this.handleImageDeletion(imageUrl)
+    await this.handleImageDeletion(imageUrl)
 
-      if (this.useCache) this.clearCache()
-      return `${this.fieldName} deleted successfully`
-    } catch (error) {
-      throw error
-    }
+    if (this.useCache) this.clearCache()
+    return `${this.fieldName} deleted successfully`
   }
 }
 

@@ -21,7 +21,7 @@ if (env.Status !== 'test') {
   app.use(morgan('dev'))
 }
 app.use(helmet())
-app.use(cors())
+app.use(cors(eh.corsConfig))
 app.use(express.json())
 app.use(eh.validJson)
 if (env.Status === 'development') {

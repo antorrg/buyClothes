@@ -19,7 +19,7 @@ app.listen(env.Port, async () => {
     console.log(`Server is listening on http://localhost:${env.Port}\nServer in ${env.Status}😉`)
     if (env.Status === 'development') {
       await sequelize.sync({ force: false })
-      //await pepe()
+      // await pepe()
 
       console.log(`Swagger is running on http://localhost:${env.Port}/api-docs`)
     }

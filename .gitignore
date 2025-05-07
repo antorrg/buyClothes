@@ -114,6 +114,9 @@ dist
 # Serverless directories
 .serverless/
 
+# Development directories
+apiNode24/
+
 # FuseBox cache
 .fusebox/
 

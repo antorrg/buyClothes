@@ -17,12 +17,18 @@ export default {
     return error
   },
 
-  corsConfig: (req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.header('Access-Control-Allow-Credentials', 'true')
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-type, Accept, Authorization, x-access-token')
-    res.header('Access-Control-Allow-Methods', ' GET, POST, OPTIONS, PUT, DELETE')
-    next()
+  corsConfig: {
+    origin: 'http://localhost:5173', // cámbialo a tu dominio en producción
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    allowedHeaders: [
+      'Origin',
+      'X-Requested-With',
+      'Content-Type',
+      'Accept',
+      'Authorization',
+      'x-access-token'
+    ]
   },
   validJson: (err, req, res, next) => {
     if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {

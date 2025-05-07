@@ -1,4 +1,4 @@
-/*import { MercadoPagoConfig, Payment, Preference } from 'mercadopago'
+/* import { MercadoPagoConfig, Payment, Preference } from 'mercadopago'
 import { v4 as uuidv4 } from 'uuid'
 import env from '../../Configs/envConfig.js'
 
@@ -8,11 +8,11 @@ const client = new MercadoPagoConfig({
   accessToken: env.MpAccesToken,
   options: {
     timeout: 5000,
-    idempotencyKey:idempotKey 
+    idempotencyKey:idempotKey
   }
 })
 const requestOptions = {
-  idempotencyKey: idempotKey 
+  idempotencyKey: idempotKey
 }
 // Crear una instancia de `Payment`
 const payment = new Payment(client)
@@ -40,7 +40,7 @@ export const createOrder = async (req, res) => {
     console.error('Error en la request: ', error)
     res.status(error.status || 500).json({ error: error.message })
   }
-}*/
+} */
 
 import { MercadoPagoConfig, Preference } from 'mercadopago'
 import env from '../../Configs/envConfig.js'

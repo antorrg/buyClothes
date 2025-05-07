@@ -1,13 +1,13 @@
-import GeneralController from "./GeneralController.js";
+import GeneralController from './GeneralController.js'
 
-class ProductController extends GeneralController{
-    constructor(){
-        super()
-    }
+class ProductController extends GeneralController {
+  constructor (Service) {
+    super(Service)
+  }
 }
 
 export default ProductController
-/*mainRouter.post('/create', async (req, res) => {
+/* mainRouter.post('/create', async (req, res) => {
   const data = req.body
   try {
     const response = await tuki.create(data)
@@ -43,4 +43,4 @@ mainRouter.get('/:id', async (req, res) => { // page, size, name, trademark, fie
   } catch (error) {
     res.status(error.status || 500).json({ error: error.message })
   }
-})*/
+}) */

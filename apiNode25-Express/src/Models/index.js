@@ -8,6 +8,7 @@ import Sales from './sales.js'
 import User from './user.js'
 import ProductAttributes from './productAttributes.js'
 import Landing from './landing.js'
+import Cache from './cache.js'
 
 export default {
   Product,
@@ -19,5 +20,6 @@ export default {
   Sales,
   User,
   ProductAttributes,
-  Landing
+  Landing,
+  Cache
 }

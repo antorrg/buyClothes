@@ -22,7 +22,8 @@ const {
   Rating,
   Sales,
   User,
-  Landing
+  Landing,
+  Cache
 } = sequelize.models
 
 // Asociations:
@@ -53,5 +54,6 @@ export {
   Trademark,
   Attributes,
   Landing,
+  Cache,
   sequelize
 }

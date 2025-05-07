@@ -1,4 +1,3 @@
-
 export default {
   productCreate1: [{ name: 'name', type: 'string' }, { name: 'description', type: 'string' }, { name: 'images', type: 'array' }, { name: 'released', type: 'string' }, { name: 'category', type: 'int' }, { name: 'discipline', type: 'int' }, { name: 'trademark', type: 'int' }],
 
@@ -7,7 +6,7 @@ export default {
   productUpd: [{ name: 'enable', type: 'boolean' }, { name: 'name', type: 'string' }, { name: 'description', type: 'string' }, { name: 'images', type: 'array' }, { name: 'released', type: 'string' }, { name: 'category', type: 'int' }, { name: 'discipline', type: 'int' }, { name: 'trademark', type: 'int' }],
 
   variantUpd: [{ name: 'enable', type: 'boolean' }, { name: 'order', type: 'string' }, { name: 'characteristics', type: 'string' }, { name: 'price', type: 'float' }, { name: 'stock', type: 'int' }, { name: 'images', type: 'array' }, { name: 'size', type: 'string' }, { name: 'color', type: 'string' }],
- //Se definen, validan y tipan las queries aqui
+  // Se definen, validan y tipan las queries aqui
   prodGetAll: [{ name: 'page', type: 'int' }, { name: 'size', type: 'int' }, { name: 'name', type: 'string' }, { name: 'trademark', type: 'int' }, { name: 'fields', type: 'string' }], // page, size, name, trademark, fields
 
   prodGetById: [{ name: 'size', type: 'string' }, { name: 'color', type: 'string' }] // size, color

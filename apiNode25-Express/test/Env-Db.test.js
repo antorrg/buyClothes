@@ -10,7 +10,7 @@ describe('Iniciando tests, probando variables de entorno del archivo "envConfig.
     const formatEnvInfo = `Servidor corriendo en: ${env.Status}\n` +
                    `Base de datos de testing: ${env.DatabaseUrl}`
     expect(formatEnvInfo).toBe('Servidor corriendo en: test\n' +
-        'Base de datos de testing: postgres://postgres:antonio@localhost:5432/testing')
+        'Base de datos de testing: postgres://postgres:antonio@localhost:5432/testbuyclothes')
   })
 
   it('Debería verificar la existencia de tablas en la base de datos', async () => {
@@ -24,7 +24,7 @@ describe('Iniciando tests, probando variables de entorno del archivo "envConfig.
 
     const expectedTables = [
       'Users', 'Products', 'ProductVariants', 'Attributes',
-      'Ratings', 'Companies', 'Sales', 'Trademarks', 'Landings'
+      'Ratings', 'Companies', 'Sales', 'Trademarks', 'Landings', 'Caches'
     ]
 
     expectedTables.forEach(table => {
@@ -32,7 +32,7 @@ describe('Iniciando tests, probando variables de entorno del archivo "envConfig.
     })
   })
   it('Debería hacer una consulta básica en cada tabla sin errores', async () => {
-    const models = ['User', 'Product', 'ProductVariant', 'Attributes', 'Rating', 'Company', 'Sales', 'Trademark', 'Landing']
+    const models = ['User', 'Product', 'ProductVariant', 'Attributes', 'Rating', 'Company', 'Sales', 'Trademark', 'Landing', 'Cache']
 
     for (const model of models) {
       const records = await db[model].findAll()
@@ -50,7 +50,8 @@ describe('Probando la estructura de las tablas en la base de datos', () => {
     Ratings: ['id', 'comment', 'score', 'deletedAt', 'createdAt', 'updatedAt', 'ProductVariantId', 'UserId'],
     Companies: ['id', 'name', 'picture', 'email', 'web_site', 'country', 'enable', 'deletedAt'],
     Sales: ['id', 'name', 'description', 'value', 'quantity', 'total', 'enable', 'deletedAt'],
-    Landings: ['id', 'name', 'title', 'description', 'images', 'metaTitle', 'metaDescription', 'metaKeywords', 'logo', 'enable', 'deletedAt']
+    Landings: ['id', 'name', 'title', 'description', 'images', 'metaTitle', 'metaDescription', 'metaKeywords', 'logo', 'enable', 'deletedAt'],
+    Caches: ['key', 'value', 'expires_at', 'createdAt']
   }
 
   Object.entries(tables).forEach(([tableName, expectedColumns]) => {

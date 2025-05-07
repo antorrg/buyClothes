@@ -1,6 +1,4 @@
-
 class ProductCleaner {
-    
   static parserVariant (info) {
     return info?.map(dt => ({
       id: dt.id,
@@ -13,9 +11,10 @@ class ProductCleaner {
       price: dt.price,
       stock: dt.stock,
       enable: dt.enable
-  
+
     }))
   }
+
   static parserProduct (dat) {
     return {
       id: dat.id,
@@ -29,11 +28,11 @@ class ProductCleaner {
       trademark: dat.trademark || null,
       enable: dat.enable,
       variants: this.parserVariant(dat.variants)
-  
+
     }
   }
-  
- static parsedProductGet (products) {
+
+  static parsedProductGet (products) {
     return products?.map(product => ({
       id: product.id,
       name: product.name,
@@ -43,7 +42,7 @@ class ProductCleaner {
       enable: product.enable,
       // Mapeamos los atributos asociados
       attributes: product.Attributes?.map(attr => ({
-  
+
         [attr.type]: attr.name
       })),
       // Mapeamos las marcas asociadas
@@ -63,6 +62,7 @@ class ProductCleaner {
       }))
     }))
   }
+
   static parsedProductGetById (product) {
     return {
       id: product.id,
@@ -107,4 +107,3 @@ class ProductCleaner {
   }
 }
 export default ProductCleaner
-  
