@@ -1,9 +1,7 @@
 export default class ProdHelp {
   static parseProduct (product, isDetailed = false) {
-    console.log('soy parserfunction')
     const base = {
       id: product.id,
-      pepito: 'soypepito',
       name: product.name,
       description: product.description,
       images: product.images,

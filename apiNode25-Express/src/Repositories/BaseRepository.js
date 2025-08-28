@@ -32,7 +32,7 @@ class BaseRepository {
     if (existingRecord.length === 0) {
       if (dataEmpty) {
         existingRecord.push(dataEmpty)// return [dataEmpty]
-      } else { throwError(`This ${this.Model.name.toLowerCase()} name do not exists`, 404) }
+      } else {return {message: 'No data yet'} }
     }
     return existingRecord
   }

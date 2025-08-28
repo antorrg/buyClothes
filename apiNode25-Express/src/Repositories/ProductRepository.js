@@ -8,6 +8,7 @@ import {
 } from '../Configs/database.js'
 import { Op } from 'sequelize'
 import eh from '../Configs/errorHandlers.js'
+import attributes from '../Models/attributes.js'
 
 const throwError = eh.throwError
 /*
@@ -337,7 +338,41 @@ class ProductRepository extends BaseRepository {
     }
   }
 
-  async variantUpdate (id, newData) {
+  async delete (id) {
+    const dataFound = await this.Model.findByPk(id)
+    if (!dataFound) {
+      throwError(`${this.Model} not found`, 404)
+    }
+    await dataFound.destroy()
+    return `${this.Model.name} deleted successfully`
+  };
+
+  async getInfoVariants (id) {
+    const acc = []
+    const imgsAcc = []
+    const dataFound = await this.Model.findByPk(id, {
+      include: [{
+        model: this.ModelVariant,
+        attributes: ['id', 'images']
+      }]
+    })
+    if (!dataFound) {
+      throwError(`${this.Model.name} not found`, 404)
+    }
+    dataFound.ProductVariants.forEach(variant => {
+      acc.push(variant.id)
+      if (Array.isArray(variant.images)) {
+        imgsAcc.push(...variant.images)
+      }
+    })
+    // TODO: Implementar el borrado de imágenes si se decide limpiar el storage al eliminar variantes
+    return {
+      ids: acc,
+      images: imgsAcc
+    }
+  }
+
+  async variantUpdate (id, newData) { // Revisar para eliminar despues
     const dataFound = await this.ModelVariant.findByPk(id)
     if (!dataFound) {
       throwError(`${this.Model.name} not found`, 404)

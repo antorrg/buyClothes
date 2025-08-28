@@ -20,6 +20,9 @@ export default (sequelize)=>{
             defaultValue:false
         }
     },
-    {timestamps: true},
+    {
+
+    timestamps: true
+  },
     )
 }

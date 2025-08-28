@@ -9,7 +9,13 @@ export default {
   // Se definen, validan y tipan las queries aqui
   prodGetAll: [{ name: 'page', type: 'int' }, { name: 'size', type: 'int' }, { name: 'name', type: 'string' }, { name: 'trademark', type: 'int' }, { name: 'fields', type: 'string' }], // page, size, name, trademark, fields
 
-  prodGetById: [{ name: 'size', type: 'string' }, { name: 'color', type: 'string' }] // size, color
+  prodGetById: [{ name: 'size', type: 'string' }, { name: 'color', type: 'string' }], // size, color
+
+  setAdmin:(req, res, next)=>{
+    const isAdmin = true
+    req.admin = isAdmin
+    next()
+  }
 }
 
 /* name: "Producto uno",

@@ -1,9 +1,8 @@
 import eh from '../Configs/errorHandlers.js'
 
 class GeneralController {
-  constructor (service, isAdmin = false) {
+  constructor (service) {
     this.service = service
-    this.isAdmin = isAdmin
   }
 
   responder (res, status, success, message = null, results = null) {
@@ -18,7 +17,8 @@ class GeneralController {
 
   getAll = eh.catchController(async (req, res) => {
     const queryObject = req.query || {}
-    const response = await this.service.getAll(queryObject, this.isAdmin)
+    const isAdmin = req.admin || false
+    const response = await this.service.getAll(queryObject, isAdmin)
     if (response.cache === true) { return this.responder(res, 203, true, null, response.data) }
     return GeneralController.responder(res, 200, true, null, response.data)
   })
@@ -26,7 +26,8 @@ class GeneralController {
   getById = eh.catchController(async (req, res) => {
     const { id } = req.params
     const queryObject = req.query || {}
-    const response = await this.service.getById(id, queryObject, this.isAdmin)
+    const isAdmin = req.admin || false
+    const response = await this.service.getById(id, queryObject, isAdmin)
     return GeneralController.responder(res, 200, true, null, response)
   })
 

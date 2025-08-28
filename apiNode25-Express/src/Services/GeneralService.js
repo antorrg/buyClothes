@@ -1,4 +1,5 @@
 import eh from '../Configs/errorHandlers.js'
+import SequelizeCache from '../Utils/sequelizeCache.js'
 
 const throwError = eh.throwError
 
@@ -26,19 +27,25 @@ class GeneralService {
 
   async getAll (isAdmin = false) {
     // console.log('service',emptyObject)
-
-    try {
-      const data = await this.Repository.getAll(isAdmin)
-
-      const dataParsed = this.parserFunction ? data.map(dat => this.parserFunction(dat)) : data
-      // console.log('soy la data: ', dataParsed)
-
-      // console.log(dataParsed)
-      return {
-        data: dataParsed
+    const cacheKey = `${this.fieldName.toLowerCase()}`
+    if (this.useCache) {
+      const cachedData = SequelizeCache.getCache(cacheKey)
+      if (cachedData) {
+        return {
+          data: cachedData,
+          cache: true
+        }
       }
-    } catch (error) {
-      throw error
+    }
+    const data = await this.Repository.getAll(isAdmin)
+
+    const dataParsed = this.parserFunction ? data.map(dat => this.parserFunction(dat)) : data
+
+    if (this.useCache) {
+      SequelizeCache.setCache(cacheKey, dataParsed, 30)
+    }
+    return {
+      data: dataParsed
     }
   }
 
@@ -72,7 +79,7 @@ class GeneralService {
         await this.handleImageDeletion(imageUrl)
       }
 
-      if (this.useCache) this.clearCache()
+      if (this.useCache) SequelizeCache.clearCache()
       return {
         message: `${this.fieldName} updated successfully`,
         data: this.parserFunction ? this.parserFunction(upData) : upData
@@ -96,6 +103,7 @@ class GeneralService {
       await this.Repository.delete(id)
 
       if (deleteImg) { await this.handleImageDeletion(imageUrl) }
+      if (this.useCache) SequelizeCache.clearCache()
 
       return `${this.fieldName} deleted successfully`
     } catch (error) {

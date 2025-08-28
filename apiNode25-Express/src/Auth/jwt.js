@@ -1,7 +1,7 @@
 import crypto from 'crypto'
 import pkg from 'jsonwebtoken'
-import env from '../envConfig.js'
-import eh from '../utils/errors/errorHandlers.js'
+import env from '../Configs/envConfig.js'
+import eh from '../Configs/errorHandlers.js'
 
 //! Esta parte corresponde a jsonwebtoken:
 

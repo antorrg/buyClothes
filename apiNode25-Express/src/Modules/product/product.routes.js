@@ -8,9 +8,9 @@ const productRouter = express.Router()
 
 productRouter.post('/', MiddlewareHandler.validateFieldsWithItems(v.productCreate1, v.productCreate2, 'variants'))
 
-productRouter.get('/product')
+productRouter.get('/product')//isAdmin true
 
-productRouter.get('/product/:id')
+productRouter.get('/product/:id')//isAdmin true
 
 productRouter.get('/')
 

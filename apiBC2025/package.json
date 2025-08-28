@@ -1,0 +1,54 @@
+{
+  "name": "apibc2025",
+  "version": "1.0.0",
+  "description": "Una aplicación Express generada con Bash",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "unit:test": "cross-env NODE_ENV=test jest --detectOpenHandles",
+    "lint": "standard --fix",
+    "gen:schema": "node src/Shared/Swagger/schemas/tools/generateSchema.js",
+    "validate:schema": "validate-schema"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.4.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "req-valid-express": "^1.0.4",
+    "sequelize": "^6.37.7",
+    "uuid": "^11.1.0"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "@babel/preset-env"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "standard": "^17.1.2",
+    "supertest": "^7.1.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
